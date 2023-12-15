@@ -66,7 +66,6 @@ export const text = stylex.defineVars({
   h1: `clamp(${Math.min(MIN_FONT.h1)}rem, calc(${INTERCEPT.h1}rem + ${Math.round(10000 * SLOPE.h1) / 100}vw), ${Math.max(MAX_FONT.h1)}rem)`,
 })
 
-
 const MULT = {
   xxxs: 0.25,
   xxs: 0.5,

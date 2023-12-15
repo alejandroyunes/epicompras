@@ -1,18 +1,18 @@
-import * as stylex from "@stylexjs/stylex";
-import type { StyleXStyles, Theme } from "@stylexjs/stylex/lib/StyleXTypes";
+import * as stylex from "@stylexjs/stylex"
+import type { StyleXStyles, Theme } from "@stylexjs/stylex/lib/StyleXTypes"
 
-import "./ButtonTokens.stylex";
-import { buttonTokens } from "./ButtonTokens.stylex";
+import "./ButtonTokens.stylex"
+import { buttonTokens } from "./ButtonTokens.stylex"
 
 type Props = Readonly<{
-  onClick: () => void;
-  children: React.ReactNode;
+  onClick: () => void
+  children: React.ReactNode
   // for Overrides
-  style?: StyleXStyles;
-  theme?: Theme<typeof buttonTokens>;
-  variant?: "primary" | "danger";
-  em?: boolean;
-}>;
+  style?: StyleXStyles
+  theme?: Theme<typeof buttonTokens>
+  variant?: "primary" | "danger"
+  em?: boolean
+}>
 
 export default function Card({
   onClick,
@@ -35,7 +35,7 @@ export default function Card({
     >
       {children}
     </button>
-  );
+  )
 }
 
 const styles = stylex.create({
@@ -52,7 +52,7 @@ const styles = stylex.create({
   emphasise: {
     transform: "scale(1.1)",
   },
-});
+})
 
 const variantStyles = stylex.create({
   danger: {
@@ -62,4 +62,4 @@ const variantStyles = stylex.create({
   primary: {
     fontWeight: "bold",
   },
-});
+})

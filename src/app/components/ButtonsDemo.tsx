@@ -1,15 +1,17 @@
-"use client";
+"use client"
 
-import * as stylex from "@stylexjs/stylex";
-import { buttonTokens } from "./ButtonTokens.stylex";
-import ThemeableButton from "./ThemeableButton";
+import * as stylex from "@stylexjs/stylex"
+import { buttonTokens } from "./ButtonTokens.stylex"
+import ThemeableButton from "./ThemeableButton"
 
-type Props = Readonly<{}>;
+type Props = Readonly<{}>
 
 export default function ButtonsDemo(_props: Props) {
+
   const onClick = () => {
-    console.log("click");
-  };
+    console.log("click")
+  }
+
   return (
     <div {...stylex.props(styles.container)}>
       <ThemeableButton onClick={onClick}>Vanilla Button</ThemeableButton>
@@ -36,7 +38,7 @@ export default function ButtonsDemo(_props: Props) {
         Red - Bordered Button
       </ThemeableButton>
     </div>
-  );
+  )
 }
 
 const redTheme = stylex.createTheme(buttonTokens, {
@@ -45,7 +47,7 @@ const redTheme = stylex.createTheme(buttonTokens, {
   cornerRadius: "4px",
   paddingBlock: "4px",
   paddingInline: "8px",
-});
+})
 
 const styles = stylex.create({
   container: {
@@ -64,4 +66,4 @@ const styles = stylex.create({
   greenBorder: {
     borderColor: "green",
   },
-});
+})

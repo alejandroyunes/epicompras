@@ -1,15 +1,14 @@
-import * as stylex from "@stylexjs/stylex";
-import Card from "./Card";
-import { globalTokens as $, spacing, text } from "./globalTokens.stylex";
-import ButtonsDemo from "./components/ButtonsDemo";
+import * as stylex from "@stylexjs/stylex"
+import Card from "./Card"
+import { globalTokens as $, spacing, text } from "./globalTokens.stylex"
+import ButtonsDemo from "./components/ButtonsDemo"
 
-const MEDIA_MOBILE: "@media (max-width: 700px)" = "@media (max-width: 700px)";
-const MEDIA_TABLET: "@media (min-width: 701px) and (max-width: 1120px)" =
-  "@media (min-width: 701px) and (max-width: 1120px)";
+const MEDIA_MOBILE: "@media (max-width: 700px)" = "@media (max-width: 700px)"
+const MEDIA_TABLET: "@media (min-width: 701px) and (max-width: 1120px)" = "@media (min-width: 701px) and (max-width: 1120px)"
 
-const bgImage = `linear-gradient(to bottom, ${$.bgStartRGB}, ${$.calloutRGB50})`;
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`;
-const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.25)`;
+const bgImage = `linear-gradient(to bottom, ${$.bgStartRGB}, ${$.calloutRGB50})`
+const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
+const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.25)`
 
 const s = stylex.create({
   main: {
@@ -127,16 +126,16 @@ const s = stylex.create({
     },
     textAlign: { [MEDIA_MOBILE]: "center" },
   },
-});
+})
 
-const HOMEPAGE = "http://stylex-docusaurus.vercel.app";
+const HOMEPAGE = "http://stylex-docusaurus.vercel.app"
 
 export default function Home() {
   return (
     <main {...stylex.props(s.main)}>
       <div {...stylex.props(s.description)}>
         <p {...stylex.props(s.descP)}>
-          Get started by editing&nbsp;
+          Get started by editing&nbsp
           <code {...stylex.props(s.code)}>app/page.tsx</code>
         </p>
       </div>
@@ -170,5 +169,5 @@ export default function Home() {
         />
       </div>
     </main>
-  );
+  )
 }
