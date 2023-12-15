@@ -10,7 +10,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-
     "@stylexjs/open-props": "^0.3.0",
     "@stylexjs/stylex": "^0.3.0",
     "bright": "^0.8.4",

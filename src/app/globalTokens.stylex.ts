@@ -1,29 +1,11 @@
-import stylex from "@stylexjs/stylex";
+import stylex from "@stylexjs/stylex"
 
-/**
- * o--o o    o   o o-O-o o-o       o--o  o-o  o   o o-O-o  o-o
- * |    |    |   |   |   |  \      |    o   o |\  |   |   |
- * O-o  |    |   |   |   |   O     O-o  |   | | \ |   |    o-o
- * |    |    |   |   |   |  /      |    o   o |  \|   |       |
- * o    O---o o-o  o-O-o o-o       o     o-o  o   o   o   o--o
- *
- * Reference: https://utopia.fyi/type/calculator
- *
- * The following constants are used to calculate fluid typography.
- * Feel free to change these initial numbers to suit your needs.
- *
- * StyleX can compute all of this at compile time as all the information
- * is statically available in the same file and the only functions used are
- * the Math.pow and Math.round functions.
- *
- * NOTE: Any custom functions will not be able to be computed at compile time.
- */
-const MIN_WIDTH = 320;
-const MAX_WIDTH = 1240;
-const MIN_SCALE = 1.2;
-const MAX_SCALE = 1.333;
-const MIN_BASE_SIZE = 16;
-const MAX_BASE_SIZE = 20;
+const MIN_WIDTH = 320
+const MAX_WIDTH = 1240
+const MIN_SCALE = 1.2
+const MAX_SCALE = 1.333
+const MIN_BASE_SIZE = 16
+const MAX_BASE_SIZE = 20
 
 // Font sizes in `rem` units
 const MIN_FONT = {
@@ -36,7 +18,7 @@ const MIN_FONT = {
   h3: Math.round((MIN_BASE_SIZE * Math.pow(MIN_SCALE, 3)) / 0.16) / 100,
   h2: Math.round((MIN_BASE_SIZE * Math.pow(MIN_SCALE, 4)) / 0.16) / 100,
   h1: Math.round((MIN_BASE_SIZE * Math.pow(MIN_SCALE, 5)) / 0.16) / 100,
-};
+}
 // Font sizes in `rem` units
 const MAX_FONT = {
   xxs: Math.round(MAX_BASE_SIZE / Math.pow(MAX_SCALE, 3) / 0.16) / 100,
@@ -48,7 +30,7 @@ const MAX_FONT = {
   h3: Math.round((MAX_BASE_SIZE * Math.pow(MAX_SCALE, 3)) / 0.16) / 100,
   h2: Math.round((MAX_BASE_SIZE * Math.pow(MAX_SCALE, 4)) / 0.16) / 100,
   h1: Math.round((MAX_BASE_SIZE * Math.pow(MAX_SCALE, 5)) / 0.16) / 100,
-};
+}
 const SLOPE = {
   xxs: (16 * (MAX_FONT.xxs - MIN_FONT.xxs)) / (MAX_WIDTH - MIN_WIDTH),
   xs: (16 * (MAX_FONT.xs - MIN_FONT.xs)) / (MAX_WIDTH - MIN_WIDTH),
@@ -59,7 +41,7 @@ const SLOPE = {
   h3: (16 * (MAX_FONT.h3 - MIN_FONT.h3)) / (MAX_WIDTH - MIN_WIDTH),
   h2: (16 * (MAX_FONT.h2 - MIN_FONT.h2)) / (MAX_WIDTH - MIN_WIDTH),
   h1: (16 * (MAX_FONT.h1 - MIN_FONT.h1)) / (MAX_WIDTH - MIN_WIDTH),
-};
+}
 const INTERCEPT = {
   xxs: Math.round(100 * (MIN_FONT.xxs - SLOPE.xxs * (MIN_WIDTH / 16))) / 100,
   xs: Math.round(100 * (MIN_FONT.xs - SLOPE.xs * (MIN_WIDTH / 16))) / 100,
@@ -70,65 +52,20 @@ const INTERCEPT = {
   h3: Math.round(100 * (MIN_FONT.h3 - SLOPE.h3 * (MIN_WIDTH / 16))) / 100,
   h2: Math.round(100 * (MIN_FONT.h2 - SLOPE.h2 * (MIN_WIDTH / 16))) / 100,
   h1: Math.round(100 * (MIN_FONT.h1 - SLOPE.h1 * (MIN_WIDTH / 16))) / 100,
-};
+}
 
 export const text = stylex.defineVars({
-  xxs: `clamp(${Math.min(MIN_FONT.xxs)}rem, calc(${INTERCEPT.xxs}rem + ${
-    Math.round(10000 * SLOPE.xxs) / 100
-  }vw), ${Math.max(MAX_FONT.xxs)}rem)`,
-  xs: `clamp(${Math.min(MIN_FONT.xs)}rem, calc(${INTERCEPT.xs}rem + ${
-    Math.round(10000 * SLOPE.xs) / 100
-  }vw), ${Math.max(MAX_FONT.xs)}rem)`,
-  sm: `clamp(${Math.min(MIN_FONT.sm)}rem, calc(${INTERCEPT.sm}rem + ${
-    Math.round(10000 * SLOPE.sm) / 100
-  }vw), ${Math.max(MAX_FONT.sm)}rem)`,
-  p: `clamp(${Math.min(MIN_FONT.p)}rem, calc(${INTERCEPT.p}rem + ${
-    Math.round(10000 * SLOPE.p) / 100
-  }vw), ${Math.max(MAX_FONT.p)}rem)`,
-  h5: `clamp(${Math.min(MIN_FONT.h5)}rem, calc(${INTERCEPT.h5}rem + ${
-    Math.round(10000 * SLOPE.h5) / 100
-  }vw), ${Math.max(MAX_FONT.h5)}rem)`,
-  h4: `clamp(${Math.min(MIN_FONT.h4)}rem, calc(${INTERCEPT.h4}rem + ${
-    Math.round(10000 * SLOPE.h4) / 100
-  }vw), ${Math.max(MAX_FONT.h4)}rem)`,
-  h3: `clamp(${Math.min(MIN_FONT.h3)}rem, calc(${INTERCEPT.h3}rem + ${
-    Math.round(10000 * SLOPE.h3) / 100
-  }vw), ${Math.max(MAX_FONT.h3)}rem)`,
-  h2: `clamp(${Math.min(MIN_FONT.h2)}rem, calc(${INTERCEPT.h2}rem + ${
-    Math.round(10000 * SLOPE.h2) / 100
-  }vw), ${Math.max(MAX_FONT.h2)}rem)`,
-  h1: `clamp(${Math.min(MIN_FONT.h1)}rem, calc(${INTERCEPT.h1}rem + ${
-    Math.round(10000 * SLOPE.h1) / 100
-  }vw), ${Math.max(MAX_FONT.h1)}rem)`,
-});
+  xxs: `clamp(${Math.min(MIN_FONT.xxs)}rem, calc(${INTERCEPT.xxs}rem + ${Math.round(10000 * SLOPE.xxs) / 100}vw), ${Math.max(MAX_FONT.xxs)}rem)`,
+  xs: `clamp(${Math.min(MIN_FONT.xs)}rem, calc(${INTERCEPT.xs}rem + ${Math.round(10000 * SLOPE.xs) / 100}vw), ${Math.max(MAX_FONT.xs)}rem)`,
+  sm: `clamp(${Math.min(MIN_FONT.sm)}rem, calc(${INTERCEPT.sm}rem + ${Math.round(10000 * SLOPE.sm) / 100}vw), ${Math.max(MAX_FONT.sm)}rem)`,
+  p: `clamp(${Math.min(MIN_FONT.p)}rem, calc(${INTERCEPT.p}rem + ${Math.round(10000 * SLOPE.p) / 100}vw), ${Math.max(MAX_FONT.p)}rem)`,
+  h5: `clamp(${Math.min(MIN_FONT.h5)}rem, calc(${INTERCEPT.h5}rem + ${Math.round(10000 * SLOPE.h5) / 100}vw), ${Math.max(MAX_FONT.h5)}rem)`,
+  h4: `clamp(${Math.min(MIN_FONT.h4)}rem, calc(${INTERCEPT.h4}rem + ${Math.round(10000 * SLOPE.h4) / 100}vw), ${Math.max(MAX_FONT.h4)}rem)`,
+  h3: `clamp(${Math.min(MIN_FONT.h3)}rem, calc(${INTERCEPT.h3}rem + ${Math.round(10000 * SLOPE.h3) / 100}vw), ${Math.max(MAX_FONT.h3)}rem)`,
+  h2: `clamp(${Math.min(MIN_FONT.h2)}rem, calc(${INTERCEPT.h2}rem + ${Math.round(10000 * SLOPE.h2) / 100}vw), ${Math.max(MAX_FONT.h2)}rem)`,
+  h1: `clamp(${Math.min(MIN_FONT.h1)}rem, calc(${INTERCEPT.h1}rem + ${Math.round(10000 * SLOPE.h1) / 100}vw), ${Math.max(MAX_FONT.h1)}rem)`,
+})
 
-/**
- * o--o o    o   o o-O-o o-o        o-o  o--o    O    o-o o--o
- * |    |    |   |   |   |  \      |     |   |  / \  /    |
- * O-o  |    |   |   |   |   O      o-o  O--o  o---oO     O-o
- * |    |    |   |   |   |  /          | |     |   | \    |
- * o    O---o o-o  o-O-o o-o       o--o  o     o   o  o-o o--o
- *
- * Reference: https://utopia.fyi/space/calculator
- *
- * Similar to the fluid typography, we can create fluid values for spacing.
- * Using similar formulas and similar scales.
- *
- * NOTE: It is common to have more varied needs for spacing than for font-size.
- * So feel free to add some more values by following the pattern below.
- *
- * EXCEPT: We are using `px` instead of `rem`
- * ------------------------------------------
- * When talking about font-size, it is the best practice to use
- * `rem` so that an end user can change the font-size using the
- * browser's font-size setting.
- *
- * However, when talking about spacing, it is the best practice to
- * use `px` because using `rems` here makes font-size behave like zoom.
- *
- * Users that prefer larger text, don't neccessarily want larger spacing as well.
- *
- */
 
 const MULT = {
   xxxs: 0.25,
@@ -141,7 +78,8 @@ const MULT = {
   xxl: 4,
   xxxl: 6,
   xxxxl: 8,
-};
+}
+
 const MIN_SPACE = {
   xxxs: MULT.xxxs * MIN_BASE_SIZE,
   xxs: MULT.xxs * MIN_BASE_SIZE,
@@ -153,7 +91,7 @@ const MIN_SPACE = {
   xxl: MULT.xxl * MIN_BASE_SIZE,
   xxxl: MULT.xxxl * MIN_BASE_SIZE,
   xxxxl: MULT.xxxxl * MIN_BASE_SIZE,
-};
+}
 const MAX_SPACE = {
   xxxs: MULT.xxxs * MAX_BASE_SIZE,
   xxs: MULT.xxs * MAX_BASE_SIZE,
@@ -165,7 +103,7 @@ const MAX_SPACE = {
   xxl: MULT.xxl * MAX_BASE_SIZE,
   xxxl: MULT.xxxl * MAX_BASE_SIZE,
   xxxxl: MULT.xxxxl * MAX_BASE_SIZE,
-};
+}
 const SLOPE_SPACE = {
   xxxs: (MAX_SPACE.xxxs - MIN_SPACE.xxxs) / (MAX_WIDTH - MIN_WIDTH),
   xxs: (MAX_SPACE.xxs - MIN_SPACE.xxs) / (MAX_WIDTH - MIN_WIDTH),
@@ -177,7 +115,7 @@ const SLOPE_SPACE = {
   xxl: (MAX_SPACE.xxl - MIN_SPACE.xxl) / (MAX_WIDTH - MIN_WIDTH),
   xxxl: (MAX_SPACE.xxxl - MIN_SPACE.xxxl) / (MAX_WIDTH - MIN_WIDTH),
   xxxxl: (MAX_SPACE.xxxxl - MIN_SPACE.xxxxl) / (MAX_WIDTH - MIN_WIDTH),
-};
+}
 // rounded to the nearest 0.25px
 const INTERCEPT_SPACE = {
   xxxs: Math.round(4 * (MIN_SPACE.xxxs - SLOPE_SPACE.xxxs * MIN_WIDTH)) / 4,
@@ -190,51 +128,39 @@ const INTERCEPT_SPACE = {
   xxl: Math.round(4 * (MIN_SPACE.xxl - SLOPE_SPACE.xxl * MIN_WIDTH)) / 4,
   xxxl: Math.round(4 * (MIN_SPACE.xxxl - SLOPE_SPACE.xxxl * MIN_WIDTH)) / 4,
   xxxxl: Math.round(4 * (MIN_SPACE.xxxxl - SLOPE_SPACE.xxxxl * MIN_WIDTH)) / 4,
-};
+}
 export const spacing = stylex.defineVars({
-  xxxs: `clamp(${MIN_SPACE.xxxs}px, calc(${INTERCEPT_SPACE.xxxs}px - ${
-    Math.round(10000 * SLOPE_SPACE.xxxs) / 100
-  }vw), ${MAX_SPACE.xxxs}px)`,
-  xxs: `clamp(${MIN_SPACE.xxs}px, calc(${INTERCEPT_SPACE.xxs}px - ${
-    Math.round(10000 * SLOPE_SPACE.xxs) / 100
-  }vw), ${MAX_SPACE.xxs}px)`,
-  xs: `clamp(${MIN_SPACE.xs}px, calc(${INTERCEPT_SPACE.xs}px - ${
-    Math.round(10000 * SLOPE_SPACE.xs) / 100
-  }vw), ${MAX_SPACE.xs}px)`,
-  sm: `clamp(${MIN_SPACE.sm}px, calc(${INTERCEPT_SPACE.sm}px - ${
-    Math.round(10000 * SLOPE_SPACE.sm) / 100
-  }vw), ${MAX_SPACE.sm}px)`,
-  md: `clamp(${MIN_SPACE.md}px, calc(${INTERCEPT_SPACE.md}px - ${
-    Math.round(10000 * SLOPE_SPACE.md) / 100
-  }vw), ${MAX_SPACE.md}px)`,
-  lg: `clamp(${MIN_SPACE.lg}px, calc(${INTERCEPT_SPACE.lg}px - ${
-    Math.round(10000 * SLOPE_SPACE.lg) / 100
-  }vw), ${MAX_SPACE.lg}px)`,
-  xl: `clamp(${MIN_SPACE.xl}px, calc(${INTERCEPT_SPACE.xl}px - ${
-    Math.round(10000 * SLOPE_SPACE.xl) / 100
-  }vw), ${MAX_SPACE.xl}px)`,
-  xxl: `clamp(${MIN_SPACE.xxl}px, calc(${INTERCEPT_SPACE.xxl}px - ${
-    Math.round(10000 * SLOPE_SPACE.xxl) / 100
-  }vw), ${MAX_SPACE.xxl}px)`,
-  xxxl: `clamp(${MIN_SPACE.xxxl}px, calc(${INTERCEPT_SPACE.xxxl}px - ${
-    Math.round(10000 * SLOPE_SPACE.xxxl) / 100
-  }vw), ${MAX_SPACE.xxxl}px)`,
-  xxxxl: `clamp(${MIN_SPACE.xxxxl}px, calc(${INTERCEPT_SPACE.xxxxl}px - ${
-    Math.round(10000 * SLOPE_SPACE.xxxxl) / 100
-  }vw), ${MAX_SPACE.xxxxl}px)`,
-});
+  xxxs: `clamp(${MIN_SPACE.xxxs}px, calc(${INTERCEPT_SPACE.xxxs}px - ${Math.round(10000 * SLOPE_SPACE.xxxs) / 100
+    }vw), ${MAX_SPACE.xxxs}px)`,
+  xxs: `clamp(${MIN_SPACE.xxs}px, calc(${INTERCEPT_SPACE.xxs}px - ${Math.round(10000 * SLOPE_SPACE.xxs) / 100
+    }vw), ${MAX_SPACE.xxs}px)`,
+  xs: `clamp(${MIN_SPACE.xs}px, calc(${INTERCEPT_SPACE.xs}px - ${Math.round(10000 * SLOPE_SPACE.xs) / 100
+    }vw), ${MAX_SPACE.xs}px)`,
+  sm: `clamp(${MIN_SPACE.sm}px, calc(${INTERCEPT_SPACE.sm}px - ${Math.round(10000 * SLOPE_SPACE.sm) / 100
+    }vw), ${MAX_SPACE.sm}px)`,
+  md: `clamp(${MIN_SPACE.md}px, calc(${INTERCEPT_SPACE.md}px - ${Math.round(10000 * SLOPE_SPACE.md) / 100
+    }vw), ${MAX_SPACE.md}px)`,
+  lg: `clamp(${MIN_SPACE.lg}px, calc(${INTERCEPT_SPACE.lg}px - ${Math.round(10000 * SLOPE_SPACE.lg) / 100
+    }vw), ${MAX_SPACE.lg}px)`,
+  xl: `clamp(${MIN_SPACE.xl}px, calc(${INTERCEPT_SPACE.xl}px - ${Math.round(10000 * SLOPE_SPACE.xl) / 100
+    }vw), ${MAX_SPACE.xl}px)`,
+  xxl: `clamp(${MIN_SPACE.xxl}px, calc(${INTERCEPT_SPACE.xxl}px - ${Math.round(10000 * SLOPE_SPACE.xxl) / 100
+    }vw), ${MAX_SPACE.xxl}px)`,
+  xxxl: `clamp(${MIN_SPACE.xxxl}px, calc(${INTERCEPT_SPACE.xxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxl) / 100
+    }vw), ${MAX_SPACE.xxxl}px)`,
+  xxxxl: `clamp(${MIN_SPACE.xxxxl}px, calc(${INTERCEPT_SPACE.xxxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxxl) / 100
+    }vw), ${MAX_SPACE.xxxxl}px)`,
+})
 
 /**
  * Color Tokens
  */
-const DARK_MODE = "@media (prefers-color-scheme: dark)";
+const DARK_MODE = "@media (prefers-color-scheme: dark)"
 
 export const globalTokens = stylex.defineVars({
   maxWidth: `${MAX_WIDTH}px`,
-  fontMono:
-    'ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace',
-  fontSans:
-    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
+  fontMono: 'ui-monospace, Menlo, Monaco, "Cascadia Mono", "Segoe UI Mono", "Roboto Mono", "Oxygen Mono", "Ubuntu Monospace", "Source Code Pro", "Fira Mono", "Droid Sans Mono", "Courier New", monospace',
+  fontSans: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"',
 
   foregroundR: { default: "0", [DARK_MODE]: "255" },
   foregroundG: { default: "0", [DARK_MODE]: "255" },
@@ -265,12 +191,11 @@ export const globalTokens = stylex.defineVars({
   cardBorderB: { default: "135", [DARK_MODE]: "200" },
 
   primaryGlow: {
-    default:
-      "conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg)",
+    default: "conic-gradient(from 180deg at 50% 50%, #16abff33 0deg, #0885ff33 55deg, #54d6ff33 120deg, #0071ff33 160deg, transparent 360deg)",
     [DARK_MODE]: "radial-gradient(rgba(1, 65, 255, 0.4), rgba(1, 65, 255, 0))",
   },
   secondaryGlow: {
     default: "radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",
     [DARK_MODE]: `linear-gradient(to bottom right, rgba(1, 65, 255, 0), rgba(1, 65, 255, 0), rgba(1, 65, 255, 0.3))`,
   },
-});
+})
