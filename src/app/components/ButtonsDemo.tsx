@@ -14,6 +14,7 @@ export default function ButtonsDemo(_props: Props) {
 
   return (
     <div {...stylex.props(styles.container)}>
+
       <ThemeableButton onClick={onClick}>Vanilla Button</ThemeableButton>
 
       <ThemeableButton onClick={onClick} style={styles.bordered}>
@@ -61,7 +62,7 @@ const styles = stylex.create({
   bordered: {
     borderWidth: 2,
     borderStyle: "solid",
-    borderColor: "red",
+    borderColor: "green",
   },
   greenBorder: {
     borderColor: "green",

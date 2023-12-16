@@ -1,3 +1,4 @@
+import { DesktopNav } from "./components/ui/nav/DesktopNav"
 import "./globals.css"
 
 import { globalTokens as $ } from "./globalTokens.stylex"
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html {...stylex.props(styles.html, styles.reset)} lang="en">
-      <body {...stylex.props(styles.reset, styles.body)}>{children}</body>
+      <body {...stylex.props(styles.reset, styles.body)}>
+        <DesktopNav />
+        {children}
+      </body>
     </html>
   )
 }
@@ -21,7 +25,7 @@ const fgColor = `rgba(${$.foregroundR}, ${$.foregroundG}, ${$.foregroundB}, 1)`
 
 const styles = stylex.create({
   html: {
-    colorScheme: "light dark",
+    colorScheme: "light dark"
   },
   reset: {
     minHeight: "100%",
@@ -30,7 +34,7 @@ const styles = stylex.create({
   },
   body: {
     color: fgColor,
-    backgroundImage: {
+    backgroundColor: {
       default: "linear-gradient(to bottom, rgb(214, 219, 220), white)",
       [DARK]: "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },

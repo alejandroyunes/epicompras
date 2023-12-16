@@ -14,14 +14,7 @@ type Props = Readonly<{
   em?: boolean
 }>
 
-export default function Card({
-  onClick,
-  children,
-  style,
-  theme,
-  variant,
-  em = false,
-}: Props) {
+export default function Card({ onClick, children, style, theme, variant, em = false }: Props) {
   return (
     <button
       {...stylex.props(

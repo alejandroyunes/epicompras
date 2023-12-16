@@ -10,6 +10,50 @@ const bgImage = `linear-gradient(to bottom, ${$.bgStartRGB}, ${$.calloutRGB50})`
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.25)`
 
+const HOMEPAGE = "http://stylex-docusaurus.vercel.app"
+
+export default function Home() {
+  return (
+    <main {...stylex.props(s.main)}>
+      <div {...stylex.props(s.description)}>
+        <p {...stylex.props(s.descP)}>
+          Get started by editing&nbsp
+          <code {...stylex.props(s.code)}>app/page.tsx</code>
+        </p>
+      </div>
+      <div {...stylex.props(s.hero)}>
+        <h1 {...stylex.props(s.h1)}>
+          Next.js App Dir<span {...stylex.props(s.emoji)}>♥️</span>️StyleX
+        </h1>
+      </div>
+      <ButtonsDemo />
+
+      <div {...stylex.props(s.grid)}>
+        <Card
+          href={`${HOMEPAGE}/docs/learn/`}
+          title="Docs"
+          body="Learn how to use StyleX to build UIs"
+        />
+        <Card
+          href={`${HOMEPAGE}/docs/api/`}
+          title="API"
+          body="Browse through the StyleX API reference"
+        />
+        <Card
+          href={`${HOMEPAGE}/playground/`}
+          title="Playground"
+          body="Playing with StyleX and look at look at the compile outputs"
+        />
+        <Card
+          href="https://github.com/nmn/nextjs-app-dir-stylex"
+          title="Templates"
+          body="Get started with a NextJS+StyleX project."
+        />
+      </div>
+    </main>
+  )
+}
+
 const s = stylex.create({
   main: {
     display: "flex",
@@ -127,47 +171,3 @@ const s = stylex.create({
     textAlign: { [MEDIA_MOBILE]: "center" },
   },
 })
-
-const HOMEPAGE = "http://stylex-docusaurus.vercel.app"
-
-export default function Home() {
-  return (
-    <main {...stylex.props(s.main)}>
-      <div {...stylex.props(s.description)}>
-        <p {...stylex.props(s.descP)}>
-          Get started by editing&nbsp
-          <code {...stylex.props(s.code)}>app/page.tsx</code>
-        </p>
-      </div>
-      <div {...stylex.props(s.hero)}>
-        <h1 {...stylex.props(s.h1)}>
-          Next.js App Dir<span {...stylex.props(s.emoji)}>♥️</span>️StyleX
-        </h1>
-      </div>
-      <ButtonsDemo />
-
-      <div {...stylex.props(s.grid)}>
-        <Card
-          href={`${HOMEPAGE}/docs/learn/`}
-          title="Docs"
-          body="Learn how to use StyleX to build UIs"
-        />
-        <Card
-          href={`${HOMEPAGE}/docs/api/`}
-          title="API"
-          body="Browse through the StyleX API reference"
-        />
-        <Card
-          href={`${HOMEPAGE}/playground/`}
-          title="Playground"
-          body="Playing with StyleX and look at look at the compile outputs"
-        />
-        <Card
-          href="https://github.com/nmn/nextjs-app-dir-stylex"
-          title="Templates"
-          body="Get started with a NextJS+StyleX project."
-        />
-      </div>
-    </main>
-  )
-}

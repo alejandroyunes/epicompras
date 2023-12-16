@@ -129,32 +129,22 @@ const INTERCEPT_SPACE = {
   xxxxl: Math.round(4 * (MIN_SPACE.xxxxl - SLOPE_SPACE.xxxxl * MIN_WIDTH)) / 4,
 }
 export const spacing = stylex.defineVars({
-  xxxs: `clamp(${MIN_SPACE.xxxs}px, calc(${INTERCEPT_SPACE.xxxs}px - ${Math.round(10000 * SLOPE_SPACE.xxxs) / 100
-    }vw), ${MAX_SPACE.xxxs}px)`,
-  xxs: `clamp(${MIN_SPACE.xxs}px, calc(${INTERCEPT_SPACE.xxs}px - ${Math.round(10000 * SLOPE_SPACE.xxs) / 100
-    }vw), ${MAX_SPACE.xxs}px)`,
-  xs: `clamp(${MIN_SPACE.xs}px, calc(${INTERCEPT_SPACE.xs}px - ${Math.round(10000 * SLOPE_SPACE.xs) / 100
-    }vw), ${MAX_SPACE.xs}px)`,
-  sm: `clamp(${MIN_SPACE.sm}px, calc(${INTERCEPT_SPACE.sm}px - ${Math.round(10000 * SLOPE_SPACE.sm) / 100
-    }vw), ${MAX_SPACE.sm}px)`,
-  md: `clamp(${MIN_SPACE.md}px, calc(${INTERCEPT_SPACE.md}px - ${Math.round(10000 * SLOPE_SPACE.md) / 100
-    }vw), ${MAX_SPACE.md}px)`,
-  lg: `clamp(${MIN_SPACE.lg}px, calc(${INTERCEPT_SPACE.lg}px - ${Math.round(10000 * SLOPE_SPACE.lg) / 100
-    }vw), ${MAX_SPACE.lg}px)`,
-  xl: `clamp(${MIN_SPACE.xl}px, calc(${INTERCEPT_SPACE.xl}px - ${Math.round(10000 * SLOPE_SPACE.xl) / 100
-    }vw), ${MAX_SPACE.xl}px)`,
-  xxl: `clamp(${MIN_SPACE.xxl}px, calc(${INTERCEPT_SPACE.xxl}px - ${Math.round(10000 * SLOPE_SPACE.xxl) / 100
-    }vw), ${MAX_SPACE.xxl}px)`,
-  xxxl: `clamp(${MIN_SPACE.xxxl}px, calc(${INTERCEPT_SPACE.xxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxl) / 100
-    }vw), ${MAX_SPACE.xxxl}px)`,
-  xxxxl: `clamp(${MIN_SPACE.xxxxl}px, calc(${INTERCEPT_SPACE.xxxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxxl) / 100
-    }vw), ${MAX_SPACE.xxxxl}px)`,
+  xxxs: `clamp(${MIN_SPACE.xxxs}px, calc(${INTERCEPT_SPACE.xxxs}px - ${Math.round(10000 * SLOPE_SPACE.xxxs) / 100}vw), ${MAX_SPACE.xxxs}px)`,
+  xxs: `clamp(${MIN_SPACE.xxs}px, calc(${INTERCEPT_SPACE.xxs}px - ${Math.round(10000 * SLOPE_SPACE.xxs) / 100}vw), ${MAX_SPACE.xxs}px)`,
+  xs: `clamp(${MIN_SPACE.xs}px, calc(${INTERCEPT_SPACE.xs}px - ${Math.round(10000 * SLOPE_SPACE.xs) / 100}vw), ${MAX_SPACE.xs}px)`,
+  sm: `clamp(${MIN_SPACE.sm}px, calc(${INTERCEPT_SPACE.sm}px - ${Math.round(10000 * SLOPE_SPACE.sm) / 100}vw), ${MAX_SPACE.sm}px)`,
+  md: `clamp(${MIN_SPACE.md}px, calc(${INTERCEPT_SPACE.md}px - ${Math.round(10000 * SLOPE_SPACE.md) / 100}vw), ${MAX_SPACE.md}px)`,
+  lg: `clamp(${MIN_SPACE.lg}px, calc(${INTERCEPT_SPACE.lg}px - ${Math.round(10000 * SLOPE_SPACE.lg) / 10}vw), ${MAX_SPACE.lg}px)`,
+  xl: `clamp(${MIN_SPACE.xl}px, calc(${INTERCEPT_SPACE.xl}px - ${Math.round(10000 * SLOPE_SPACE.xl) / 100}vw), ${MAX_SPACE.xl}px)`,
+  xxl: `clamp(${MIN_SPACE.xxl}px, calc(${INTERCEPT_SPACE.xxl}px - ${Math.round(10000 * SLOPE_SPACE.xxl) / 100}vw), ${MAX_SPACE.xxl}px)`,
+  xxxl: `clamp(${MIN_SPACE.xxxl}px, calc(${INTERCEPT_SPACE.xxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxl) / 100}vw), ${MAX_SPACE.xxxl}px)`,
+  xxxxl: `clamp(${MIN_SPACE.xxxxl}px, calc(${INTERCEPT_SPACE.xxxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxxl) / 100}vw), ${MAX_SPACE.xxxxl}px)`,
 })
 
 /**
  * Color Tokens
  */
-const DARK_MODE = "@media (prefers-color-scheme: dark)"
+export const DARK_MODE = "@media (prefers-color-scheme: dark)"
 
 export const globalTokens = stylex.defineVars({
   maxWidth: `${MAX_WIDTH}px`,
