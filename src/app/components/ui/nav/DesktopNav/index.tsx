@@ -2,10 +2,13 @@ import { globalTokens } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 import CustomInput from "./CustomInput"
 import Image from "next/image"
-import ventas from './images/ventas.jpg'
+import ventas from './Assets/images/ventas.jpg'
 import Location from "./Location"
 import LanguagePicker from "./LanguagePicker"
 import ModePicker from "./ModePicker"
+import Messages from "./Messages"
+import Notifications from "./Notifications"
+import Profile from "./Profile"
 
 export function DesktopNav() {
   return (
@@ -26,6 +29,9 @@ export function DesktopNav() {
       <div {...stylex.props(styles.right)}>
         <LanguagePicker />
         <ModePicker />
+        <Messages />
+        <Notifications />
+        <Profile />
       </div>
     </nav >
   )

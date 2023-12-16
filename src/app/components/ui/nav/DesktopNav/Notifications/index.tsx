@@ -1,13 +1,12 @@
 import stylex from "@stylexjs/stylex"
-import ArrowDownSvg from "../Assets/Icons/ArrowDownSvg";
+import BellSvg from "../Assets/Icons/BellSvg";
 
-export default function LanguagePicker() {
+export default function Notifications() {
   return (
     <div className={stylex(styles.container)}>
 
-      <div className={stylex(styles.text)}>Español</div>
       <div className={stylex(styles.icon)}>
-        <ArrowDownSvg />
+        <BellSvg />
       </div>
     </div>
   );
