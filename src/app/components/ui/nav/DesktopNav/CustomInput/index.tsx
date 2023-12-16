@@ -1,6 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import { InputHTMLAttributes } from "react"
-import SearchIcon from "../icons/SearchIcon";
+import SearchIcon from "./icons/SearchISvg"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> { }
 
@@ -10,7 +10,7 @@ export default function CustomInput(props: Props) {
       <div className={stylex(styles.icon)}><SearchIcon /></div>
       <input {...stylex.props(styles.input)} type="text" placeholder="buscar" {...props} />
     </div>
-  );
+  )
 }
 
 const styles = stylex.create({
@@ -34,4 +34,4 @@ const styles = stylex.create({
     boxSizing: "border-box",
     paddingLeft: "40px",
   },
-});
+})

@@ -1,14 +1,24 @@
-// import { DARK_MODE, globalTokens } from "@/app/globalTokens.stylex"
-import { DARK_MODE, globalTokens } from "../../../../globalTokens.stylex"
+import { globalTokens } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 import CustomInput from "./CustomInput"
-export function DesktopNav() {
+import Image from "next/image"
+import ventas from './images/ventas.jpg'
+import Location from "./Location"
 
+export function DesktopNav() {
   return (
     <nav {...stylex.props(styles.container)}>
-      <div  {...stylex.props(styles.left)}>
 
+      <div  {...stylex.props(styles.left)}>
+        <Image
+          {...stylex.props(styles.image)}
+          src={ventas}
+          alt="alt"
+          width={30}
+          height={30}
+        />
         <CustomInput />
+        <Location text="Medellîn" />
       </div>
 
       <div>
@@ -33,6 +43,9 @@ const styles = stylex.create({
   left: {
     display: "flex",
     alignItems: "center",
+  },
+  image: {
+    marginRight: 24
   },
   main: {
     display: "flex",
