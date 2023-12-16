@@ -1,17 +1,16 @@
 import stylex from "@stylexjs/stylex"
-import LocationSvg from "./icons/LocationSvg"
+import ArrowDownSvg from "../Assets/Icons/ArrowDownSvg";
 
-interface IconTextProps {
-  text: string;
-}
 
-export default function Location({ text }: IconTextProps) {
+
+export default function LanguagePicker() {
   return (
     <div className={stylex(styles.container)}>
+
+      <div className={stylex(styles.text)}>Español</div>
       <div className={stylex(styles.icon)}>
-        <LocationSvg />
+        <ArrowDownSvg />
       </div>
-      <div className={stylex(styles.text)}>{text}</div>
     </div>
   );
 };
@@ -28,5 +27,5 @@ const styles = stylex.create({
   text: {
     fontSize: "16px",
   },
-})
+});
 

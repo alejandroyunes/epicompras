@@ -4,6 +4,8 @@ import CustomInput from "./CustomInput"
 import Image from "next/image"
 import ventas from './images/ventas.jpg'
 import Location from "./Location"
+import LanguagePicker from "./LanguagePicker"
+import ModePicker from "./ModePicker"
 
 export function DesktopNav() {
   return (
@@ -21,8 +23,9 @@ export function DesktopNav() {
         <Location text="Medellîn" />
       </div>
 
-      <div>
-        <h1>rest of things</h1>
+      <div {...stylex.props(styles.right)}>
+        <LanguagePicker />
+        <ModePicker />
       </div>
     </nav >
   )
@@ -44,11 +47,13 @@ const styles = stylex.create({
     display: "flex",
     alignItems: "center",
   },
+  right: {
+    display: "flex",
+    alignItems: "center",
+  },
   image: {
     marginRight: 24
   },
-  main: {
-    display: "flex",
-  }
+
 })
 

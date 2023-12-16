@@ -1,17 +1,15 @@
 import stylex from "@stylexjs/stylex"
-import LocationSvg from "./icons/LocationSvg"
+import ModeSvg from "../Assets/Icons/ModeSvg"
 
-interface IconTextProps {
-  text: string;
-}
 
-export default function Location({ text }: IconTextProps) {
+
+export default function ModePicker() {
   return (
     <div className={stylex(styles.container)}>
+
       <div className={stylex(styles.icon)}>
-        <LocationSvg />
+        <ModeSvg />
       </div>
-      <div className={stylex(styles.text)}>{text}</div>
     </div>
   );
 };
