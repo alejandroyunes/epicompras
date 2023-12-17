@@ -4,7 +4,13 @@ const stylexPlugin = require("@stylexjs/nextjs-plugin")
 const nextConfig = {
   pageExtensions: ["js", "jsx", "ts", "tsx"],
   images: {
-    domains: ['res.cloudinary.com']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '**',
+      },
+    ],
   },
 }
 

@@ -19,6 +19,7 @@ const MIN_FONT = {
   h2: Math.round((MIN_BASE_SIZE * Math.pow(MIN_SCALE, 4)) / 0.16) / 100,
   h1: Math.round((MIN_BASE_SIZE * Math.pow(MIN_SCALE, 5)) / 0.16) / 100,
 }
+
 // Font sizes in `rem` units
 const MAX_FONT = {
   xxs: Math.round(MAX_BASE_SIZE / Math.pow(MAX_SCALE, 3) / 0.16) / 100,
@@ -144,7 +145,7 @@ export const spacing = stylex.defineVars({
 /**
  * Color Tokens
  */
-export const DARK_MODE = "@media (prefers-color-scheme: dark)"
+const DARK_MODE = "@media (prefers-color-scheme: dark)"
 
 export const globalTokens = stylex.defineVars({
   maxWidth: `${MAX_WIDTH}px`,
