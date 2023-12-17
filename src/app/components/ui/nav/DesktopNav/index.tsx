@@ -16,7 +16,7 @@ export function DesktopNav() {
 
       <div  {...stylex.props(styles.left)}>
         <Image
-          {...stylex.props(styles.image)}
+          {...stylex.props(styles.logo)}
           src={ventas}
           alt="alt"
           width={30}
@@ -47,7 +47,10 @@ const styles = stylex.create({
     padding: "0 24px",
     outline: "1px solid red",
     width: globalTokens.maxWidth,
-    margin: "0 auto",
+    margin: "24px auto",
+  },
+  logo: {
+    marginRight: 24
   },
   left: {
     display: "flex",
@@ -57,9 +60,5 @@ const styles = stylex.create({
     display: "flex",
     alignItems: "center",
   },
-  image: {
-    marginRight: 24
-  },
-
 })
 

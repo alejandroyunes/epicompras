@@ -26,7 +26,7 @@ const styles = stylex.create({
     marginRight: "8px",
   },
   text: {
-    fontSize: "16px",
+    fontSize: "26px",
   },
 })
 
