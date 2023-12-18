@@ -23,4 +23,3 @@ const styles = stylex.create({
     marginRight: spacing.xs,
   },
 });
-
