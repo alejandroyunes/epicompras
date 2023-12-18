@@ -38,7 +38,7 @@ const styles = stylex.create({
     borderRadius: spacing.xs,
     fontSize: text.p,
     width: "100%",
-    padding: `${spacing.xs} ${spacing.xs}`,
+    padding: `${spacing.xxs} ${spacing.xs}`,
     boxSizing: "border-box",
     paddingLeft: spacing.xl,
   },

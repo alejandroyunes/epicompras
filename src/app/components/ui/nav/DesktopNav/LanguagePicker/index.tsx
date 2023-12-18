@@ -1,5 +1,7 @@
 import stylex from "@stylexjs/stylex"
-import ArrowDownSvg from "../Assets/Icons/ArrowDownSvg";
+import ArrowDownSvg from "../Assets/Icons/ArrowDownSvg"
+import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
+
 
 export default function LanguagePicker() {
   return (
@@ -17,13 +19,14 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: "8px"
   },
   icon: {
-    marginRight: "8px",
+    marginRight: spacing.xxs,
   },
   text: {
-    fontSize: "16px",
+    fontSize: text.p,
+    paddingRight: spacing.xxs,
+    fontFamily: globalTokens.fontSans
   },
 });
 

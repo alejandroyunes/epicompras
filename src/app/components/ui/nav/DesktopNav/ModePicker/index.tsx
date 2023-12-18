@@ -1,4 +1,5 @@
 import stylex from "@stylexjs/stylex"
+import { spacing } from "../../../../../globalTokens.stylex";
 import ModeSvg from "../Assets/Icons/ModeSvg"
 
 
@@ -18,13 +19,10 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: "8px"
+    marginLeft: spacing.xs,
   },
   icon: {
-    marginRight: "8px",
-  },
-  text: {
-    fontSize: "16px",
+    marginRight: spacing.xxs,
   },
 })
 

@@ -1,5 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import MessagesSvg from "../Assets/Icons/MessagesSvg";
+import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
 
 export default function Messages() {
   return (
@@ -16,13 +17,10 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: "8px"
+    marginLeft: spacing.xs,
   },
   icon: {
-    marginRight: "8px",
-  },
-  text: {
-    fontSize: "16px",
+    marginRight: spacing.xs,
   },
 });
 

@@ -1,5 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "./icons/LocationSvg"
+import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
 
 interface IconTextProps {
   text: string;
@@ -11,7 +12,9 @@ export default function Location({ text }: IconTextProps) {
       <div className={stylex(styles.icon)}>
         <LocationSvg />
       </div>
-      <div className={stylex(styles.text)}>{text}</div>
+      <div className={stylex(styles.text)}>
+        {text}
+      </div>
     </div>
   );
 };
@@ -20,13 +23,14 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: "8px"
+    marginLeft: spacing.xs,
   },
   icon: {
-    marginRight: "8px",
+    marginRight: spacing.xs,
   },
   text: {
-    fontSize: "26px",
+    fontSize: text.p,
+    fontFamily: globalTokens.fontSans
   },
 })
 

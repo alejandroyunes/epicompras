@@ -1,5 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import ProfileSvg from "../Assets/Icons/ProfileSvg";
+import { spacing } from "../../../../../globalTokens.stylex"
 
 export default function Profile() {
   return (
@@ -16,13 +17,10 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: "8px"
+    marginLeft: spacing.xs,
   },
   icon: {
-    marginRight: "8px",
-  },
-  text: {
-    fontSize: "16px",
+    marginRight: spacing.xs,
   },
 });
 
