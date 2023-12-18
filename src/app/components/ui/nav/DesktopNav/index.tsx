@@ -1,5 +1,6 @@
-import { globalTokens } from "../../../../globalTokens.stylex"
+import { globalTokens, spacing } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
+
 import CustomInput from "./CustomInput"
 import Image from "next/image"
 import ventas from './Assets/images/ventas.jpg'
@@ -44,13 +45,13 @@ const styles = stylex.create({
     alignItems: "center",
     justifyContent: "space-between",
     gap: 16,
-    padding: "0 24px",
+    padding: `0 ${spacing.md}`,
     outline: "1px solid red",
     width: globalTokens.maxWidth,
-    margin: "24px auto",
+    margin: `${spacing.md} auto`,
   },
   logo: {
-    marginRight: 24
+    marginRight: spacing.md
   },
   left: {
     display: "flex",

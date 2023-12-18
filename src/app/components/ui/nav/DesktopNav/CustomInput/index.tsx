@@ -1,17 +1,21 @@
 import stylex from "@stylexjs/stylex"
 import { InputHTMLAttributes } from "react"
 import SearchIcon from "./icons/SearchISvg"
+import { globalTokens as $, spacing, text } from "./../../../../../globalTokens.stylex"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> { }
 
 export default function CustomInput(props: Props) {
   return (
     <div className={stylex(styles.main)}>
-      <div className={stylex(styles.icon)}><SearchIcon /></div>
-      <input {...stylex.props(styles.input)} type="text" placeholder="buscar" {...props} />
+      <div className={stylex(styles.icon)}>
+        <SearchIcon />
+      </div>
+      <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" {...props} />
     </div>
   )
 }
+const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const styles = stylex.create({
   main: {
@@ -21,17 +25,21 @@ const styles = stylex.create({
   icon: {
     position: "absolute",
     top: "50%",
-    left: "10px",
+    left: 8,
     transform: "translateY(-50%)",
     zIndex: 1,
   },
   input: {
-    border: "2px solid #ccc",
-    borderRadius: "12px",
-    fontSize: "16px",
+    borderStyle: "solid",
+    borderColor: xBorderColor,
+    borderWidth: {
+      default: "2px",
+    },
+    borderRadius: spacing.xs,
+    fontSize: text.p,
     width: "100%",
-    padding: "12px 20px",
+    padding: `${spacing.xs} ${spacing.xs}`,
     boxSizing: "border-box",
-    paddingLeft: "40px",
+    paddingLeft: spacing.xl,
   },
 })

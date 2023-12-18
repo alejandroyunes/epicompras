@@ -189,3 +189,11 @@ export const globalTokens = stylex.defineVars({
     [DARK_MODE]: `linear-gradient(to bottom right, rgba(1, 65, 255, 0), rgba(1, 65, 255, 0), rgba(1, 65, 255, 0.3))`,
   },
 })
+
+const MOBILE = `@media (max-width: 700px)`
+const TABLET = `@media (min-width: 701px) and (max-width: 1120px)`
+
+export const media = stylex.defineVars({
+  mobile: MOBILE,
+  tablet: TABLET
+})
