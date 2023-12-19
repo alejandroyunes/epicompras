@@ -10,8 +10,8 @@ export default function Profile() {
         <ProfileSvg />
       </div>
     </div>
-  );
-};
+  )
+}
 
 const styles = stylex.create({
   container: {
@@ -22,4 +22,4 @@ const styles = stylex.create({
   icon: {
     marginRight: spacing.xs,
   },
-});
+})

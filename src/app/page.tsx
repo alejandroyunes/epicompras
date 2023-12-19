@@ -1,12 +1,10 @@
 import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "./globalTokens.stylex"
-import ButtonsDemo from "./components/ButtonsDemo"
 
 export default function Home() {
   return (
     <main {...stylex.props(s.main)}>
       <h1 {...stylex.props(s.h1)}>hello world</h1>
-      <ButtonsDemo />
     </main>
   )
 }

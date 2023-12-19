@@ -190,8 +190,8 @@ export const globalTokens = stylex.defineVars({
   },
 })
 
-const MOBILE = `@media (max-width: 700px)`
-const TABLET = `@media (min-width: 701px) and (max-width: 1120px)`
+const MOBILE = "@media (max-width: 700px)"
+const TABLET = "@media (min-width: 701px) and (max-width: 1120px)"
 
 export const media = stylex.defineVars({
   mobile: MOBILE,

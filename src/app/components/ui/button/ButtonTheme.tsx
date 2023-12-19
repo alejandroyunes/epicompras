@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex"
 import type { StyleXStyles, Theme } from "@stylexjs/stylex/lib/StyleXTypes"
-
+import { text } from '../../../globalTokens.stylex'
 import "./ButtonTokens.stylex"
 import { buttonTokens } from "./ButtonTokens.stylex"
 
@@ -8,13 +8,13 @@ type Props = Readonly<{
   onClick: () => void
   children: React.ReactNode
   // for Overrides
-  style?: StyleXStyles
   theme?: Theme<typeof buttonTokens>
+  style?: StyleXStyles
   variant?: "primary" | "danger"
   em?: boolean
 }>
 
-export default function Card({ onClick, children, style, theme, variant, em = false }: Props) {
+export default function ButtonTheme({ onClick, children, style, theme, variant, em = false }: Props) {
   return (
     <button
       {...stylex.props(
@@ -41,6 +41,8 @@ const styles = stylex.create({
     borderRadius: buttonTokens.cornerRadius,
     paddingBlock: buttonTokens.paddingBlock,
     paddingInline: buttonTokens.paddingInline,
+    cursor: "pointer",
+    fontSize: text.p
   },
   emphasise: {
     transform: "scale(1.1)",

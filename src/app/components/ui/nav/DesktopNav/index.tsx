@@ -1,4 +1,6 @@
-import { globalTokens, spacing } from "../../../../globalTokens.stylex"
+"use client"
+
+import { globalTokens, media, spacing } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "./CustomInput"
@@ -10,8 +12,14 @@ import ModePicker from "./ModePicker"
 import Messages from "./Messages"
 import Notifications from "./Notifications"
 import Profile from "./Profile"
+import ButtonTheme from "../../button/ButtonTheme"
 
 export function DesktopNav() {
+
+  const onClick = () => {
+    console.log("click")
+  }
+
   return (
     <nav {...stylex.props(styles.container)}>
 
@@ -33,7 +41,9 @@ export function DesktopNav() {
         <Messages />
         <Notifications />
         <Profile />
+        <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
       </div>
+
     </nav >
   )
 }
@@ -47,7 +57,9 @@ const styles = stylex.create({
     gap: 16,
     padding: `0 ${spacing.md}`,
     outline: "1px solid red",
-    width: globalTokens.maxWidth,
+    width: {
+      default: globalTokens.maxWidth,
+    },
     margin: `${spacing.md} auto`,
   },
   logo: {
@@ -60,6 +72,5 @@ const styles = stylex.create({
   right: {
     display: "flex",
     alignItems: "center",
-  },
+  }
 })
-
