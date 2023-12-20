@@ -1,31 +1,62 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import ProfileSvg from "../Assets/Icons/ProfileSvg";
+import ProfileSvg from "../Assets/Icons/ProfileSvg"
 import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
+import MessageSvg from "../Assets/Icons/MessagesSvg"
+import AdsSvg from "../Assets/Icons/AdsSvg"
+import HeartSvg from "../Assets/Icons/HeartSvg"
 
 
 export default function Profile() {
   const [open, setOpen] = useState(false)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener('click', handleClickOutside);
+
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    }
+  }, [dropdownRef])
 
   return (
-    <div className={stylex(styles.container)} onClick={() => setOpen(!open)}>
+    <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>
 
       <div className={stylex(styles.icon)}>
         <ProfileSvg />
       </div>
       {open &&
         <div className={stylex(styles.dropdown)}>
-          <a href="#" className={stylex(styles.a)}>
-            <span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>Profile</a>
-          <a href="#" className={stylex(styles.a)}>Dropdown Link </a>
-          <a href="#" className={stylex(styles.a)}>Dropdown Link </a>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
+            Profile
+          </a>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><AdsSvg /></span>
+            Publicaciones
+          </a>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><MessageSvg /></span>
+            Mensajes
+          </a>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><HeartSvg /></span>
+            Favoritos
+          </a>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
+            Centro de ayuda
+          </a>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
+            Salir
+          </a>
         </div>}
     </div>
   )
 }
-
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const styles = stylex.create({
@@ -41,7 +72,7 @@ const styles = stylex.create({
   },
   dropdown: {
     position: "absolute",
-    top: "30px",
+    top: 20,
     right: 0,
     transform: 'translateY(16px)',
     borderStyle: "solid",
@@ -53,7 +84,7 @@ const styles = stylex.create({
     margin: "15px"
   },
   a: {
-    color: 'white',
+    color: "inherit",
     fontSize: text.p,
     padding: "5px 20px",
     display: "flex",
@@ -62,22 +93,23 @@ const styles = stylex.create({
     whiteSpace: "nowrap",
     textDecoration: "none",
     ':hover': {
-      background: "red"
+      background: xBorderColor
     },
     ':first-child:hover': {
-      background: "blue",
+      background: xBorderColor,
       borderTopLeftRadius: spacing.xs,
       borderTopRightRadius: spacing.xs
     },
     ':last-child:hover': {
-      background: "green",
+      background: xBorderColor,
       borderBottomLeftRadius: spacing.xs,
       borderBottomRightRadius: spacing.xs
     }
   },
 
   iconDropdown: {
+    display: "flex",
     marginRight: spacing.xs,
-    fontSize: "14px"
+
   }
 })
