@@ -50,7 +50,7 @@ export function DesktopNav() {
 
 const media = {
   mobile: "@media (max-width: 700px)",
-  tablet: "@media (min-width: 701px) and (max-width: 1120px)"
+  tablet: "@media (min-width: 701px) and (max-width: 1260px)"
 }
 
 const styles = stylex.create({
@@ -64,10 +64,6 @@ const styles = stylex.create({
     width: {
       default: globalTokens.maxWidth,
       [media.tablet]: "100%",
-    },
-    border: {
-      default: "1px solid green",
-      [media.tablet]: "none",
     },
     margin: `${spacing.md} auto`,
   },

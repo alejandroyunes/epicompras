@@ -38,5 +38,6 @@ const styles = stylex.create({
       default: "linear-gradient(to bottom, rgb(214, 219, 220), white)",
       [DARK]: "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
+    fontFamily: $.fontSans,
   },
 })
