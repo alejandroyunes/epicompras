@@ -7,6 +7,8 @@ import { useEffect, useRef, useState } from "react"
 import MessageSvg from "../Assets/Icons/MessagesSvg"
 import AdsSvg from "../Assets/Icons/AdsSvg"
 import HeartSvg from "../Assets/Icons/HeartSvg"
+import HelpSvg from "../Assets/Icons/HelpSvg"
+import LogoutSvg from "../Assets/Icons/LogoutSvg"
 
 
 export default function Profile() {
@@ -47,10 +49,10 @@ export default function Profile() {
           <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><HeartSvg /></span>
             Favoritos
           </a>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><HelpSvg /></span>
             Centro de ayuda
           </a>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><LogoutSvg /></span>
             Salir
           </a>
         </div>}
