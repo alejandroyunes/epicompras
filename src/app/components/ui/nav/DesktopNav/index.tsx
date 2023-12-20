@@ -1,6 +1,6 @@
 "use client"
 
-import { globalTokens, media, spacing } from "../../../../globalTokens.stylex"
+import { globalTokens, spacing } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "./CustomInput"
@@ -14,8 +14,8 @@ import Notifications from "./Notifications"
 import Profile from "./Profile"
 import ButtonTheme from "../../button/ButtonTheme"
 
-export function DesktopNav() {
 
+export function DesktopNav() {
   const onClick = () => {
     console.log("click")
   }
@@ -48,6 +48,11 @@ export function DesktopNav() {
   )
 }
 
+const media = {
+  mobile: "@media (max-width: 700px)",
+  tablet: "@media (min-width: 701px) and (max-width: 1120px)"
+}
+
 const styles = stylex.create({
   container: {
     display: "flex",
@@ -56,9 +61,13 @@ const styles = stylex.create({
     justifyContent: "space-between",
     gap: 16,
     padding: `0 ${spacing.md}`,
-    outline: "1px solid red",
     width: {
       default: globalTokens.maxWidth,
+      [media.tablet]: "100%",
+    },
+    border: {
+      default: "1px solid green",
+      [media.tablet]: "none",
     },
     margin: `${spacing.md} auto`,
   },

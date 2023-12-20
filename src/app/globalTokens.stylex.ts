@@ -142,9 +142,6 @@ export const spacing = stylex.defineVars({
   xxxxl: `clamp(${MIN_SPACE.xxxxl}px, calc(${INTERCEPT_SPACE.xxxxl}px - ${Math.round(10000 * SLOPE_SPACE.xxxxl) / 100}vw), ${MAX_SPACE.xxxxl}px)`,
 })
 
-/**
- * Color Tokens
- */
 const DARK_MODE = "@media (prefers-color-scheme: dark)"
 
 export const globalTokens = stylex.defineVars({
@@ -188,12 +185,4 @@ export const globalTokens = stylex.defineVars({
     default: "radial-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0))",
     [DARK_MODE]: `linear-gradient(to bottom right, rgba(1, 65, 255, 0), rgba(1, 65, 255, 0), rgba(1, 65, 255, 0.3))`,
   },
-})
-
-const MOBILE = "@media (max-width: 700px)"
-const TABLET = "@media (min-width: 701px) and (max-width: 1120px)"
-
-export const media = stylex.defineVars({
-  mobile: MOBILE,
-  tablet: TABLET
 })

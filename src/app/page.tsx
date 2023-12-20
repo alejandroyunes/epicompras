@@ -18,7 +18,6 @@ const bgImage = `linear-gradient(to bottom, ${$.bgStartRGB}, ${$.calloutRGB50})`
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.25)`
 
-
 const s = stylex.create({
   main: {
     display: "flex",
@@ -47,7 +46,6 @@ const s = stylex.create({
     },
     color: {
       [media.mobile]: "blue",
-
     }
   },
 
