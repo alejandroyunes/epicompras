@@ -114,10 +114,8 @@ const styles = stylex.create({
       borderBottomRightRadius: spacing.xs
     }
   },
-
   iconDropdown: {
     display: "flex",
     marginRight: spacing.xs,
-
   }
 })

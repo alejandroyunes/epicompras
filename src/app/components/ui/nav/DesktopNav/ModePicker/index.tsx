@@ -1,12 +1,11 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex";
+import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
 import ModeSvg from "../Assets/Icons/ModeSvg"
-import { useEffect, useRef, useState } from "react";
-import ProfileSvg from "../Assets/Icons/ProfileSvg";
-import AdsSvg from "../Assets/Icons/AdsSvg";
-import MessageSvg from "../Assets/Icons/MessagesSvg";
+import { useEffect, useRef, useState } from "react"
+import LightModeSvg from "./icons/LightModeSvg"
+import DarkModeSvg from "./icons/DarkMode"
 
 export default function ModePicker() {
 
@@ -36,14 +35,11 @@ export default function ModePicker() {
       </div>
       {open &&
         <div className={stylex(styles.dropdown)}>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
-            Profile
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><LightModeSvg /></span>
+            Modo Claro
           </a>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><AdsSvg /></span>
-            Publicaciones
-          </a>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><MessageSvg /></span>
-            Mensajes
+          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><DarkModeSvg /></span>
+            Modo Oscuro
           </a>
         </div>}
     </div>
@@ -58,6 +54,7 @@ const styles = stylex.create({
     display: "flex",
     alignItems: "center",
     marginLeft: spacing.xs,
+    position: "relative"
   },
   icon: {
     marginRight: spacing.xxs,

@@ -14,7 +14,6 @@ import Notifications from "./Notifications"
 import Profile from "./Profile"
 import ButtonTheme from "../../button/ButtonTheme"
 
-
 export function DesktopNav() {
   const onClick = () => {
     console.log("click")
