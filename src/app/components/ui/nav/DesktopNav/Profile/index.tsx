@@ -10,22 +10,22 @@ import HeartSvg from "../Assets/Icons/HeartSvg"
 import HelpSvg from "../Assets/Icons/HelpSvg"
 import LogoutSvg from "../Assets/Icons/LogoutSvg"
 
-
 export default function Profile() {
   const [open, setOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
+
     const handleClickOutside = (event: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
         setOpen(false)
       }
     }
 
-    document.addEventListener('click', handleClickOutside);
+    document.addEventListener('click', handleClickOutside)
 
     return () => {
-      document.removeEventListener('click', handleClickOutside);
+      document.removeEventListener('click', handleClickOutside)
     }
   }, [dropdownRef])
 
@@ -59,7 +59,9 @@ export default function Profile() {
     </div>
   )
 }
+
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
+const DARK = "@media (prefers-color-scheme: dark)"
 
 const styles = stylex.create({
   container: {
@@ -83,7 +85,11 @@ const styles = stylex.create({
       default: "2px",
     },
     borderRadius: spacing.xs,
-    margin: "15px"
+    margin: "15px",
+    background: {
+      default: "white",
+      [DARK]: "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+    },
   },
   a: {
     color: "inherit",
