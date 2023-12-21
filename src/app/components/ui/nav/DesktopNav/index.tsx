@@ -42,7 +42,6 @@ export function DesktopNav() {
         <Profile />
         <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
       </div>
-
     </nav >
   )
 }

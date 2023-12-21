@@ -69,6 +69,7 @@ const styles = stylex.create({
     alignItems: "center",
     marginLeft: spacing.xs,
     position: "relative",
+    zIndex: 1,
   },
   icon: {
     marginRight: spacing.xs,

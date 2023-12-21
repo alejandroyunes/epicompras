@@ -11,24 +11,25 @@ export default function Notifications() {
 
   useEffect(() => {
 
-    const handleClickAnimationOutside = (event: MouseEvent) => {
-      if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
-        setOpen(false)
-      }
-    }
+    // const handleClickAnimationOutside = (event: MouseEvent) => {
+    //   if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
+    //     setOpen(false)
+    //   }
+    // }
 
-    document.addEventListener('click', handleClickAnimationOutside)
+    // document.addEventListener('click', handleClickAnimationOutside)
 
-    return () => {
-      document.removeEventListener('click', handleClickAnimationOutside)
-    }
+    // return () => {
+    //   document.removeEventListener('click', handleClickAnimationOutside)
+    // }
 
   }, [slideNotificaitonRef])
 
-  return (
-    <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={slideNotificaitonRef}>
 
-      <div className={stylex(styles.icon)}>
+  return (
+    <div className={stylex(styles.container)} ref={slideNotificaitonRef}>
+
+      <div className={stylex(styles.icon)} onClick={() => setOpen(!open)}>
         <BellSvg />
       </div>
 
@@ -49,22 +50,24 @@ const slideOut = stylex.keyframes({
 })
 
 
-
 const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
     marginLeft: spacing.xs,
-    // position: "relative"
+    position: 'relative',
+    zIndex: 100,
   },
   icon: {
     marginRight: spacing.xs,
     cursor: "pointer"
   },
   slider: {
-    position: "absolute",
-    width: 100,
-    height: 100,
+    position: "fixed",
+    width: '30vw',
+    top: '0%',
+    height: "100vh",
+    right: "-30vw",
     background: "blue",
     transform: "translateX(-100%)"
   },

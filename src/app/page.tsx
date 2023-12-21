@@ -24,7 +24,6 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    minHeight: "100vh",
     paddingTop: spacing.xxl,
     paddingBottom: {
       default: spacing.xxl,
