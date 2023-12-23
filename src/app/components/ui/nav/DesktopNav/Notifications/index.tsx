@@ -11,44 +11,45 @@ export default function Notifications() {
 
   useEffect(() => {
 
-    // const handleClickAnimationOutside = (event: MouseEvent) => {
-    //   if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
-    //     setOpen(false)
-    //   }
-    // }
+    const handleClickAnimationOutside = (event: MouseEvent) => {
+      if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
 
-    // document.addEventListener('click', handleClickAnimationOutside)
+    document.addEventListener('mousedown', handleClickAnimationOutside)
 
-    // return () => {
-    //   document.removeEventListener('click', handleClickAnimationOutside)
-    // }
+    return () => {
+      document.removeEventListener('mousedown', handleClickAnimationOutside)
+    }
 
   }, [slideNotificaitonRef])
 
 
   return (
-    <div className={stylex(styles.container)} ref={slideNotificaitonRef}>
+    <div {...stylex.props(styles.container)} ref={slideNotificaitonRef}>
 
-      <div className={stylex(styles.icon)} onClick={() => setOpen(!open)}>
+      <div {...stylex.props(styles.icon)} onClick={() => setOpen(!open)}>
         <BellSvg />
       </div>
 
-      <div className={stylex(styles.slider, open ? styles.slideIn : styles.slideOut)}>
+      <div {...stylex.props(styles.slider, open ? styles.slideIn : styles.slideOut)}>
+        <div >
 
+        </div>
       </div>
     </div>
   )
 }
 
 const slideIn = stylex.keyframes({
-  '100%': { transform: 'translateX(0%)' },
-})
-
-const slideOut = stylex.keyframes({
   '0%': { transform: 'translateX(0%)' },
   '100%': { transform: 'translateX(-100%)' },
 })
 
+const slideOut = stylex.keyframes({
+  '100%': { transform: 'translateX(0%)' },
+})
 
 const styles = stylex.create({
   container: {
