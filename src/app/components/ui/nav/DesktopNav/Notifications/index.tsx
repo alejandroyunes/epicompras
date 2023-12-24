@@ -24,17 +24,15 @@ export default function Notifications() {
     return () => {
       document.removeEventListener('mousedown', handleClickAnimationOutside)
     }
-
   }, [slideNotificaitonRef])
 
   return (
-    <div {...stylex.props(styles.container)} >
-
+    <>
       <div {...stylex.props(styles.icon)} onClick={() => setOpen(!open)}>
         <BellSvg />
       </div>
 
-      <div  {...stylex.props(styles.slider, open ? styles.slideIn : styles.slideOut)} ref={slideNotificaitonRef}>
+      <div {...stylex.props(styles.sliderContainer, open ? styles.slideIn : styles.slideOut)} ref={slideNotificaitonRef}>
         <div {...stylex.props(styles.animationContainer)}>
 
           <div {...stylex.props(styles.animationBell)}>
@@ -54,9 +52,8 @@ export default function Notifications() {
         </div>
       </div>
 
-
       {open && <div {...stylex.props(styles.bg)} />}
-    </div>
+    </>
   )
 }
 const DARK = "@media (prefers-color-scheme: dark)"
@@ -68,27 +65,30 @@ const slideIn = stylex.keyframes({
 })
 
 const slideOut = stylex.keyframes({
+  // '0%': { transform: 'translateX(-100%)' },
   '100%': { transform: 'translateX(0%)' },
 })
 
+const fadeIn = stylex.keyframes({
+  '0%': { visibility: 'hidden', opacity: 0 },
+  '100%': { visibility: 'visible', opacity: 1 },
+})
+
 const styles = stylex.create({
-  container: {
+  icon: {
+    marginRight: spacing.xs,
+    cursor: "pointer",
     display: "flex",
     alignItems: "center",
     marginLeft: spacing.xs,
-    position: 'relative',
-    zIndex: 100,
+    zIndex: 4,
   },
-  icon: {
-    marginRight: spacing.xs,
-    cursor: "pointer"
-  },
-  slider: {
+  sliderContainer: {
     position: "fixed",
-    width: '30vw',
-    top: '0%',
-    height: "100vh",
+    top: 0,
     right: "-30vw",
+    width: "30vw",
+    height: "100vh",
     borderStyle: "solid",
     borderColor: xBorderColor,
     borderWidth: {
@@ -100,7 +100,8 @@ const styles = stylex.create({
     },
   },
   slideIn: {
-    animation: `${slideIn} 0.5s forwards`
+    animation: `${slideIn} 0.5s forwards`,
+    zIndex: 100
   },
   slideOut: {
     animation: `${slideOut} 0.5s forwards`,
@@ -143,5 +144,6 @@ const styles = stylex.create({
     height: "100vh",
     right: "30vw",
     background: "rgba(9, 9, 11, 0.5)",
+    animation: `${fadeIn} 0.5s forwards`,
   }
 })
