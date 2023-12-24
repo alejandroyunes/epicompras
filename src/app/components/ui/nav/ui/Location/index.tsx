@@ -1,5 +1,5 @@
 import stylex from "@stylexjs/stylex"
-import LocationSvg from "./icons/LocationSvg"
+import LocationSvg from "../Assets/Icons/LocationSvg"
 import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
 
 interface IconTextProps {

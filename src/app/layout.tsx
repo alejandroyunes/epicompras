@@ -1,4 +1,5 @@
 import { DesktopNav } from "./components/ui/nav/DesktopNav"
+import { MobileNav } from "./components/ui/nav/Mobile"
 import "./globals.css"
 
 import { globalTokens as $ } from "./globalTokens.stylex"
@@ -13,11 +14,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html {...stylex.props(styles.html, styles.reset)} lang="en">
       <body {...stylex.props(styles.reset, styles.body)}>
-        <div {...stylex.props(styles.desktop)}>
+        <div {...stylex.props(styles.desktopNav)}>
           <DesktopNav />
         </div>
-        <div {...stylex.props(styles.mobile)}>
-          <DesktopNav />
+        <div {...stylex.props(styles.mobileNav)}>
+          <MobileNav />
         </div>
         {children}
       </body>
@@ -49,13 +50,13 @@ const styles = stylex.create({
     },
     fontFamily: $.fontSans,
   },
-  desktop: {
+  desktopNav: {
     display: {
       default: "block",
       [media.mobile]: "none"
     },
   },
-  mobile: {
+  mobileNav: {
     display: {
       default: "none",
       [media.mobile]: "block"

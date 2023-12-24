@@ -147,5 +147,6 @@ const styles = stylex.create({
     right: "30vw",
     background: "rgba(9, 9, 11, 0.5)",
     animation: `${fadeIn} 0.5s forwards`,
+    zIndex: 100
   }
 })
