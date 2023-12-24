@@ -28,14 +28,13 @@ export default function Notifications() {
   }, [slideNotificaitonRef])
 
   return (
-    <div {...stylex.props(styles.container)} ref={slideNotificaitonRef}>
+    <div {...stylex.props(styles.container)} >
 
       <div {...stylex.props(styles.icon)} onClick={() => setOpen(!open)}>
         <BellSvg />
       </div>
 
-      <div {...stylex.props(styles.slider, open ? styles.slideIn : styles.slideOut)}>
-
+      <div  {...stylex.props(styles.slider, open ? styles.slideIn : styles.slideOut)} ref={slideNotificaitonRef}>
         <div {...stylex.props(styles.animationContainer)}>
 
           <div {...stylex.props(styles.animationBell)}>
@@ -54,6 +53,7 @@ export default function Notifications() {
           <ExitSvg />
         </div>
       </div>
+
 
       {open && <div {...stylex.props(styles.bg)} />}
     </div>
@@ -89,7 +89,6 @@ const styles = stylex.create({
     top: '0%',
     height: "100vh",
     right: "-30vw",
-    transform: "translateX(-100%)",
     borderStyle: "solid",
     borderColor: xBorderColor,
     borderWidth: {
@@ -122,7 +121,10 @@ const styles = stylex.create({
     cursor: "pointer"
   },
   animationBell: {
-    background: "rgb(244, 244, 240)",
+    background: {
+      default: "rgb(244, 244, 240)",
+      [DARK]: "rgb(121 121 111)"
+    },
     borderRadius: "50%",
     display: "flex",
     alignItems: "center",
