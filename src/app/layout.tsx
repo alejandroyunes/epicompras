@@ -13,7 +13,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html {...stylex.props(styles.html, styles.reset)} lang="en">
       <body {...stylex.props(styles.reset, styles.body)}>
-        <DesktopNav />
+        <div {...stylex.props(styles.desktop)}>
+          <DesktopNav />
+        </div>
+        <div {...stylex.props(styles.mobile)}>
+          <DesktopNav />
+        </div>
         {children}
       </body>
     </html>
@@ -22,6 +27,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
 const DARK = "@media (prefers-color-scheme: dark)"
 const fgColor = `rgba(${$.foregroundR}, ${$.foregroundG}, ${$.foregroundB}, 1)`
+
+const media = {
+  mobile: "@media (max-width: 900px)",
+}
 
 const styles = stylex.create({
   html: {
@@ -40,4 +49,16 @@ const styles = stylex.create({
     },
     fontFamily: $.fontSans,
   },
+  desktop: {
+    display: {
+      default: "block",
+      [media.mobile]: "none"
+    },
+  },
+  mobile: {
+    display: {
+      default: "none",
+      [media.mobile]: "block"
+    },
+  }
 })

@@ -3,15 +3,15 @@
 import { globalTokens, spacing } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
-import CustomInput from "./CustomInput"
+import CustomInput from "../ui/CustomInput"
 import Image from "next/image"
-import ventas from './Assets/images/ventas.jpg'
-import Location from "./Location"
-import LanguagePicker from "./LanguagePicker"
-import ModePicker from "./ModePicker"
-import Messages from "./Messages"
-import Notifications from "./Notifications"
-import Profile from "./Profile"
+import ventas from '../ui/Assets/images/ventas.jpg'
+import Location from "../ui/Location"
+import LanguagePicker from "../ui/LanguagePicker"
+import ModePicker from "../ui/ModePicker"
+import Messages from "../ui/Messages"
+import Notifications from "../ui/Notifications"
+import Profile from "../ui/Profile"
 import ButtonTheme from "../../button/ButtonTheme"
 
 export function DesktopNav() {
@@ -35,7 +35,7 @@ export function DesktopNav() {
       </div>
 
       <div {...stylex.props(styles.right)}>
-        <LanguagePicker />
+        {/* <LanguagePicker /> */}
         <ModePicker />
         <Messages />
         <Notifications />
