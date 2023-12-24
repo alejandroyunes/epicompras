@@ -65,9 +65,10 @@ const slideIn = stylex.keyframes({
 })
 
 const slideOut = stylex.keyframes({
-  // '0%': { transform: 'translateX(-100%)' },
+  '0%': { transform: 'translateX(-100%)' },
   '100%': { transform: 'translateX(0%)' },
 })
+
 
 const fadeIn = stylex.keyframes({
   '0%': { visibility: 'hidden', opacity: 0 },
@@ -91,6 +92,7 @@ const styles = stylex.create({
     height: "100vh",
     borderStyle: "solid",
     borderColor: xBorderColor,
+    willChange: 'transform',
     borderWidth: {
       default: "2px",
     },
