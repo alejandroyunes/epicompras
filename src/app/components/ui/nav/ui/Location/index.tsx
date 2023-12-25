@@ -23,7 +23,6 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: spacing.xs,
   },
   icon: {
     marginRight: spacing.xs,
@@ -33,4 +32,3 @@ const styles = stylex.create({
     fontFamily: globalTokens.fontSans
   },
 })
-
