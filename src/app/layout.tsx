@@ -29,9 +29,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 const DARK = "@media (prefers-color-scheme: dark)"
 const fgColor = `rgba(${$.foregroundR}, ${$.foregroundG}, ${$.foregroundB}, 1)`
 
-const media = {
-  mobile: "@media (max-width: 900px)",
-}
 
 const styles = stylex.create({
   html: {
@@ -53,13 +50,13 @@ const styles = stylex.create({
   desktopNav: {
     display: {
       default: "block",
-      [media.mobile]: "none"
+      "@media (max-width: 900px)": "none"
     },
   },
   mobileNav: {
     display: {
       default: "none",
-      [media.mobile]: "block"
+      "@media (max-width: 900px)": "block"
     },
   }
 })

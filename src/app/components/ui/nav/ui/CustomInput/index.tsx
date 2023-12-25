@@ -1,14 +1,14 @@
 import stylex from "@stylexjs/stylex"
 import { InputHTMLAttributes } from "react"
-import SearchIcon from "./icons/SearchISvg"
+import SearchIcon from "../Assets/Icons/SearchISvg"
 import { globalTokens as $, spacing, text } from "./../../../../../globalTokens.stylex"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> { }
 
 export default function CustomInput(props: Props) {
   return (
-    <div className={stylex(styles.main)}>
-      <div className={stylex(styles.icon)}>
+    <div {...stylex.props(styles.main)}>
+      <div {...stylex.props(styles.icon)}>
         <SearchIcon />
       </div>
       <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" {...props} />
@@ -27,7 +27,6 @@ const styles = stylex.create({
     top: "50%",
     left: 8,
     transform: "translateY(-50%)",
-    zIndex: 1,
   },
   input: {
     borderStyle: "solid",
@@ -37,9 +36,9 @@ const styles = stylex.create({
     },
     borderRadius: spacing.xs,
     fontSize: text.p,
-    width: "100%",
     padding: `${spacing.xxs} ${spacing.xs}`,
     boxSizing: "border-box",
     paddingLeft: spacing.xl,
+    marginRight: spacing.sm,
   },
 })

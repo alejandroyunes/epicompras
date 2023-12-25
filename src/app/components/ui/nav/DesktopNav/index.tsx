@@ -30,7 +30,7 @@ export function DesktopNav() {
           height={30}
         />
         <CustomInput />
-        <Location text="Medellîn" />
+        <Location text="Medellín" />
       </div>
 
       <div {...stylex.props(styles.right)}>
@@ -40,13 +40,8 @@ export function DesktopNav() {
         <Profile />
         <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
       </div>
-    </nav >
+    </nav>
   )
-}
-
-const media = {
-  mobile: "@media (max-width: 700px)",
-  tablet: "@media (min-width: 701px) and (max-width: 1260px)"
 }
 
 const styles = stylex.create({
@@ -55,11 +50,10 @@ const styles = stylex.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    gap: 16,
     padding: `0 ${spacing.md}`,
     width: {
       default: globalTokens.maxWidth,
-      [media.tablet]: "100%",
+      "@media (min-width: 701px) and (max-width: 1260px)": "100%",
     },
     margin: `${spacing.md} auto`,
   },

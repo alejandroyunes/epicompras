@@ -1,4 +1,4 @@
-import stylex from "@stylexjs/stylex"
+import * as stylex from '@stylexjs/stylex';
 
 const MIN_WIDTH = 320
 const MAX_WIDTH = 1240

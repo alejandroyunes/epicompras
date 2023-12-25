@@ -9,15 +9,6 @@ export default function Home() {
   )
 }
 
-const media = {
-  mobile: "@media (max-width: 700px)",
-  tablet: "@media (min-width: 701px) and (max-width: 1120px)"
-}
-
-const bgImage = `linear-gradient(to bottom, ${$.bgStartRGB}, ${$.calloutRGB50})`
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
-const xBorderBottomColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.25)`
-
 const s = stylex.create({
   main: {
     display: "flex",
@@ -27,7 +18,7 @@ const s = stylex.create({
     paddingTop: spacing.xxl,
     paddingBottom: {
       default: spacing.xxl,
-      [media.mobile]: spacing.md,
+      "@media (max-width: 700px)": spacing.md,
     },
   },
   h1: {
@@ -41,25 +32,10 @@ const s = stylex.create({
     whiteSpace: "nowrap",
     flexDirection: {
       default: "row",
-      [media.mobile]: "column",
+      "@media (max-width: 700px)": "column",
     },
     color: {
-      [media.mobile]: "blue",
+      "@media (max-width: 700px)": "blue",
     }
   },
-
-  // grid: {
-  //   display: "grid",
-  //   gridTemplateColumns: {
-  //     default: "repeat(4, minmax(25%, auto))",
-  //     [media.mobile]: "1fr",
-  //     [media.tablet]: "repeat(2, 50%)",
-  //   },
-  //   width: $.maxWidth,
-  //   maxWidth: {
-  //     default: "100%",
-  //     [media.mobile]: 320,
-  //   },
-  //   textAlign: { [media.mobile]: "center" },
-  // },
 })
