@@ -39,6 +39,6 @@ const styles = stylex.create({
     padding: `${spacing.xxs} ${spacing.xs}`,
     boxSizing: "border-box",
     paddingLeft: spacing.xl,
-    marginRight: spacing.sm,
+    width: "100%",
   },
 })

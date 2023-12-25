@@ -53,11 +53,12 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: spacing.xs,
-    position: "relative"
+    position: "relative",
+    marginLeft: spacing.xxs,
+    marginRight: spacing.xxs,
+
   },
   icon: {
-    marginRight: spacing.xxs,
     cursor: "pointer"
   },
   dropdown: {

@@ -20,13 +20,12 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
-    marginLeft: spacing.xs,
+    marginLeft: spacing.xxs,
+    marginRight: spacing.xxs,
     position: "relative",
   },
   icon: {
-    marginRight: spacing.xs,
     cursor: "pointer"
   },
-
 })
 

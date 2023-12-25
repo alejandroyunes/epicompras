@@ -23,6 +23,10 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
+    marginLeft: {
+      default: spacing.sm,
+      "@media (max-width: 900px)": spacing.xxs,
+    },
   },
   icon: {
     marginRight: spacing.xs,

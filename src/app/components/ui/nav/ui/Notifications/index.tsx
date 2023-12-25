@@ -77,11 +77,11 @@ const fadeIn = stylex.keyframes({
 
 const styles = stylex.create({
   icon: {
-    marginRight: spacing.xs,
     cursor: "pointer",
     display: "flex",
     alignItems: "center",
-    marginLeft: spacing.xs,
+    marginLeft: spacing.xxs,
+    marginRight: spacing.xxs,
     zIndex: 4,
   },
   sliderContainer: {

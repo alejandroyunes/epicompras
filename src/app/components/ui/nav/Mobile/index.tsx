@@ -11,7 +11,6 @@ import ModePicker from "../ui/ModePicker"
 import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"
-import ButtonTheme from "../../button/ButtonTheme"
 import HamburgerSvg from "../ui/Assets/Icons/HamburgerSvg"
 
 export function MobileNav() {
@@ -41,14 +40,13 @@ export function MobileNav() {
       </div>
 
       <div {...stylex.props(styles.down)}>
-        <div>
+        <div {...stylex.props(styles.input)} >
           <CustomInput />
         </div>
 
         <div {...stylex.props(styles.downItems)}>
           <ModePicker />
           <Profile />
-          {/* <ButtonTheme onClick={onClick}>Publicar</ButtonTheme> */}
         </div>
 
       </div>
@@ -88,5 +86,8 @@ const styles = stylex.create({
   upItems: {
     display: "flex",
     alignItems: "center",
+  },
+  input: {
+    width: "100%",
   }
 })
