@@ -47,7 +47,6 @@ export default function ModePicker() {
 }
 
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
-const DARK = "@media (prefers-color-scheme: dark)"
 
 const styles = stylex.create({
   container: {
@@ -75,7 +74,7 @@ const styles = stylex.create({
     margin: "15px",
     background: {
       default: "white",
-      [DARK]: "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
   },
   a: {

@@ -56,7 +56,7 @@ export default function Notifications() {
     </>
   )
 }
-const DARK = "@media (prefers-color-scheme: dark)"
+
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const slideIn = stylex.keyframes({
@@ -98,7 +98,7 @@ const styles = stylex.create({
     },
     background: {
       default: "white",
-      [DARK]: "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
   },
   slideIn: {
@@ -126,7 +126,7 @@ const styles = stylex.create({
   animationBell: {
     background: {
       default: "rgb(244, 244, 240)",
-      [DARK]: "rgb(121 121 111)"
+      "@media (prefers-color-scheme: dark)": "rgb(121 121 111)"
     },
     borderRadius: "50%",
     display: "flex",
