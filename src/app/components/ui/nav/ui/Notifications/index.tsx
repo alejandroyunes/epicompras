@@ -87,8 +87,14 @@ const styles = stylex.create({
   sliderContainer: {
     position: "fixed",
     top: 0,
-    right: "-30vw",
-    width: "30vw",
+    right: {
+      default: "-30vw",
+      "@media (max-width: 900px)": "-80vw"
+    },
+    width: {
+      default: "30vw",
+      "@media (max-width: 900px)": "80vw"
+    },
     height: "100vh",
     borderStyle: "solid",
     borderColor: xBorderColor,
@@ -141,10 +147,16 @@ const styles = stylex.create({
   },
   bg: {
     position: "fixed",
-    width: '70vw',
+    width: {
+      default: '70vw',
+      "@media (max-width: 900px)": "20vw"
+    },
     top: '0%',
     height: "100vh",
-    right: "30vw",
+    right: {
+      default: "30vw",
+      "@media (max-width: 900px)": "80vw"
+    },
     background: "rgba(9, 9, 11, 0.5)",
     animation: `${fadeIn} 0.5s forwards`,
     zIndex: 100
