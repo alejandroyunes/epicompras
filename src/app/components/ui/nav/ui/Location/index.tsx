@@ -33,6 +33,5 @@ const styles = stylex.create({
   },
   text: {
     fontSize: text.p,
-    fontFamily: globalTokens.fontSans
   },
 })
