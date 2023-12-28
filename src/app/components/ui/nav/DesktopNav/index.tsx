@@ -34,7 +34,6 @@ export function DesktopNav() {
       </div>
 
       <div {...stylex.props(styles.right)}>
-        <ModePicker />
         <Messages />
         <Notifications />
         <Profile />

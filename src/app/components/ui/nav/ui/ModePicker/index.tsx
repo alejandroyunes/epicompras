@@ -3,7 +3,7 @@
 import stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
 import ModeSvg from "../Assets/Icons/ModeSvg"
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useReducer, useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
 
@@ -20,29 +20,33 @@ export default function ModePicker() {
       }
     }
 
-    document.addEventListener('click', handleClickOutside)
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      document.removeEventListener('click', handleClickOutside)
+      document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [dropdownRef])
 
   return (
-    <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>
-
-      <div className={stylex(styles.icon)}>
-        <ModeSvg />
+    <>
+      <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>
+        <div className={stylex(styles.icon)}>
+          <ModeSvg />
+        </div>
+        {open &&
+          <div className={stylex(styles.dropdown)}>
+            <a {...stylex.props(styles.a)} >
+              <span {...stylex.props(styles.iconDropdown)}><LightModeSvg /></span>
+              Modo Claro
+            </a>
+            <a {...stylex.props(styles.a)} >
+              <span {...stylex.props(styles.iconDropdown)}><DarkModeSvg /></span>
+              Modo Oscuro
+            </a>
+          </div>}
       </div>
-      {open &&
-        <div className={stylex(styles.dropdown)}>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><LightModeSvg /></span>
-            Modo Claro
-          </a>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><DarkModeSvg /></span>
-            Modo Oscuro
-          </a>
-        </div>}
-    </div>
+
+    </>
   )
 }
 

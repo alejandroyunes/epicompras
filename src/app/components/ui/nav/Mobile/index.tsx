@@ -45,7 +45,6 @@ export function MobileNav() {
         </div>
 
         <div {...stylex.props(styles.downItems)}>
-          <ModePicker />
           <Profile />
         </div>
 

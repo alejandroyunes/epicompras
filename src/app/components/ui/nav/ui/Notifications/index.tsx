@@ -69,7 +69,6 @@ const slideOut = stylex.keyframes({
   '100%': { transform: 'translateX(0%)' },
 })
 
-
 const fadeIn = stylex.keyframes({
   '0%': { visibility: 'hidden', opacity: 0 },
   '100%': { visibility: 'visible', opacity: 1 },
