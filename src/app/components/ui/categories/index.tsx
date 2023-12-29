@@ -1,6 +1,8 @@
 import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "../../../globalTokens.stylex"
 import Link from "next/link"
+import Image from "next/image"
+import houses from './assets/casas-apartamentos.jpeg'
 
 export default function Categories() {
   return (
@@ -11,28 +13,208 @@ export default function Categories() {
         </div>
         <div>
           <Link href="#" {...stylex.props(s.categoriesUrl)}>
-            <span >Ver todos</span>
+            <span>Ver todos</span>
           </Link>
         </div>
       </div>
       <div {...stylex.props(s.categoryItems)}>
-        <ul  {...stylex.props(s.unorderedList)}>
-          <li>Categoría 1</li>
-          <li>Categoría 2</li>
-          <li>Categoría 3</li>
-          <li>Categoría 4</li>
-          <li>Categoría 1</li>
-          <li>Categoría 2</li>
-          <li>Categoría 3</li>
-          <li>Categoría 4</li>
-          <li>Categoría 1</li>
-          <li>Categoría 2</li>
-          <li>Categoría 3</li>
-          <li>Categoría 4</li>
-          <li>Categoría 1</li>
-          <li>Categoría 2</li>
-          <li>Categoría 3</li>
-          <li>Categoría 4</li>
+        <ul {...stylex.props(s.unorderedList)}>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
+                  src={houses}
+                  alt="alt"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+            </Link>
+          </li>
         </ul>
       </div>
     </section>
@@ -76,16 +258,14 @@ const s = stylex.create({
     maxWidth: "100%",
     overflowX: "scroll",
     scrollbarWidth: "thin",
-    scrollbarColor: `transparent ${xBorderColor}`, // You can adjust the color
-
+    scrollbarColor: `transparent ${xBorderColor}`,
     "::-webkit-scrollbar": {
       width: "8px",
       height: "8px"
     },
-
     "::-webkit-scrollbar-thumb": {
-      borderRadius: "8px", // This rounds the thumb
-      background: xBorderColor, // You can adjust the color
+      borderRadius: "8px",
+      background: xBorderColor,
     },
   },
   unorderedList: {
@@ -93,23 +273,30 @@ const s = stylex.create({
     gridAutoFlow: "column",
     gridGap: `${spacing.xs}`,
     listStyle: "none",
-    margin: 0,
-    padding: 0,
+  },
+  liList: {
+    width: 100,
+    cursor: "pointer",
+  },
+  liImage: {
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  categoriesImage: {
+    width: "80px",
+    height: "80px",
+    borderRadius: '50%',
+  },
+  itemLink: {
+    fontSize: text.sm,
+    color: "inherit",
+    textDecoration: "none",
+  },
+  liLabel: {
+    cursor: "pointer",
+    display: "flex",
+    justifyContent: "center",
+    textAlign: "center",
   }
 })
-
-// Estamos enterados de vuestra posición
-
-// A voces inocentes habeís venido a callar
-// Las caras descompuestas de tanto aguantar
-// Los ojos en la trastienda y las rodillas por doblar
-
-// Una voz por megáfono nos alienta a continuar
-// “renunciar a luchar es renunciar a vivir”
-// Con la garganta reseca su voz no puede afinar
-// Y muere otro yapeta que no se quiso callar
-
-// Para alterar percepciones tenemos a la nación
-// La prensa la radio y la televisión
-// Acá no pasa nada hay brotes de insumisión
-// Rebelión sofocadad sin muertos que lamentar
