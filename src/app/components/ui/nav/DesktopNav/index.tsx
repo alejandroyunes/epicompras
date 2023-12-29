@@ -7,7 +7,6 @@ import CustomInput from "../ui/CustomInput"
 import Image from "next/image"
 import ventas from '../ui/Assets/images/ventas.jpg'
 import Location from "../ui/Location"
-import ModePicker from "../ui/ModePicker"
 import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"

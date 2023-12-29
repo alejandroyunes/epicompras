@@ -16,8 +16,7 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    // paddingTop: spacing.xxl,
-    // paddingBottom: {
+    // width: {
     //   default: spacing.xxl,
     //   "@media (max-width: 700px)": spacing.md,
     // },

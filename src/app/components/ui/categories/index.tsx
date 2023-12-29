@@ -2,7 +2,11 @@ import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "../../../globalTokens.stylex"
 import Link from "next/link"
 import Image from "next/image"
-import houses from './assets/casas-apartamentos.jpeg'
+import houses from './assets/carros.webp'
+import cars from './assets/carros.webp'
+import smartphones from './assets/smartphones.webp'
+import inmobiliario from './assets/inmobilario.webp'
+import vestido from './assets/vestido.webp'
 
 export default function Categories() {
   return (
@@ -24,13 +28,13 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
+                  src={cars}
+                  alt="compra y venta de carros y motos"
                   width={80}
                   height={80}
                 />
               </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+              <label {...stylex.props(s.liLabel)}>Carros y Motos</label>
             </Link>
           </li>
           <li {...stylex.props(s.liList)}>
@@ -38,13 +42,13 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
+                  src={smartphones}
+                  alt="compra y venta de teléfonos inteligentes"
                   width={80}
                   height={80}
                 />
               </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+              <label {...stylex.props(s.liLabel)}>Teléfonos Inteligentes</label>
             </Link>
           </li>
           <li {...stylex.props(s.liList)}>
@@ -52,13 +56,13 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
+                  src={inmobiliario}
+                  alt="compra y venta de propiedad raíz"
                   width={80}
                   height={80}
                 />
               </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+              <label {...stylex.props(s.liLabel)}>Inmobiliario</label>
             </Link>
           </li>
           <li {...stylex.props(s.liList)}>
@@ -66,13 +70,13 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
+                  src={vestido}
+                  alt="compra y venta de vestidos"
                   width={80}
                   height={80}
                 />
               </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+              <label {...stylex.props(s.liLabel)}>Moda y Belleza</label>
             </Link>
           </li>
           <li {...stylex.props(s.liList)}>
@@ -228,6 +232,8 @@ const s = stylex.create({
     diplay: "flex",
     flexDirection: "row",
     alignItems: "center",
+    margin: "0 auto",
+    maxWidth: $.maxWidth
   },
   categories: {
     display: "flex",
@@ -278,6 +284,11 @@ const s = stylex.create({
     width: 100,
     cursor: "pointer",
   },
+  itemLink: {
+    fontSize: text.sm,
+    color: "inherit",
+    textDecoration: "none",
+  },
   liImage: {
     display: "flex",
     justifyContent: "center",
@@ -287,11 +298,6 @@ const s = stylex.create({
     width: "80px",
     height: "80px",
     borderRadius: '50%',
-  },
-  itemLink: {
-    fontSize: text.sm,
-    color: "inherit",
-    textDecoration: "none",
   },
   liLabel: {
     cursor: "pointer",
