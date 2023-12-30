@@ -1,11 +1,13 @@
 import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "./globalTokens.stylex"
 import Categories from "./components/ui/categories"
+import Ads from "./components/ui/Ads"
 
 export default function Home() {
   return (
     <main {...stylex.props(s.main)}>
       <Categories />
+      <Ads />
     </main>
   )
 }
@@ -16,10 +18,6 @@ const s = stylex.create({
     flexDirection: "column",
     alignItems: "center",
     justifyContent: "space-between",
-    // width: {
-    //   default: spacing.xxl,
-    //   "@media (max-width: 700px)": spacing.md,
-    // },
   },
   h1: {
     fontSize: text.h1,

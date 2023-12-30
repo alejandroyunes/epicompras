@@ -2,7 +2,6 @@ import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "../../../globalTokens.stylex"
 import Link from "next/link"
 import Image from "next/image"
-import houses from './assets/carros.webp'
 import cars from './assets/carros.webp'
 import smartphones from './assets/smartphones.webp'
 import inmobiliario from './assets/inmobilario.webp'
@@ -253,7 +252,6 @@ const s = stylex.create({
     margin: `${spacing.xs} ${spacing.md}`,
     paddingBottom: `${spacing.xs}`,
     borderBottom: `1px solid ${xBorderColor}`,
-
   },
   categoriesTitle: {
     fontSize: text.sm,
