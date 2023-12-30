@@ -14,6 +14,9 @@ import guitar from './assets/guitar.webp'
 import services from './assets/services.webp'
 import art from './assets/art.webp'
 import homeappliances from './assets/homeappliances.webp'
+import laptop from './assets/laptop.webp'
+import tools from './assets/tools.webp'
+import other from './assets/other.webp'
 
 export default function Categories() {
   return (
@@ -105,6 +108,20 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
+                  src={laptop}
+                  alt="Portátiles"
+                  width={80}
+                  height={80}
+                />
+              </div>
+              <label {...stylex.props(s.liLabel)}>Portátiles</label>
+            </Link>
+          </li>
+          <li {...stylex.props(s.liList)}>
+            <Link href="#" {...stylex.props(s.itemLink)}>
+              <div  {...stylex.props(s.liImage)}>
+                <Image
+                  {...stylex.props(s.categoriesImage)}
                   src={futbol}
                   alt="Deportes"
                   width={80}
@@ -189,13 +206,13 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
+                  src={tools}
+                  alt="Herramientas"
                   width={80}
                   height={80}
                 />
               </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+              <label {...stylex.props(s.liLabel)}>Herramientas</label>
             </Link>
           </li>
           <li {...stylex.props(s.liList)}>
@@ -203,27 +220,13 @@ export default function Categories() {
               <div  {...stylex.props(s.liImage)}>
                 <Image
                   {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
+                  src={other}
+                  alt="Otros"
                   width={80}
                   height={80}
                 />
               </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
-            </Link>
-          </li>
-          <li {...stylex.props(s.liList)}>
-            <Link href="#" {...stylex.props(s.itemLink)}>
-              <div  {...stylex.props(s.liImage)}>
-                <Image
-                  {...stylex.props(s.categoriesImage)}
-                  src={houses}
-                  alt="alt"
-                  width={80}
-                  height={80}
-                />
-              </div>
-              <label {...stylex.props(s.liLabel)}>Casas y apartamentos y algo mas</label>
+              <label {...stylex.props(s.liLabel)}>Otros</label>
             </Link>
           </li>
         </ul>
