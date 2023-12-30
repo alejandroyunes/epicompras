@@ -38,7 +38,7 @@ export default function Profile() {
       {open &&
         <div className={stylex(styles.dropdown)}>
           <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><ProfileSvg /></span>
-            Profile
+            Perfil
           </a>
           <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><AdsSvg /></span>
             Publicaciones
