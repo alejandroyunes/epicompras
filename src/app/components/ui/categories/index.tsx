@@ -274,7 +274,7 @@ const s = stylex.create({
     width: "auto",
     maxWidth: "100%",
     overflowX: "scroll",
-    scrollbarWidth: "thin",
+    scrollbarWidth: "1px",
     scrollbarColor: `transparent ${xBorderColor}`,
     "::-webkit-scrollbar": {
       width: "8px",

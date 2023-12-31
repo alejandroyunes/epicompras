@@ -90,19 +90,19 @@ const styles = stylex.create({
     cursor: "pointer",
     whiteSpace: "nowrap",
     textDecoration: "none",
-    ':hover': {
-      backgroundColor: xBorderColor
-    },
-    ':first-child:hover': {
-      backgroundColor: xBorderColor,
-      borderTopLeftRadius: spacing.xs,
-      borderTopRightRadius: spacing.xs
-    },
-    ':last-child:hover': {
-      backgroundColor: xBorderColor,
-      borderBottomLeftRadius: spacing.xs,
-      borderBottomRightRadius: spacing.xs
-    }
+    // ':hover': {
+    //   backgroundColor: xBorderColor
+    // },
+    // ':first-child:hover': {
+    //   backgroundColor: xBorderColor,
+    //   borderTopLeftRadius: spacing.xs,
+    //   borderTopRightRadius: spacing.xs
+    // },
+    // ':last-child:hover': {
+    //   backgroundColor: xBorderColor,
+    //   borderBottomLeftRadius: spacing.xs,
+    //   borderBottomRightRadius: spacing.xs
+    // }
   },
   iconDropdown: {
     display: "flex",
