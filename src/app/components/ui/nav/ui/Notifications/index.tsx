@@ -101,7 +101,7 @@ const styles = stylex.create({
     borderWidth: {
       default: "2px",
     },
-    background: {
+    backgroundColor: {
       default: "white",
       "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
@@ -133,7 +133,7 @@ const styles = stylex.create({
     cursor: "pointer"
   },
   animationBell: {
-    background: {
+    backgroundColor: {
       default: "rgb(244, 244, 240)",
       "@media (prefers-color-scheme: dark)": "rgb(121 121 111)"
     },
