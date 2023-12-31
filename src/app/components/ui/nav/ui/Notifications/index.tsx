@@ -101,13 +101,15 @@ const styles = stylex.create({
     borderWidth: {
       default: "2px",
     },
-    backgroundColor: {
+    background: {
       default: "white",
       "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
   },
   slideIn: {
-    animation: `${slideIn} 0.5s forwards`,
+    animationName: slideIn,
+    animationDuration: '0.5s',
+    animationFillMode: 'forwards',
     zIndex: 100
   },
   slideOut: {

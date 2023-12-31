@@ -86,7 +86,7 @@ const styles = stylex.create({
     },
     borderRadius: spacing.xs,
     margin: "15px",
-    backgroundColor: {
+    background: {
       default: "white",
       "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
