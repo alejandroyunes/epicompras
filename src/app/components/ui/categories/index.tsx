@@ -261,10 +261,12 @@ const s = stylex.create({
   categoriesUrl: {
     fontSize: text.sm,
     textDecoration: "none",
-    color: "inherit",
-    "::hover": {
-      textDecoration: "underline",
-    },
+    color: {
+      default: "inherit",
+      ":hover": {
+        textDecoration: "underline",
+      }
+    }
   },
   categoryItems: {
     margin: `${spacing.xs} ${spacing.md}`,
