@@ -107,15 +107,13 @@ const styles = stylex.create({
     },
   },
   slideIn: {
-    animationName: slideIn,
-    animationDuration: '0.5s',
-    animationFillMode: 'forwards',
+    animation: `${slideIn} 0.5s forwards`,
     zIndex: 100
   },
   slideOut: {
     animationName: slideOut,
-    animationDuration: '0.5s',
-    animationFillMode: 'forwards',
+    animationDuration: "0.5s",
+    animationFillMode: "forwards",
   },
   animationContainer: {
     display: "flex",
@@ -133,7 +131,7 @@ const styles = stylex.create({
     cursor: "pointer"
   },
   animationBell: {
-    backgroundColor: {
+    background: {
       default: "rgb(244, 244, 240)",
       "@media (prefers-color-scheme: dark)": "rgb(121 121 111)"
     },
@@ -160,10 +158,10 @@ const styles = stylex.create({
       default: "30vw",
       "@media (max-width: 900px)": "80vw"
     },
-    backgroundColor: "rgba(9, 9, 11, 0.5)",
+    background: "rgba(9, 9, 11, 0.5)",
     animationName: fadeIn,
-    animationDuration: '0.5s',
-    animationFillMode: 'forwards',
+    animationDuration: "0.5s",
+    animationFillMode: "forwards",
     zIndex: 100
   }
 })
