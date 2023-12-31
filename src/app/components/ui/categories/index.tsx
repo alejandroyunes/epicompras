@@ -238,9 +238,8 @@ const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.callout
 const s = stylex.create({
   container: {
     width: "100%",
-    diplay: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
     margin: "0 auto",
     maxWidth: $.maxWidth
   },
@@ -251,7 +250,9 @@ const s = stylex.create({
     alignItems: "center",
     margin: `${spacing.xs} ${spacing.md}`,
     paddingBottom: `${spacing.xs}`,
-    borderBottom: `1px solid ${xBorderColor}`,
+    borderBottomWidth: "1px",
+    borderBottomStyle: "solid",
+    borderBottomColor: xBorderColor
   },
   categoriesTitle: {
     fontSize: text.sm,
@@ -261,7 +262,7 @@ const s = stylex.create({
     fontSize: text.sm,
     textDecoration: "none",
     color: "inherit",
-    ":hover": {
+    "::hover": {
       textDecoration: "underline",
     },
   },

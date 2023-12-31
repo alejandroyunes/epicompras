@@ -2,10 +2,10 @@
 
 import stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
-import ModeSvg from "../Assets/Icons/ModeSvg"
-import { useEffect, useReducer, useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
+import ModeSvg from "../../../Assets/Icons/ModeSvg"
 
 export default function ModePicker() {
 
