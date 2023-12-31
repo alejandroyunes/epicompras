@@ -86,9 +86,9 @@ const styles = stylex.create({
     },
     borderRadius: spacing.xs,
     margin: "15px",
-    background: {
+    backgroundColor: {
       default: "white",
-      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
     },
   },
   a: {
@@ -100,22 +100,50 @@ const styles = stylex.create({
     cursor: "pointer",
     whiteSpace: "nowrap",
     textDecoration: "none",
-    ':hover': {
-      backgroundColor: xBorderColor
+    backgroundColor: {
+      default: null,
+      ':hover': {
+        default: xBorderColor
+      },
     },
-    ':first-child:hover': {
-      backgroundColor: xBorderColor,
-      borderTopLeftRadius: spacing.xs,
-      borderTopRightRadius: spacing.xs
+    borderTopLeftRadius: {
+      default: null,
+      ':first-child:hover': spacing.xs
     },
-    ':last-child:hover': {
-      backgroundColor: xBorderColor,
-      borderBottomLeftRadius: spacing.xs,
-      borderBottomRightRadius: spacing.xs
-    }
+    borderTopRightRadius: {
+      default: null,
+      ':first-child:hover': spacing.xs
+    },
+    borderBottomLeftRadius: {
+      default: null,
+      ':last-child:hover': spacing.xs
+    },
+    borderBottomRightRadius: {
+      default: null,
+      ':last-child:hover': spacing.xs
+    },
   },
   iconDropdown: {
     display: "flex",
     marginRight: spacing.xs,
   }
 })
+
+// ':first-child:hover': {
+//   // default: xBorderColor,
+//   // borderTopLeftRadius: spacing.xs,
+//   // borderTopRightRadius: spacing.xs
+//   // borderRadius: `${spacing.xs} ${spacing.xs} 0 0`,
+//   default: null,
+// },
+
+// ':last-child:hover': {
+//   // default: xBorderColor,
+//   // borderBottomLeftRadius: spacing.xs,
+//   // borderBottomRightRadius: spacing.xs
+// },
+// ':last-child:hover': {
+//   backgroundColor: xBorderColor,
+//   borderBottomLeftRadius: spacing.xs,
+//   borderBottomRightRadius: spacing.xs
+// }
