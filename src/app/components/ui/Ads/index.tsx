@@ -7,6 +7,8 @@ import casa from './assets/casa.jpg'
 import estufa from './assets/estufa.jpg'
 import laptop from './assets/laptop.jpg'
 import HeartSvg from "../Assets/Icons/HeartSvg"
+import HeartSvgFill from "../Assets/Icons/HeartSvgFill"
+import LikeHeart from "../LikeHeart"
 
 export default function Ads() {
   return (
@@ -29,13 +31,22 @@ export default function Ads() {
               height={180}
             />
           </div>
-          <div {...stylex.props(s.gridDetails)}>
-            <div>name of the product</div>
-            <div>
-              <HeartSvg />
+          <div {...stylex.props(s.gridContainer)}>
+            <div {...stylex.props(s.gridDetails)}>
+              <div>
+                <p {...stylex.props(s.detailsP)}>
+                  name of the product Lorem, ipsum dolor.
+                </p>
+              </div>
+              <div>
+                <LikeHeart />
+              </div>
             </div>
+            <div>price</div>
+            <div>date</div>
 
           </div>
+
         </div>
 
       </div>
@@ -43,7 +54,7 @@ export default function Ads() {
   )
 }
 
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
+const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.1)`
 
 
 const s = stylex.create({
@@ -74,7 +85,7 @@ const s = stylex.create({
     display: "flex",
     flexDirection: "column",
     background: {
-      default: "white",
+      default: xBorderColor,
       "@media (prefers-color-scheme: dark)": "rgb(24, 24, 27)",
     },
     borderTopLeftRadius: '12px',
@@ -91,11 +102,20 @@ const s = stylex.create({
     borderTopLeftRadius: '12px',
     borderTopRightRadius: '12px',
   },
+  gridContainer: {
+    display: "flex",
+    flexDirection: "column",
+    padding: `0 ${spacing.xxs}`
+  },
   gridDetails: {
     display: "flex",
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    padding: `0 ${spacing.xxs}`
+  },
+  detailsP: {
+    fontSize: text.p,
+    fontWeight: "bold",
+    paddingRight: `${spacing.xxs}`
   }
 })
