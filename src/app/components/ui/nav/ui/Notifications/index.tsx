@@ -111,7 +111,9 @@ const styles = stylex.create({
     zIndex: 100
   },
   slideOut: {
-    animation: `${slideOut} 0.5s forwards`,
+    animationName: slideOut,
+    animationDuration: '0.5s',
+    animationFillMode: 'forwards',
   },
   animationContainer: {
     display: "flex",
@@ -157,7 +159,9 @@ const styles = stylex.create({
       "@media (max-width: 900px)": "80vw"
     },
     backgroundColor: "rgba(9, 9, 11, 0.5)",
-    animation: `${fadeIn} 0.5s forwards`,
+    animationName: fadeIn,
+    animationDuration: '0.5s',
+    animationFillMode: 'forwards',
     zIndex: 100
   }
 })
