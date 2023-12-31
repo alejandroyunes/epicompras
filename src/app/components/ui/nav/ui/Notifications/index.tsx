@@ -101,9 +101,9 @@ const styles = stylex.create({
     borderWidth: {
       default: "2px",
     },
-    background: {
+    backgroundColor: {
       default: "white",
-      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
     },
   },
   slideIn: {
