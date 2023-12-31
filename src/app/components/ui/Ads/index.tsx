@@ -21,6 +21,7 @@ export default function Ads() {
       </div>
 
       <div {...stylex.props(s.grid)}>
+
         <div {...stylex.props(s.gridItem)}>
 
           <Link href="#" {...stylex.props(s.link)}>
@@ -36,7 +37,7 @@ export default function Ads() {
             <div {...stylex.props(s.gridContainer)}>
               <div {...stylex.props(s.gridDetails)}>
                 <div>
-                  <h3 {...stylex.props(s.detailsP)}>
+                  <h3 {...stylex.props(s.details)}>
                     name of the product Lorem, ipsum dolor.
                   </h3>
                 </div>
@@ -63,8 +64,309 @@ export default function Ads() {
           </div>
 
         </div>
-      </div>
 
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+        <div {...stylex.props(s.gridItem)}>
+
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.details)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
+              <div>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
+              </div>
+            </div>
+          </Link>
+
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
+
+        </div>
+
+      </div>
 
     </section >
   )
@@ -93,9 +395,14 @@ const s = stylex.create({
   },
   grid: {
     display: "grid",
-    gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+    gridTemplateColumns: {
+      default: "repeat(4, minmax(0, 1fr))",
+      "@media (max-width: 1100px) and (min-width: 900px)": "repeat(3, minmax(0, 1fr))",
+      "@media (max-width: 900px) and (min-width: 700px)": "repeat(2, minmax(0, 1fr))",
+      "@media (max-width: 700px)": "1fr",
+    },
     margin: `${spacing.xs} ${spacing.md}`,
-    gap: 16
+    gap: 16,
   },
   link: {
     cursor: "pointer",
@@ -138,14 +445,14 @@ const s = stylex.create({
   },
   likeHeartDiv: {
     position: "absolute",
-    top: 175,
+    top: 0,
     right: 10,
-    cursor: "pointer"
+    cursor: "pointer",
+    background: "#fdae4b",
   },
-  detailsP: {
+  details: {
     fontSize: text.p,
     fontWeight: 500,
-    paddingRight: 50,
     lineHeight: "22px"
   },
   detailsPrice: {
