@@ -23,40 +23,40 @@ export default function Ads() {
       <div {...stylex.props(s.grid)}>
         <div {...stylex.props(s.gridItem)}>
 
-          <div {...stylex.props(s.gridImage)}>
-            <Image
-              {...stylex.props(s.adImage)}
-              src={carro}
-              alt="alt"
-              width={180}
-              height={180}
-            />
-          </div>
-          <div {...stylex.props(s.gridContainer)}>
-
-            <div {...stylex.props(s.gridDetails)}>
+          <Link href="#" {...stylex.props(s.link)}>
+            <div {...stylex.props(s.gridImage)}>
+              <Image
+                {...stylex.props(s.adImage)}
+                src={carro}
+                alt="alt"
+                width={180}
+                height={180}
+              />
+            </div>
+            <div {...stylex.props(s.gridContainer)}>
+              <div {...stylex.props(s.gridDetails)}>
+                <div>
+                  <h3 {...stylex.props(s.detailsP)}>
+                    name of the product Lorem, ipsum dolor.
+                  </h3>
+                </div>
+              </div>
               <div>
-                <h3 {...stylex.props(s.detailsP)}>
-                  name of the product Lorem, ipsum dolor.
-                </h3>
+                <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+              </div>
+              <div {...stylex.props(s.location)}>
+                <div {...stylex.props(s.locationSvg)}>
+                  <LocationSvg />
+                </div>
+                <p>Medellín, Colombia</p>
+              </div>
+              <div>
+                <p>
+                  30 de diciembre
+                </p>
               </div>
             </div>
-            <div>
-              <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
-            </div>
-            <div {...stylex.props(s.location)}>
-              <div {...stylex.props(s.locationSvg)}>
-                <LocationSvg />
-              </div>
-              <p>Medellín, Colombia</p>
-            </div>
-            <div>
-              <p>
-                30 de diciembre
-              </p>
-            </div>
-
-          </div>
+          </Link>
 
           <div {...stylex.props(s.likeHeartDiv)}>
             <LikeHeart />
@@ -137,10 +137,10 @@ const s = stylex.create({
     alignItems: "center",
   },
   likeHeartDiv: {
-    outline: "4px solid red",
     position: "absolute",
     top: 175,
-    right: 10
+    right: 10,
+    cursor: "pointer"
   },
   detailsP: {
     fontSize: text.p,
