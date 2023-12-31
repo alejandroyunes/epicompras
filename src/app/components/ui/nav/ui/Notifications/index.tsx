@@ -107,7 +107,9 @@ const styles = stylex.create({
     },
   },
   slideIn: {
-    animation: `${slideIn} 0.5s forwards`,
+    animationName: slideIn,
+    animationDuration: "0.5s",
+    animationFillMode: "forwards",
     zIndex: 100
   },
   slideOut: {
