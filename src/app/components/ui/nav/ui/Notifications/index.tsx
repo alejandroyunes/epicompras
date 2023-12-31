@@ -101,7 +101,7 @@ const styles = stylex.create({
     borderWidth: {
       default: "2px",
     },
-    backgroundColor: {
+    background: {
       default: "white",
       "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
@@ -160,7 +160,10 @@ const styles = stylex.create({
       default: "30vw",
       "@media (max-width: 900px)": "80vw"
     },
-    background: "rgba(9, 9, 11, 0.5)",
+    background: {
+      default: "white",
+      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), 0.5)",
+    },
     animationName: fadeIn,
     animationDuration: "0.5s",
     animationFillMode: "forwards",
