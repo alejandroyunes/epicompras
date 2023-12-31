@@ -76,7 +76,7 @@ const styles = stylex.create({
     },
     borderRadius: spacing.xs,
     margin: "15px",
-    background: {
+    backgroundColor: {
       default: "white",
       "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
     },
@@ -91,15 +91,15 @@ const styles = stylex.create({
     whiteSpace: "nowrap",
     textDecoration: "none",
     ':hover': {
-      background: xBorderColor
+      backgroundColor: xBorderColor
     },
     ':first-child:hover': {
-      background: xBorderColor,
+      backgroundColor: xBorderColor,
       borderTopLeftRadius: spacing.xs,
       borderTopRightRadius: spacing.xs
     },
     ':last-child:hover': {
-      background: xBorderColor,
+      backgroundColor: xBorderColor,
       borderBottomLeftRadius: spacing.xs,
       borderBottomRightRadius: spacing.xs
     }

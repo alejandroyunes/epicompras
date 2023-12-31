@@ -373,7 +373,7 @@ export default function Ads() {
 }
 
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.1)`
-const DARK = '@media (prefers-color-scheme: dark)';
+const DARK = '';
 
 const s = stylex.create({
   container: {
@@ -412,9 +412,9 @@ const s = stylex.create({
   gridItem: {
     display: "flex",
     flexDirection: "column",
-    background: {
+    backgroundColor: {
       default: xBorderColor,
-      [DARK]: "rgb(24, 24, 27)",
+      "@media (prefers-color-scheme: dark)": "rgb(24, 24, 27)",
     },
     borderTopLeftRadius: '12px',
     borderTopRightRadius: '12px',

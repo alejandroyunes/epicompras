@@ -279,7 +279,7 @@ const s = stylex.create({
     },
     "::-webkit-scrollbar-thumb": {
       borderRadius: "8px",
-      background: xBorderColor,
+      backgroundColor: xBorderColor,
     },
   },
   unorderedList: {
