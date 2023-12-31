@@ -7,7 +7,7 @@ import HeartSvgFill from "../Assets/Icons/HeartSvgFill"
 export default function LikeHeart() {
   const [like, setLike] = useState(false)
   return (
-    <>
+    <div>
       {
         like ?
           <div onClick={() => setLike(false)}>
@@ -17,6 +17,6 @@ export default function LikeHeart() {
             <HeartSvg />
           </div>
       }
-    </>
+    </div>
   )
 }

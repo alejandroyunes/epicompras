@@ -9,6 +9,7 @@ import laptop from './assets/laptop.jpg'
 import HeartSvg from "../Assets/Icons/HeartSvg"
 import HeartSvgFill from "../Assets/Icons/HeartSvgFill"
 import LikeHeart from "../LikeHeart"
+import LocationSvg from "../Assets/Icons/LocationSvg"
 
 export default function Ads() {
   return (
@@ -20,8 +21,8 @@ export default function Ads() {
       </div>
 
       <div {...stylex.props(s.grid)}>
-
         <div {...stylex.props(s.gridItem)}>
+
           <div {...stylex.props(s.gridImage)}>
             <Image
               {...stylex.props(s.adImage)}
@@ -32,25 +33,40 @@ export default function Ads() {
             />
           </div>
           <div {...stylex.props(s.gridContainer)}>
+
             <div {...stylex.props(s.gridDetails)}>
               <div>
-                <p {...stylex.props(s.detailsP)}>
+                <h3 {...stylex.props(s.detailsP)}>
                   name of the product Lorem, ipsum dolor.
-                </p>
-              </div>
-              <div>
-                <LikeHeart />
+                </h3>
               </div>
             </div>
-            <div>price</div>
-            <div>date</div>
+            <div>
+              <p {...stylex.props(s.detailsPrice)}>$ 250,000</p>
+            </div>
+            <div {...stylex.props(s.location)}>
+              <div {...stylex.props(s.locationSvg)}>
+                <LocationSvg />
+              </div>
+              <p>Medellín, Colombia</p>
+            </div>
+            <div>
+              <p>
+                30 de diciembre
+              </p>
+            </div>
 
           </div>
 
-        </div>
+          <div {...stylex.props(s.likeHeartDiv)}>
+            <LikeHeart />
+          </div>
 
+        </div>
       </div>
-    </section>
+
+
+    </section >
   )
 }
 
@@ -60,11 +76,10 @@ const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.callout
 const s = stylex.create({
   container: {
     width: "100%",
-    diplay: "flex",
-    flexDirection: "row",
-    alignItems: "center",
+    display: "flex",
+    flexDirection: "column",
     margin: "0 auto",
-    maxWidth: $.maxWidth
+    maxWidth: $.maxWidth,
   },
   adsTitle: {
     display: "flex",
@@ -80,6 +95,12 @@ const s = stylex.create({
     display: "grid",
     gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
     margin: `${spacing.xs} ${spacing.md}`,
+    gap: 16
+  },
+  link: {
+    cursor: "pointer",
+    color: "inherit",
+    textDecoration: "none"
   },
   gridItem: {
     display: "flex",
@@ -92,6 +113,7 @@ const s = stylex.create({
     borderTopRightRadius: '12px',
     borderBottomLeftRadius: '12px',
     borderBottomRightRadius: '12px',
+    position: "relative"
   },
   gridImage: {
     margin: `0 0 ${spacing.xxs} 0`,
@@ -105,7 +127,8 @@ const s = stylex.create({
   gridContainer: {
     display: "flex",
     flexDirection: "column",
-    padding: `0 ${spacing.xxs}`
+    padding: `0 ${spacing.xxs}`,
+    margin: `0 0 ${spacing.xs} 0`,
   },
   gridDetails: {
     display: "flex",
@@ -113,9 +136,33 @@ const s = stylex.create({
     justifyContent: "space-between",
     alignItems: "center",
   },
+  likeHeartDiv: {
+    outline: "4px solid red",
+    position: "absolute",
+    top: 175,
+    right: 10
+  },
   detailsP: {
     fontSize: text.p,
+    fontWeight: 500,
+    paddingRight: 50,
+    lineHeight: "22px"
+  },
+  detailsPrice: {
+    fontSize: text.p,
     fontWeight: "bold",
-    paddingRight: `${spacing.xxs}`
-  }
+    paddingRight: `${spacing.xxs}`,
+    paddingTop: `${spacing.xxs}`
+  },
+  location: {
+    display: "flex",
+    flexDirection: "row",
+    alignItems: "center",
+    paddingTop: `${spacing.xxs}`
+  },
+  locationSvg: {
+    paddingRight: `${spacing.xxs}`,
+  },
 })
+
+
