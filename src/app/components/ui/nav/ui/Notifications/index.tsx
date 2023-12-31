@@ -110,7 +110,7 @@ const styles = stylex.create({
     animationName: slideIn,
     animationDuration: "0.5s",
     animationFillMode: "forwards",
-    zIndex: 100
+    zIndex: 101
   },
   slideOut: {
     animationName: slideOut,
@@ -150,20 +150,11 @@ const styles = stylex.create({
   },
   bg: {
     position: "fixed",
-    width: {
-      default: '70vw',
-      "@media (max-width: 900px)": "20vw"
-    },
-    top: '0%',
+    width: '100vw',
+    left: 0,
+    top: 0,
     height: "100vh",
-    right: {
-      default: "30vw",
-      "@media (max-width: 900px)": "80vw"
-    },
-    background: {
-      default: "white",
-      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), 0.5)",
-    },
+    backgroundColor: "rgba(20, 22, 27, 0.5)",
     animationName: fadeIn,
     animationDuration: "0.5s",
     animationFillMode: "forwards",
