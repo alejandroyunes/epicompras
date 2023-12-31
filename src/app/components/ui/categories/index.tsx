@@ -262,11 +262,11 @@ const s = stylex.create({
     fontSize: text.sm,
     textDecoration: "none",
     color: {
-      default: "inherit",
-      ":hover": {
-        textDecoration: "underline",
-      }
-    }
+      default: 'inherit',
+      ':hover': {
+        default: null,
+      },
+    },
   },
   categoryItems: {
     margin: `${spacing.xs} ${spacing.md}`,
