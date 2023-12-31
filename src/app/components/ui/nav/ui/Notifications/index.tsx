@@ -1,11 +1,11 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import BellSvg from "../Assets/Icons/BellSvg";
+import BellSvg from "../../../Assets/Icons/BellSvg";
 import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
 import { useEffect, useRef, useState } from "react"
-import ExitSvg from "../Assets/Icons/ExitSvg";
-import BellSlashSvg from "../Assets/Icons/BellSlashSvg";
+import ExitSvg from "../../../Assets/Icons/ExitSvg";
+import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg";
 
 export default function Notifications() {
   const [open, setOpen] = useState(false)

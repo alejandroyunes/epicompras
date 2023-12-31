@@ -1,6 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import { InputHTMLAttributes } from "react"
-import SearchIcon from "../Assets/Icons/SearchISvg"
+import SearchIcon from "../../../Assets/Icons/SearchISvg"
 import { globalTokens as $, spacing, text } from "./../../../../../globalTokens.stylex"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> { }

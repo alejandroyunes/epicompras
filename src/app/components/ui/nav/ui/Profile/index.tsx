@@ -1,14 +1,14 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import ProfileSvg from "../Assets/Icons/ProfileSvg"
+import ProfileSvg from "../../../Assets/Icons/ProfileSvg"
 import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
 import { useEffect, useRef, useState } from "react"
-import MessageSvg from "../Assets/Icons/MessagesSvg"
-import AdsSvg from "../Assets/Icons/AdsSvg"
-import HeartSvg from "../Assets/Icons/HeartSvg"
-import HelpSvg from "../Assets/Icons/HelpSvg"
-import LogoutSvg from "../Assets/Icons/LogoutSvg"
+import MessageSvg from "../../../Assets/Icons/MessagesSvg"
+import AdsSvg from "../../../Assets/Icons/AdsSvg"
+import HeartSvg from "../../../Assets/Icons/HeartSvg"
+import HelpSvg from "../../../Assets/Icons/HelpSvg"
+import LogoutSvg from "../../../Assets/Icons/LogoutSvg"
 
 export default function Profile() {
   const [open, setOpen] = useState(false)

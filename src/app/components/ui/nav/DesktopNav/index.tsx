@@ -5,7 +5,7 @@ import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "../ui/CustomInput"
 import Image from "next/image"
-import ventas from '../ui/Assets/images/ventas.jpg'
+import ventas from '../../Assets/images/ventas.jpg'
 import Location from "../ui/Location"
 import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"

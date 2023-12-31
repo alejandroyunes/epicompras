@@ -1,7 +1,7 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import MessagesSvg from "../Assets/Icons/MessagesSvg";
+import MessagesSvg from "../../../Assets/Icons/MessagesSvg";
 import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
 
 export default function Messages() {

@@ -6,6 +6,7 @@ import carro from './assets/carro.jpg'
 import casa from './assets/casa.jpg'
 import estufa from './assets/estufa.jpg'
 import laptop from './assets/laptop.jpg'
+import HeartSvg from "../Assets/Icons/HeartSvg"
 
 export default function Ads() {
   return (
@@ -28,7 +29,13 @@ export default function Ads() {
               height={180}
             />
           </div>
-          <div>text</div>
+          <div {...stylex.props(s.gridDetails)}>
+            <div>name of the product</div>
+            <div>
+              <HeartSvg />
+            </div>
+
+          </div>
         </div>
 
       </div>
@@ -76,7 +83,7 @@ const s = stylex.create({
     borderBottomRightRadius: '12px',
   },
   gridImage: {
-    margin: `0 0 ${spacing.sm} 0`,
+    margin: `0 0 ${spacing.xxs} 0`,
   },
   adImage: {
     width: "100%",
@@ -84,4 +91,11 @@ const s = stylex.create({
     borderTopLeftRadius: '12px',
     borderTopRightRadius: '12px',
   },
+  gridDetails: {
+    display: "flex",
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    padding: `0 ${spacing.xxs}`
+  }
 })
