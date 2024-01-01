@@ -1,6 +1,6 @@
 import stylex from "@stylexjs/stylex"
-import ArrowDownSvg from "../Assets/Icons/ArrowDownSvg"
 import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
+import ArrowDownSvg from "../../../Assets/Icons/ArrowDownSvg";
 
 
 export default function LanguagePicker() {
