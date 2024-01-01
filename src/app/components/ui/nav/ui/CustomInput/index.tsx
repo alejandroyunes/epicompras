@@ -1,17 +1,36 @@
+"use-client"
+
 import stylex from "@stylexjs/stylex"
-import { InputHTMLAttributes } from "react"
+import { InputHTMLAttributes, useState } from "react"
 import SearchIcon from "../../../Assets/Icons/SearchISvg"
 import { globalTokens as $, spacing, text } from "./../../../../../globalTokens.stylex"
+import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> { }
 
 export default function CustomInput(props: Props) {
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log('Form submitted', inputValue);
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+  }
+
   return (
     <div {...stylex.props(styles.main)}>
       <div {...stylex.props(styles.icon)}>
         <SearchIcon />
       </div>
-      <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" {...props} />
+      <form onSubmit={handleSubmit}>
+        <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" onChange={handleChange} value={inputValue} {...props} />
+      </form>
+      <div {...stylex.props(styles.arrow)} onClick={handleSubmit}>
+        <ArrowRightSvg />
+      </div>
     </div>
   )
 }
@@ -40,5 +59,13 @@ const styles = stylex.create({
     boxSizing: "border-box",
     paddingLeft: spacing.xl,
     width: "100%",
+  },
+  arrow: {
+    borderLeft: "2px solid red",
+    cursor: "pointer",
+    position: "absolute",
+    top: "50%",
+    right: 8,
+    transform: "translateY(-50%)",
   },
 })
