@@ -128,22 +128,3 @@ const styles = stylex.create({
     marginRight: spacing.xs,
   }
 })
-
-// ':first-child:hover': {
-//   // default: xBorderColor,
-//   // borderTopLeftRadius: spacing.xs,
-//   // borderTopRightRadius: spacing.xs
-//   // borderRadius: `${spacing.xs} ${spacing.xs} 0 0`,
-//   default: null,
-// },
-
-// ':last-child:hover': {
-//   // default: xBorderColor,
-//   // borderBottomLeftRadius: spacing.xs,
-//   // borderBottomRightRadius: spacing.xs
-// },
-// ':last-child:hover': {
-//   backgroundColor: xBorderColor,
-//   borderBottomLeftRadius: spacing.xs,
-//   borderBottomRightRadius: spacing.xs
-// }
