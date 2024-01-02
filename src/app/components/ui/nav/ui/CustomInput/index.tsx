@@ -25,7 +25,7 @@ export default function CustomInput(props: Props) {
       <div {...stylex.props(styles.icon)}>
         <SearchIcon />
       </div>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} {...stylex.props(styles.form)}>
         <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" onChange={handleChange} value={inputValue} {...props} />
       </form>
       <div {...stylex.props(styles.arrow)} onClick={handleSubmit}>
@@ -47,6 +47,9 @@ const styles = stylex.create({
     left: 8,
     transform: "translateY(-50%)",
   },
+  form: {
+    width: "100%",
+  },
   input: {
     borderStyle: "solid",
     borderColor: xBorderColor,
@@ -61,7 +64,6 @@ const styles = stylex.create({
     width: "100%",
   },
   arrow: {
-    borderLeft: "2px solid red",
     cursor: "pointer",
     position: "absolute",
     top: "50%",

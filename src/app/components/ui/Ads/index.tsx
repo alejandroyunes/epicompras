@@ -39,7 +39,7 @@ export default function Ads() {
           <div {...stylex.props(s.gridContainer)}>
             <div {...stylex.props(s.gridDetails)}>
               <Link href="#" {...stylex.props(s.link)}>
-                <h3 {...stylex.props(s.details)}>
+                <h3 {...stylex.props(s.description)}>
                   name of the product Lorem, ipsum dolor.
                 </h3>
               </Link>
@@ -144,7 +144,7 @@ const s = stylex.create({
   likeHeartSvg: {
     cursor: "pointer"
   },
-  details: {
+  description: {
     fontSize: text.p,
     fontWeight: 500,
     lineHeight: "22px"
