@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import ExitSvg from "../../../Assets/Icons/ExitSvg";
 import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg";
 import { globalTokens as $ } from '../../../../../globalTokens.stylex'
+import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg";
 
 interface IconTextProps {
   text: string;
@@ -15,6 +16,17 @@ export default function Location({ text }: IconTextProps) {
 
   const [open, setOpen] = useState(false)
   const slideNotificaitonRef = useRef<HTMLDivElement>(null)
+
+  const [inputValue, setInputValue] = useState('');
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault();
+    console.log('Form submitted', inputValue);
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+  }
 
   return (
     <>
@@ -30,16 +42,34 @@ export default function Location({ text }: IconTextProps) {
       <div {...stylex.props(styles.sliderContainer, open ? styles.slideIn : styles.slideOut)} ref={slideNotificaitonRef}>
         <div {...stylex.props(styles.animationContainer)}>
 
-          <div {...stylex.props(styles.animationBell)}>
-            <BellSlashSvg />
-          </div>
-
-          <div {...stylex.props(styles.notifications)}>
+          <div {...stylex.props(styles.locationText)}>
             <p>
-              No hay notificaciones
+              ¿Dónde quieres buscar?
             </p>
           </div>
 
+          <div {...stylex.props(styles.searchInput)}>
+
+            <form onSubmit={handleSubmit} {...stylex.props(styles.form)}>
+              <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" onChange={handleChange} value={inputValue} />
+            </form>
+
+            <div {...stylex.props(styles.arrow)} onClick={handleSubmit}>
+              <ArrowRightSvg />
+            </div>
+          </div>
+
+          <div {...stylex.props(styles.currentContainer)}>
+            <LocationSvg />
+            <div {...stylex.props(styles.currentLocation)}>
+              <p>
+                Usar la ubicación actual
+              </p>
+              <p>blocked</p>
+            </div>
+
+
+          </div>
         </div>
 
         <div {...stylex.props(styles.animationExit)} onClick={() => setOpen(false)}>
@@ -132,10 +162,8 @@ const styles = stylex.create({
   animationContainer: {
     display: "flex",
     position: 'relative',
-    justifyContent: "center",
     flexDirection: "column",
-    alignItems: "center",
-    marginTop: 24
+    margin: 24
   },
   animationExit: {
     display: "flex",
@@ -144,21 +172,53 @@ const styles = stylex.create({
     right: 16,
     cursor: "pointer"
   },
-  animationBell: {
-    backgroundColor: {
-      default: "rgb(244, 244, 240)",
-      "@media (prefers-color-scheme: dark)": "rgb(121 121 111)"
-    },
-    borderRadius: "50%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    width: 56,
-    height: 56,
-    marginBottom: 16
-  },
-  notifications: {
+  locationText: {
     fontSize: text.p,
+    paddingBottom: spacing.xs
+  },
+  searchInput: {
+    position: "relative"
+  },
+  form: {
+    width: "100%",
+  },
+  input: {
+    borderStyle: "solid",
+    borderColor: xBorderColor,
+    borderWidth: {
+      default: "2px",
+    },
+    borderRadius: spacing.xs,
+    fontSize: text.p,
+    padding: `${spacing.xxs} ${spacing.xs}`,
+    boxSizing: "border-box",
+    paddingLeft: spacing.xs,
+    width: "100%",
+  },
+  arrow: {
+    cursor: "pointer",
+    position: "absolute",
+    top: "50%",
+    right: 8,
+    transform: "translateY(-50%)",
+  },
+  currentContainer: {
+    display: "flex",
+    flexDirection: "row",
+    borderStyle: "solid",
+    borderColor: xBorderColor,
+    borderWidth: {
+      default: "2px",
+    },
+    alignItems: "center",
+    marginTop: spacing.xs,
+    padding: `0 ${spacing.xs}`,
+  },
+  currentLocation: {
+    width: "100%",
+    padding: `${spacing.xxs} ${spacing.xs}`,
+    display: "flex",
+    flexDirection: "column"
   },
   bg: {
     position: "fixed",
