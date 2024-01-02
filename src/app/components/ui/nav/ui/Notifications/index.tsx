@@ -95,12 +95,10 @@ const styles = stylex.create({
       "@media (max-width: 900px)": "80vw"
     },
     height: "100vh",
-    borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderLeftStyle: "solid",
+    borderLeftWidth: 2,
+    borderLeftColor: xBorderColor,
     willChange: 'transform',
-    borderWidth: {
-      default: "2px",
-    },
     backgroundColor: {
       default: "white",
       "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",

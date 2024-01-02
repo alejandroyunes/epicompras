@@ -23,15 +23,26 @@ const styles = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
+    flexDirection: {
+      default: null,
+      "@media (max-width: 900px)": "row-reverse",
+    },
     marginLeft: {
       default: spacing.sm,
       "@media (max-width: 900px)": spacing.xxs,
     },
   },
   icon: {
-    marginRight: spacing.xs,
+    marginRight: {
+      default: spacing.xs,
+      "@media (max-width: 900px)": 0,
+    }
   },
   text: {
     fontSize: text.p,
+    marginRight: {
+      default: null,
+      "@media (max-width: 900px)": spacing.xxs,
+    },
   },
 })

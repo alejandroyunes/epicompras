@@ -33,9 +33,8 @@ export function MobileNav() {
           />
         </div>
         <div {...stylex.props(styles.upItems)}>
-          <Notifications />
-          <Messages />
           <Location text="Medellín" />
+          <Notifications />
         </div>
       </div>
 

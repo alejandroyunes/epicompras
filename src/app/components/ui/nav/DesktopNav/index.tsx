@@ -33,7 +33,6 @@ export function DesktopNav() {
       </div>
 
       <div {...stylex.props(styles.right)}>
-        <Messages />
         <Notifications />
         <Profile />
         <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
