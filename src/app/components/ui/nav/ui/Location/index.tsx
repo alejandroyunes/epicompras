@@ -79,8 +79,6 @@ export default function Location() {
     searchCity()
   }
 
-
-
   const handleSetCity = (city: string) => {
     setCity(city)
     setOpen(false)

@@ -29,7 +29,7 @@ export function DesktopNav() {
           height={30}
         />
         <CustomInput />
-        <Location text="Medellín" />
+        <Location />
       </div>
 
       <div {...stylex.props(styles.right)}>
