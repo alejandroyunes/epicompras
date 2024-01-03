@@ -17,11 +17,11 @@ export default function Location({ text }: IconTextProps) {
   const [open, setOpen] = useState(false)
   const slideNotificaitonRef = useRef<HTMLDivElement>(null)
 
-  const [inputValue, setInputValue] = useState('');
+  const [inputValue, setInputValue] = useState('')
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log('Form submitted', inputValue);
+    event.preventDefault()
+    console.log('Form submitted', inputValue)
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -67,9 +67,16 @@ export default function Location({ text }: IconTextProps) {
               </p>
               <p>blocked</p>
             </div>
-
-
           </div>
+        </div>
+
+        <div {...stylex.props(styles.resultContainer)}>
+          <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+          </ul>
         </div>
 
         <div {...stylex.props(styles.animationExit)} onClick={() => setOpen(false)}>
@@ -219,6 +226,9 @@ const styles = stylex.create({
     padding: `${spacing.xxs} ${spacing.xs}`,
     display: "flex",
     flexDirection: "column"
+  },
+  resultContainer: {
+    margin: 24
   },
   bg: {
     position: "fixed",
