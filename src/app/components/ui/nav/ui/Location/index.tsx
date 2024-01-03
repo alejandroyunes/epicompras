@@ -63,14 +63,8 @@ export default function Location() {
       return cityLowerCase.includes(searchTerm)
     })
     setCityArray(filteredCities)
-    console.log('Filtered', filteredCities)
 
     return filteredCities
-  }
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
-    searchCity()
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -79,6 +73,13 @@ export default function Location() {
       searchCity()
     }
   }
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    searchCity()
+  }
+
+
 
   const handleSetCity = (city: string) => {
     setCity(city)
@@ -112,14 +113,13 @@ export default function Location() {
           setOpen(false)
           setCity(city)
         },
-        (error) => {
+        () => {
           setCityBlocked(true)
-          console.log(error.message)
+
         }
       )
     } else {
       setErrorCity(true)
-      console.error('Geolocation is not supported by your browser.')
     }
   }
 
