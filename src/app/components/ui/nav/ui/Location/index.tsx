@@ -2,11 +2,10 @@
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "../../../Assets/Icons/LocationSvg"
 import { spacing, text } from "../../../../../globalTokens.stylex"
-import { useRef, useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import { globalTokens as $ } from '../../../../../globalTokens.stylex'
 import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
-import { error } from "console"
 
 interface LocationProps {
   latitude: number
@@ -54,6 +53,22 @@ export default function Location() {
     { city: 'Mitú', latitude: 1.1986, longitude: -70.1733 },
     { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
   ]
+
+
+  useEffect(() => {
+
+    const handleClickAnimationOutside = (event: MouseEvent) => {
+      if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
+        setOpen(false)
+      }
+    }
+
+    document.addEventListener('mousedown', handleClickAnimationOutside)
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickAnimationOutside)
+    }
+  }, [slideNotificaitonRef])
 
   const searchCity = () => {
     const searchTerm = inputValue.toLocaleLowerCase()

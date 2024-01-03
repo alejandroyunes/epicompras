@@ -1,3 +1,4 @@
+"use-client"
 import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "../../../globalTokens.stylex"
 import Link from "next/link"
