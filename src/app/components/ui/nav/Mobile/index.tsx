@@ -33,7 +33,7 @@ export function MobileNav() {
           />
         </div>
         <div {...stylex.props(styles.upItems)}>
-          <Location text="Medellín" />
+          <Location />
           <Notifications />
         </div>
       </div>

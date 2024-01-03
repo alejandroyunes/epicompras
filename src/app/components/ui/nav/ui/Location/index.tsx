@@ -2,30 +2,122 @@
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "../../../Assets/Icons/LocationSvg"
 import { spacing, text } from "../../../../../globalTokens.stylex"
-import { useRef, useState } from "react";
-import ExitSvg from "../../../Assets/Icons/ExitSvg";
-import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg";
+import { useRef, useState } from "react"
+import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import { globalTokens as $ } from '../../../../../globalTokens.stylex'
-import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg";
+import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
+import { error } from "console"
 
-interface IconTextProps {
-  text: string;
+interface LocationProps {
+  latitude: number
+  longitude: number
 }
 
-export default function Location({ text }: IconTextProps) {
+export default function Location() {
 
   const [open, setOpen] = useState(false)
   const slideNotificaitonRef = useRef<HTMLDivElement>(null)
-
   const [inputValue, setInputValue] = useState('')
+  const [city, setCity] = useState('')
+  const [errorCity, setErrorCity] = useState(false)
+  const [cityBlocked, setCityBlocked] = useState(false)
+  const [cityArray, setCityArray] = useState<{ city: string; latitude: number; longitude: number; }[]>(null);
+
+
+  const searchCity = () => {
+    const searchTerm = inputValue.toLocaleLowerCase()
+
+    const filteredCities = colombiaCoordinates.filter(city => {
+      const cityLowerCase = city.city.toLocaleLowerCase()
+      return cityLowerCase.includes(searchTerm)
+    })
+    setCityArray(filteredCities)
+    console.log('Filtered', filteredCities)
+
+    return filteredCities
+  }
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    console.log('Form submitted', inputValue)
+    searchCity()
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value)
+    if (inputValue.length >= 2) {
+      searchCity()
+    }
+  }
+
+  const colombiaCoordinates = [
+    { city: 'Bogotá', latitude: 4.6097, longitude: -74.0817 },
+    { city: 'Medellín', latitude: 6.1924, longitude: -75.5963 },
+    { city: 'Cali', latitude: 3.4516, longitude: -76.5320 },
+    { city: 'Barranquilla', latitude: 10.9639, longitude: -74.7967 },
+    { city: 'Cartagena', latitude: 10.3910, longitude: -75.4794 },
+    { city: 'Santa Marta', latitude: 11.2404, longitude: -74.1990 },
+    { city: 'Manizales', latitude: 5.0702, longitude: -75.5136 },
+    { city: 'Pereira', latitude: 4.8136, longitude: -75.6961 },
+    { city: 'Cúcuta', latitude: 7.8938, longitude: -72.5078 },
+    { city: 'Ibagué', latitude: 4.4389, longitude: -75.2322 },
+    { city: 'Neiva', latitude: 2.9273, longitude: -75.2819 },
+    { city: 'Villavicencio', latitude: 4.1420, longitude: -73.6266 },
+    { city: 'Bucaramanga', latitude: 7.1198, longitude: -73.1227 },
+    { city: 'Pasto', latitude: 1.2136, longitude: -77.2811 },
+    { city: 'Popayán', latitude: 2.4386, longitude: -76.6132 },
+    { city: 'Armenia', latitude: 4.5341, longitude: -75.6751 },
+    { city: 'Montería', latitude: 8.7555, longitude: -75.8885 },
+    { city: 'Sincelejo', latitude: 9.2960, longitude: -75.3978 },
+    { city: 'Valledupar', latitude: 10.4633, longitude: -73.2532 },
+    { city: 'Tunja', latitude: 5.5352, longitude: -73.3670 },
+    { city: 'Riohacha', latitude: 11.5444, longitude: -72.9060 },
+    { city: 'Quibdó', latitude: 5.6947, longitude: -76.6619 },
+    { city: 'Florencia', latitude: 1.6144, longitude: -75.6062 },
+    { city: 'Yopal', latitude: 5.3375, longitude: -72.3956 },
+    { city: 'Mocoa', latitude: 1.1518, longitude: -76.6464 },
+    { city: 'Puerto Carreño', latitude: 6.1891, longitude: -67.4850 },
+    { city: 'San José del Guaviare', latitude: 2.5730, longitude: -72.6459 },
+    { city: 'Inírida', latitude: 3.8652, longitude: -67.9239 },
+    { city: 'Mitú', latitude: 1.1986, longitude: -70.1733 },
+    { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
+  ]
+
+  const getLocationCity = ({ latitude, longitude }: LocationProps) => {
+    const closestCity = colombiaCoordinates.reduce((closest, current) => {
+      const distanceToCurrent = Math.sqrt(
+        Math.pow(latitude - current.latitude, 2) +
+        Math.pow(longitude - current.longitude, 2)
+      )
+
+      if (distanceToCurrent < closest.distance) {
+        return { city: current.city, distance: distanceToCurrent }
+      }
+
+      return closest
+    }, { city: '', distance: Number.MAX_VALUE })
+
+    return closestCity.city
+  }
+
+  const handleGetLocation = () => {
+    if (navigator.geolocation) {
+      navigator.geolocation.getCurrentPosition(
+        (position) => {
+          const { latitude, longitude } = position.coords
+          const locationObject = { latitude, longitude }
+          const city = getLocationCity(locationObject)
+          setOpen(false)
+          setCity(city)
+        },
+        (error) => {
+          setCityBlocked(true)
+          console.log(error.message)
+        }
+      )
+    } else {
+      setErrorCity(true)
+      console.error('Geolocation is not supported by your browser.')
+    }
   }
 
   return (
@@ -35,7 +127,7 @@ export default function Location({ text }: IconTextProps) {
           <LocationSvg />
         </div>
         <div className={stylex(styles.text)}>
-          {text}
+          {city ? city : 'Ciudad'}
         </div>
       </div>
 
@@ -61,22 +153,31 @@ export default function Location({ text }: IconTextProps) {
 
           <div {...stylex.props(styles.currentContainer)}>
             <LocationSvg />
-            <div {...stylex.props(styles.currentLocation)}>
+            <div {...stylex.props(styles.currentLocation)} onClick={handleGetLocation}>
               <p>
                 Usar la ubicación actual
               </p>
-              <p>blocked</p>
+              {errorCity &&
+                <p {...stylex.props(styles.errorLocation)}>
+                  Hubo un error en la ubicación
+                </p>
+              }
+              {cityBlocked &&
+                <p {...stylex.props(styles.errorLocation)}>
+                  Ubicación bloqueada. Verifique la configuración del navegador/teléfono
+                </p>
+              }
             </div>
           </div>
         </div>
 
         <div {...stylex.props(styles.resultContainer)}>
-          <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-          </ul>
+          {cityArray &&
+            <ul {...stylex.props(styles.resultUnorder)}>
+              {cityArray.map((city) => (
+                <li {...stylex.props(styles.resultList)}>{city.city}</li>
+              ))}
+            </ul>}
         </div>
 
         <div {...stylex.props(styles.animationExit)} onClick={() => setOpen(false)}>
@@ -170,7 +271,7 @@ const styles = stylex.create({
     display: "flex",
     position: 'relative',
     flexDirection: "column",
-    margin: 24
+    margin: `${spacing.md} ${spacing.md} 0 `
   },
   animationExit: {
     display: "flex",
@@ -225,10 +326,38 @@ const styles = stylex.create({
     width: "100%",
     padding: `${spacing.xxs} ${spacing.xs}`,
     display: "flex",
-    flexDirection: "column"
+    flexDirection: "column",
+    cursor: "pointer"
   },
   resultContainer: {
-    margin: 24
+    margin: `0 ${spacing.md}`,
+  },
+  resultUnorder: {
+    listStyleType: "none",
+    cursor: "pointer",
+    borderLeftStyle: "solid",
+    borderLeftColor: xBorderColor,
+    borderLeftWidth: {
+      default: "2px",
+    },
+    borderRightStyle: "solid",
+    borderRightColor: xBorderColor,
+    borderRightWidth: {
+      default: "2px",
+    },
+    borderBottomStyle: "solid",
+    borderBottomColor: xBorderColor,
+    borderBottomWidth: {
+      default: "2px",
+    },
+  },
+  resultList: {
+
+    padding: `${spacing.xxs}`,
+
+  },
+  errorLocation: {
+    fontSize: spacing.xs
   },
   bg: {
     position: "fixed",
