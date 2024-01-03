@@ -21,34 +21,7 @@ export default function Location() {
   const [city, setCity] = useState('')
   const [errorCity, setErrorCity] = useState(false)
   const [cityBlocked, setCityBlocked] = useState(false)
-  const [cityArray, setCityArray] = useState<{ city: string; latitude: number; longitude: number; }[]>(null);
-
-
-  const searchCity = () => {
-    const searchTerm = inputValue.toLocaleLowerCase()
-
-    const filteredCities = colombiaCoordinates.filter(city => {
-      const cityLowerCase = city.city.toLocaleLowerCase()
-      return cityLowerCase.includes(searchTerm)
-    })
-    setCityArray(filteredCities)
-    console.log('Filtered', filteredCities)
-
-    return filteredCities
-  }
-
-  const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault()
-    searchCity()
-  }
-
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setInputValue(event.target.value)
-    if (inputValue.length >= 2) {
-      searchCity()
-    }
-  }
-
+  const [cityArray, setCityArray] = useState<{ city: string; latitude: number; longitude: number; }[]>()
   const colombiaCoordinates = [
     { city: 'Bogotá', latitude: 4.6097, longitude: -74.0817 },
     { city: 'Medellín', latitude: 6.1924, longitude: -75.5963 },
@@ -81,6 +54,36 @@ export default function Location() {
     { city: 'Mitú', latitude: 1.1986, longitude: -70.1733 },
     { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
   ]
+
+  const searchCity = () => {
+    const searchTerm = inputValue.toLocaleLowerCase()
+
+    const filteredCities = colombiaCoordinates.filter(city => {
+      const cityLowerCase = city.city.toLocaleLowerCase()
+      return cityLowerCase.includes(searchTerm)
+    })
+    setCityArray(filteredCities)
+    console.log('Filtered', filteredCities)
+
+    return filteredCities
+  }
+
+  const handleSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    searchCity()
+  }
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setInputValue(event.target.value)
+    if (inputValue.length >= 2) {
+      searchCity()
+    }
+  }
+
+  const handleSetCity = (city: string) => {
+    setCity(city)
+    setOpen(false)
+  }
 
   const getLocationCity = ({ latitude, longitude }: LocationProps) => {
     const closestCity = colombiaCoordinates.reduce((closest, current) => {
@@ -175,7 +178,7 @@ export default function Location() {
           {cityArray &&
             <ul {...stylex.props(styles.resultUnorder)}>
               {cityArray.map((city, index) => (
-                <li key={index}{...stylex.props(styles.resultList)}>{city.city}</li>
+                <li key={index}{...stylex.props(styles.resultList)} onClick={() => handleSetCity(city.city)}>{city.city} </li>
               ))}
             </ul>}
         </div>
