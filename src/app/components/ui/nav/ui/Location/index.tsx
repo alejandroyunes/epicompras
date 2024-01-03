@@ -174,8 +174,8 @@ export default function Location() {
         <div {...stylex.props(styles.resultContainer)}>
           {cityArray &&
             <ul {...stylex.props(styles.resultUnorder)}>
-              {cityArray.map((city) => (
-                <li {...stylex.props(styles.resultList)}>{city.city}</li>
+              {cityArray.map((city, index) => (
+                <li key={index}{...stylex.props(styles.resultList)}>{city.city}</li>
               ))}
             </ul>}
         </div>
