@@ -368,12 +368,11 @@ const styles = stylex.create({
     },
   },
   resultList: {
-
     padding: `${spacing.xxs}`,
-
   },
   errorLocation: {
-    fontSize: spacing.xs
+    fontSize: spacing.xs,
+    padding: `${spacing.xxs} 0`,
   },
   bg: {
     position: "fixed",

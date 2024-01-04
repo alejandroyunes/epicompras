@@ -11,8 +11,11 @@ import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"
 import ButtonTheme from "../../button/ButtonTheme"
+import { useState } from "react"
 
 export function DesktopNav() {
+  const [login, setLogin] = useState(true)
+
   const onClick = () => {
     console.log("click")
   }
@@ -33,9 +36,17 @@ export function DesktopNav() {
       </div>
 
       <div {...stylex.props(styles.right)}>
-        <Notifications />
-        <Profile />
-        <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
+        {login ?
+          <ButtonTheme onClick={onClick}>Entrar</ButtonTheme>
+          :
+          <>
+            <Notifications />
+            <Profile />
+            <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
+          </>
+        }
+
+
       </div>
     </nav>
   )

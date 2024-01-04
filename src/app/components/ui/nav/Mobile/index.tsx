@@ -1,6 +1,6 @@
 "use client"
 
-import { globalTokens, spacing } from "../../../../globalTokens.stylex"
+import { spacing } from "../../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "../ui/CustomInput"
@@ -12,8 +12,12 @@ import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"
 import HamburgerSvg from "../../Assets/Icons/HamburgerSvg"
+import { useState } from "react"
+import ButtonTheme from "../../button/ButtonTheme"
 
 export function MobileNav() {
+  const [login, setLogin] = useState(false)
+
   const onClick = () => {
     console.log("click")
   }
@@ -34,7 +38,13 @@ export function MobileNav() {
         </div>
         <div {...stylex.props(styles.upItems)}>
           <Location />
-          <Notifications />
+          {login ?
+            <div {...stylex.props(styles.buttonContainer)}>
+              <ButtonTheme onClick={onClick}>Entrar</ButtonTheme>
+            </div>
+            :
+            <Notifications />
+          }
         </div>
       </div>
 
@@ -44,7 +54,7 @@ export function MobileNav() {
         </div>
 
         <div {...stylex.props(styles.downItems)}>
-          <Profile />
+          {login ? null : <Profile />}
         </div>
 
       </div>
@@ -79,11 +89,13 @@ const styles = stylex.create({
   },
   downItems: {
     display: "flex"
-  }
-  ,
+  },
   upItems: {
     display: "flex",
     alignItems: "center",
+  },
+  buttonContainer: {
+    paddingLeft: spacing.xs
   },
   input: {
     width: "100%",
