@@ -1,8 +1,7 @@
-import NextAuth from "next-auth"
+import NextAuth, { AuthOptions } from "next-auth"
 import GitHubProvider from 'next-auth/providers/github'
-import { NextAuthOptions } from "next-auth";
 
-const authOptions: NextAuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     GitHubProvider({
       clientId: process.env.GITHUB_ID ?? "",
