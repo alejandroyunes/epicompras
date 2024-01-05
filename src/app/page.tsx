@@ -1,7 +1,7 @@
 import * as stylex from "@stylexjs/stylex"
 import { globalTokens as $, spacing, text } from "./globalTokens.stylex"
-import Categories from "./components/ui/categories"
-import Ads from "./components/ui/Ads"
+import Categories from "../components/ui/categories"
+import Ads from "../components/ui/Ads"
 
 export default function Home() {
   return (

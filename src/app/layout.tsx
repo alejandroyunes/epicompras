@@ -1,5 +1,5 @@
-import { DesktopNav } from "./components/ui/nav/DesktopNav"
-import { MobileNav } from "./components/ui/nav/Mobile"
+import { DesktopNav } from "../components/ui/nav/DesktopNav"
+import { MobileNav } from "../components/ui/nav/Mobile"
 import "./globals.css"
 
 import { globalTokens as $ } from "./globalTokens.stylex"
