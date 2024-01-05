@@ -1,6 +1,6 @@
 "use client"
 
-import { globalTokens, spacing } from "../../../../globalTokens.stylex"
+import { globalTokens, spacing } from "../../../../app/globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "../ui/CustomInput"

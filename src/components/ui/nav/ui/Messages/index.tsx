@@ -1,6 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import MessagesSvg from "../../../Assets/Icons/MessagesSvg";
-import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
+import { globalTokens, spacing, text } from "../../../../../app/globalTokens.stylex"
 
 export default function Messages() {
   return (

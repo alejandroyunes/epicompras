@@ -1,5 +1,5 @@
 import stylex from "@stylexjs/stylex"
-import { globalTokens, spacing, text } from "../../../../../globalTokens.stylex"
+import { globalTokens, spacing, text } from "../../../../../app/globalTokens.stylex"
 import ArrowDownSvg from "../../../Assets/Icons/ArrowDownSvg";
 
 

@@ -1,6 +1,6 @@
 import * as stylex from "@stylexjs/stylex"
 import type { StyleXStyles, Theme } from "@stylexjs/stylex/lib/StyleXTypes"
-import { text } from '../../../globalTokens.stylex'
+import { text } from '../../../app/globalTokens.stylex'
 import "./ButtonTokens.stylex"
 import { buttonTokens } from "./ButtonTokens.stylex"
 

@@ -1,10 +1,10 @@
 "use client"
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "../../../Assets/Icons/LocationSvg"
-import { spacing, text } from "../../../../../globalTokens.stylex"
+import { spacing, text } from "../../../../../app/globalTokens.stylex"
 import { useEffect, useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
-import { globalTokens as $ } from '../../../../../globalTokens.stylex'
+import { globalTokens as $ } from '../../../../../app/globalTokens.stylex'
 import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
 
 interface LocationProps {

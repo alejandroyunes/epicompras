@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "../../../globalTokens.stylex"
+import { globalTokens as $, spacing, text } from "../../../app/globalTokens.stylex"
 import Link from "next/link"
 import Image from "next/image"
 import carro from './assets/carro.jpg'

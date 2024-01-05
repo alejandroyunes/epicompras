@@ -1,7 +1,7 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "../../../../../globalTokens.stylex"
+import { globalTokens as $, spacing, text } from "../../../../../app/globalTokens.stylex"
 import { useEffect, useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"

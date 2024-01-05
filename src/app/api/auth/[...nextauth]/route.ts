@@ -8,7 +8,10 @@ const authOptions: NextAuthOptions = {
       clientId: process.env.GITHUB_ID ?? "",
       clientSecret: process.env.GITHUB_SECRET ?? ""
     })
-  ]
+  ],
+  pages: {
+    signIn: "/auth/signIn",
+  },
 }
 
 export const handler = NextAuth(authOptions)
