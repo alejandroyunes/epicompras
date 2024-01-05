@@ -1,4 +1,3 @@
-import { getServerSession } from "next-auth"
 import { DesktopNav } from "./components/ui/nav/DesktopNav"
 import { MobileNav } from "./components/ui/nav/Mobile"
 import "./globals.css"
@@ -6,7 +5,7 @@ import "./globals.css"
 import { globalTokens as $ } from "./globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
-import SessionProvider from "./components/SessionProvider"
+import SessionProvider from "./SessionProvider"
 
 export const metadata = {
   title: "Create Next App",
@@ -15,18 +14,16 @@ export const metadata = {
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
-  const session = await getServerSession()
-
   return (
     <html {...stylex.props(styles.html, styles.reset)} lang="en">
       <body {...stylex.props(styles.reset, styles.body)}>
-        <div {...stylex.props(styles.desktopNav)}>
-          <DesktopNav />
-        </div>
-        <div {...stylex.props(styles.mobileNav)}>
-          <MobileNav />
-        </div>
         <SessionProvider>
+          <div {...stylex.props(styles.desktopNav)}>
+            <DesktopNav />
+          </div>
+          <div {...stylex.props(styles.mobileNav)}>
+            <MobileNav />
+          </div>
           {children}
         </SessionProvider>
       </body>
@@ -36,7 +33,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 const DARK = "@media (prefers-color-scheme: dark)"
 const fgColor = `rgba(${$.foregroundR}, ${$.foregroundG}, ${$.foregroundB}, 1)`
-
 
 const styles = stylex.create({
   html: {

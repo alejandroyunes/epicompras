@@ -7,16 +7,17 @@ import CustomInput from "../ui/CustomInput"
 import Image from "next/image"
 import ventas from '../../Assets/images/ventas.jpg'
 import Location from "../ui/Location"
-import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"
 import ButtonTheme from "../../button/ButtonTheme"
-import { useState } from "react"
+
+import { signIn, useSession } from "next-auth/react"
 
 export function DesktopNav() {
-  const [login, setLogin] = useState(true)
+  const { data: session } = useSession()
+  console.log(session)
 
-  const onClick = () => {
+  const onHandleClick = () => {
     console.log("click")
   }
 
@@ -36,13 +37,13 @@ export function DesktopNav() {
       </div>
 
       <div {...stylex.props(styles.right)}>
-        {login ?
-          <ButtonTheme onClick={onClick}>Entrar</ButtonTheme>
+        {!session ?
+          <ButtonTheme onClick={() => signIn()}>Entrar</ButtonTheme>
           :
           <>
             <Notifications />
             <Profile />
-            <ButtonTheme onClick={onClick}>Publicar</ButtonTheme>
+            <ButtonTheme onClick={onHandleClick}>Publicar</ButtonTheme>
           </>
         }
 

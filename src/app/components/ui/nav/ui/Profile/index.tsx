@@ -9,6 +9,7 @@ import AdsSvg from "../../../Assets/Icons/AdsSvg"
 import HeartSvg from "../../../Assets/Icons/HeartSvg"
 import HelpSvg from "../../../Assets/Icons/HelpSvg"
 import LogoutSvg from "../../../Assets/Icons/LogoutSvg"
+import { signOut, } from "next-auth/react"
 
 export default function Profile() {
   const [open, setOpen] = useState(false)
@@ -52,9 +53,9 @@ export default function Profile() {
           <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><HelpSvg /></span>
             Centro de ayuda
           </a>
-          <a href="#" className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><LogoutSvg /></span>
+          <span onClick={() => signOut()} className={stylex(styles.a)}><span className={stylex(styles.iconDropdown)}><LogoutSvg /></span>
             Salir
-          </a>
+          </span>
         </div>}
     </div>
   )
