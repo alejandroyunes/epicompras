@@ -1,7 +1,7 @@
 "use client"
 
-import { signIn } from "next-auth/react";
-import React, { useRef } from "react";
+import { signIn } from "next-auth/react"
+import React, { useRef } from "react"
 
 const LoginPage = () => {
   const userName = useRef("")
@@ -15,7 +15,7 @@ const LoginPage = () => {
       redirect: true,
       callbackUrl: "/",
     });
-  };
+  }
   return (
     <div>
       login page
@@ -24,4 +24,4 @@ const LoginPage = () => {
   )
 }
 
-export default LoginPage;
+export default LoginPage

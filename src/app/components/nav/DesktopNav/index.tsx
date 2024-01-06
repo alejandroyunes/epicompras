@@ -1,6 +1,6 @@
 "use client"
 
-import { globalTokens, spacing } from "../../../../app/globalTokens.stylex"
+import { globalTokens, spacing } from "../../../globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "../ui/CustomInput"
@@ -15,7 +15,6 @@ import { signIn, useSession } from "next-auth/react"
 
 export function DesktopNav() {
   const { data: session } = useSession()
-  console.log(session)
 
   const onHandleClick = () => {
     console.log("click")
