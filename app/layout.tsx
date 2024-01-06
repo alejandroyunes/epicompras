@@ -1,10 +1,11 @@
 
 import "./globals.css"
 
-import { globalTokens as $ } from "./globalTokens.stylex"
+import { globalTokens as $, colors } from "./globalTokens.stylex"
 import * as stylex from "@stylexjs/stylex"
 
 import { NextAuthProvider } from "./providers"
+import { dracula } from "./themes"
 
 export const metadata = {
   title: "Create Next App",
@@ -39,9 +40,10 @@ const s = stylex.create({
   body: {
     color: fgColor,
     backgroundColor: {
-      default: "linear-gradient(to bottom, rgb(214, 219, 220), white)",
-      [DARK]: "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+      default: "rgb(248, 242, 242)",
+      [DARK]: "rgb(24, 24, 24)",
     },
+    // backgroundColor: colors.background,
     fontFamily: $.fontSans,
   }
 })

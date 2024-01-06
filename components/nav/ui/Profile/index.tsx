@@ -3,7 +3,7 @@
 import stylex from "@stylexjs/stylex"
 import ProfileSvg from "../../../Assets/Icons/ProfileSvg"
 import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import MessageSvg from "../../../Assets/Icons/MessagesSvg"
 import AdsSvg from "../../../Assets/Icons/AdsSvg"
 import HeartSvg from "../../../Assets/Icons/HeartSvg"
@@ -18,7 +18,6 @@ export default function Profile() {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useClickOutsideListener({ ref: dropdownRef, callback: () => setOpen(false) })
-
 
   return (
     <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>

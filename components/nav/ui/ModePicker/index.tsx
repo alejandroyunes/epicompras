@@ -1,12 +1,13 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
+import { globalTokens as $, colors, spacing, text } from "../../../../app/globalTokens.stylex"
 import { useEffect, useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
 import ModeSvg from "../../../Assets/Icons/ModeSvg"
 import useClickOutsideListener from "../../hooks/useClickOutside"
+import { dracula } from "@/app/themes"
 
 export default function ModePicker() {
 
@@ -15,39 +16,41 @@ export default function ModePicker() {
 
   useClickOutsideListener({ ref: dropdownRef, callback: () => setOpen(false) })
 
-  return (
-    <>
-      <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>
-        <div className={stylex(styles.icon)}>
-          <ModeSvg />
-        </div>
-        {open &&
-          <div className={stylex(styles.dropdown)}>
-            <a {...stylex.props(styles.a)} >
-              <span {...stylex.props(styles.iconDropdown)}><LightModeSvg /></span>
-              Modo Claro
-            </a>
-            <a {...stylex.props(styles.a)} >
-              <span {...stylex.props(styles.iconDropdown)}><DarkModeSvg /></span>
-              Modo Oscuro
-            </a>
-          </div>}
-      </div>
+  const [isDark, setDark] = useState(false)
 
-    </>
+  const toggle = () => {
+    setDark(!isDark);
+  };
+
+  return (
+    <div {...stylex.props(s.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>
+      <div {...stylex.props(s.icon)}>
+        <ModeSvg />
+      </div>
+      {open &&
+        <div {...stylex.props(s.dropdown)}>
+          <p {...stylex.props(s.text)} onClick={() => setDark(false)}>
+            <span {...stylex.props(s.iconDropdown)}><LightModeSvg /></span>
+            Modo Claro
+          </p>
+          <p {...stylex.props(s.text)} onClick={() => setDark(true)}>
+            <span {...stylex.props(s.iconDropdown)}><DarkModeSvg /></span>
+            Modo Oscuro
+          </p>
+        </div>}
+    </div>
   )
 }
 
 const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
-const styles = stylex.create({
+const s = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
     position: "relative",
     marginLeft: spacing.xxs,
     marginRight: spacing.xxs,
-
   },
   icon: {
     cursor: "pointer"
@@ -66,10 +69,10 @@ const styles = stylex.create({
     margin: "15px",
     backgroundColor: {
       default: "white",
-      "@media (prefers-color-scheme: dark)": "linear-gradient(to bottom, rgb(20, 22, 27), black)",
+      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
     },
   },
-  a: {
+  text: {
     color: "inherit",
     fontSize: text.p,
     padding: "5px 20px",
@@ -77,20 +80,28 @@ const styles = stylex.create({
     alignItems: "center",
     cursor: "pointer",
     whiteSpace: "nowrap",
-    textDecoration: "none",
-    // ':hover': {
-    //   backgroundColor: xBorderColor
-    // },
-    // ':first-child:hover': {
-    //   backgroundColor: xBorderColor,
-    //   borderTopLeftRadius: spacing.xs,
-    //   borderTopRightRadius: spacing.xs
-    // },
-    // ':last-child:hover': {
-    //   backgroundColor: xBorderColor,
-    //   borderBottomLeftRadius: spacing.xs,
-    //   borderBottomRightRadius: spacing.xs
-    // }
+    backgroundColor: {
+      default: null,
+      ':hover': {
+        default: xBorderColor
+      },
+    },
+    borderTopLeftRadius: {
+      default: null,
+      ':first-child:hover': spacing.xs
+    },
+    borderTopRightRadius: {
+      default: null,
+      ':first-child:hover': spacing.xs
+    },
+    borderBottomLeftRadius: {
+      default: null,
+      ':last-child:hover': spacing.xs
+    },
+    borderBottomRightRadius: {
+      default: null,
+      ':last-child:hover': spacing.xs
+    },
   },
   iconDropdown: {
     display: "flex",

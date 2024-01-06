@@ -2,7 +2,7 @@
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "../../../Assets/Icons/LocationSvg"
 import { spacing, text } from "../../../../app/globalTokens.stylex"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import { globalTokens as $ } from '../../../../app/globalTokens.stylex'
 import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"

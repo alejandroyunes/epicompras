@@ -21,20 +21,6 @@ export default function Home() {
 }
 
 const s = stylex.create({
-  h1: {
-    fontSize: text.h1,
-    lineHeight: 1,
-    fontFamily: $.fontSans,
-    fontWeight: 400,
-    textAlign: "center",
-    display: "flex",
-    gap: spacing.md,
-    whiteSpace: "nowrap",
-    flexDirection: {
-      default: "row",
-      "@media (max-width: 700px)": "column",
-    },
-  },
   desktopNav: {
     display: {
       default: "block",
