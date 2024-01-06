@@ -6,26 +6,14 @@ import { useEffect, useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
 import ModeSvg from "../../../Assets/Icons/ModeSvg"
+import useClickOutsideListener from "../../hooks/useClickOutside"
 
 export default function ModePicker() {
 
   const [open, setOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [dropdownRef])
+  useClickOutsideListener({ ref: dropdownRef, callback: () => setOpen(false) })
 
   return (
     <>

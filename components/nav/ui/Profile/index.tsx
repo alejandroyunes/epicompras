@@ -10,25 +10,15 @@ import HeartSvg from "../../../Assets/Icons/HeartSvg"
 import HelpSvg from "../../../Assets/Icons/HelpSvg"
 import LogoutSvg from "../../../Assets/Icons/LogoutSvg"
 import { signOut, } from "next-auth/react"
+import useClickOutsideListener from "../../hooks/useClickOutside"
+
 
 export default function Profile() {
   const [open, setOpen] = useState(false)
   const dropdownRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
+  useClickOutsideListener({ ref: dropdownRef, callback: () => setOpen(false) })
 
-    const handleClickOutside = (event: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
-        setOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickOutside)
-    }
-  }, [dropdownRef])
 
   return (
     <div className={stylex(styles.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>

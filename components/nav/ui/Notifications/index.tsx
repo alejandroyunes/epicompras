@@ -1,30 +1,18 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import BellSvg from "../../../Assets/Icons/BellSvg";
+import BellSvg from "../../../Assets/Icons/BellSvg"
 import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
 import { useEffect, useRef, useState } from "react"
-import ExitSvg from "../../../Assets/Icons/ExitSvg";
-import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg";
+import ExitSvg from "../../../Assets/Icons/ExitSvg"
+import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg"
+import useClickOutsideListener from "../../hooks/useClickOutside"
 
 export default function Notifications() {
   const [open, setOpen] = useState(false)
   const slideNotificaitonRef = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-
-    const handleClickAnimationOutside = (event: MouseEvent) => {
-      if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
-        setOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickAnimationOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickAnimationOutside)
-    }
-  }, [slideNotificaitonRef])
+  useClickOutsideListener({ ref: slideNotificaitonRef, callback: () => setOpen(false) })
 
   return (
     <>

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import { globalTokens as $ } from '../../../../app/globalTokens.stylex'
 import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
+import useClickOutsideListener from "../../hooks/useClickOutside"
 
 interface LocationProps {
   latitude: number
@@ -54,21 +55,8 @@ export default function Location() {
     { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
   ]
 
+  useClickOutsideListener({ ref: slideNotificaitonRef, callback: () => setOpen(false) });
 
-  useEffect(() => {
-
-    const handleClickAnimationOutside = (event: MouseEvent) => {
-      if (slideNotificaitonRef.current && !slideNotificaitonRef.current.contains(event.target as Node)) {
-        setOpen(false)
-      }
-    }
-
-    document.addEventListener('mousedown', handleClickAnimationOutside)
-
-    return () => {
-      document.removeEventListener('mousedown', handleClickAnimationOutside)
-    }
-  }, [slideNotificaitonRef])
 
   const searchCity = () => {
     const searchTerm = inputValue.toLocaleLowerCase()

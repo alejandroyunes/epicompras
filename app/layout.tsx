@@ -14,8 +14,8 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <html {...stylex.props(styles.html, styles.reset)} lang="en">
-      <body {...stylex.props(styles.reset, styles.body)}>
+    <html {...stylex.props(s.html, s.reset)} lang="en">
+      <body {...stylex.props(s.reset, s.body)}>
         <NextAuthProvider>
           {children}
         </NextAuthProvider>
@@ -27,7 +27,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 const DARK = "@media (prefers-color-scheme: dark)"
 const fgColor = `rgba(${$.foregroundR}, ${$.foregroundG}, ${$.foregroundB}, 1)`
 
-const styles = stylex.create({
+const s = stylex.create({
   html: {
     colorScheme: "light dark"
   },

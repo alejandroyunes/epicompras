@@ -12,6 +12,7 @@ import ButtonTheme from "../../button/ButtonTheme"
 
 import { signIn, useSession } from "next-auth/react"
 import { globalTokens, spacing } from "../../../app/globalTokens.stylex"
+import ModePicker from "../ui/ModePicker"
 
 export function DesktopNav() {
   const { data: session } = useSession()
@@ -36,6 +37,7 @@ export function DesktopNav() {
       </div>
 
       <div {...stylex.props(styles.right)}>
+        <ModePicker />
         {!session ?
           <ButtonTheme onClick={() => signIn()}>Entrar</ButtonTheme>
           :
