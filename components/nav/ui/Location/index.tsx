@@ -4,11 +4,16 @@ import LocationSvg from "@/components/Assets/Icons/LocationSvg"
 import { colors, spacing, text } from "../../../../app/globalTokens.stylex"
 import { useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
-import { globalTokens as $ } from '../../../../app/globalTokens.stylex'
 import ArrowRightSvg from "@/components/Assets/Icons/ArrowRightSvg"
 import useClickOutsideListener from "@/components/nav/hooks/useClickOutside"
 
 interface LocationProps {
+  latitude: number
+  longitude: number
+}
+
+interface cityProps {
+  city: string
   latitude: number
   longitude: number
 }
@@ -21,7 +26,7 @@ export default function Location() {
   const [city, setCity] = useState('')
   const [errorCity, setErrorCity] = useState(false)
   const [cityBlocked, setCityBlocked] = useState(false)
-  const [cityArray, setCityArray] = useState<{ city: string; latitude: number; longitude: number; }[]>()
+  const [cityArray, setCityArray] = useState<cityProps[]>()
   const colombiaCoordinates = [
     { city: 'Bogotá', latitude: 4.6097, longitude: -74.0817 },
     { city: 'Medellín', latitude: 6.1924, longitude: -75.5963 },
@@ -56,7 +61,6 @@ export default function Location() {
   ]
 
   useClickOutsideListener({ ref: slideNotificaitonRef, callback: () => setOpen(false) });
-
 
   const searchCity = () => {
     const searchTerm = inputValue.toLocaleLowerCase()
@@ -160,7 +164,7 @@ export default function Location() {
           <div {...stylex.props(s.currentContainer)}>
             <LocationSvg />
             <div {...stylex.props(s.currentLocation)} onClick={handleGetLocation}>
-              <p {...stylex.props(s.currentLocationP)}>
+              <p>
                 Usar la ubicación actual
               </p>
               {errorCity &&
@@ -197,8 +201,6 @@ export default function Location() {
     </>
   )
 }
-
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const slideIn = stylex.keyframes({
   '0%': { transform: 'translateX(0%)' },
@@ -259,7 +261,7 @@ const s = stylex.create({
     height: "100vh",
     borderLeftStyle: "solid",
     borderLeftWidth: 2,
-    borderLeftColor: xBorderColor,
+    borderLeftColor: colors.xBorderColor,
     willChange: 'transform',
     backgroundColor: colors.bg
   },
@@ -298,17 +300,18 @@ const s = stylex.create({
   },
   input: {
     borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderColor: colors.xBorderColor,
     borderWidth: {
       default: "2px",
     },
     borderRadius: spacing.xs,
-    fontSize: text.p,
+    fontSize: text.sm,
     padding: `${spacing.xxs} ${spacing.xs}`,
     boxSizing: "border-box",
     paddingLeft: spacing.xs,
     width: "100%",
-    backgroundColor: colors.inputBg
+    backgroundColor: colors.inputBg,
+    color: colors.inverted
   },
   arrow: {
     cursor: "pointer",
@@ -321,7 +324,7 @@ const s = stylex.create({
     display: "flex",
     flexDirection: "row",
     borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderColor: colors.xBorderColor,
     borderWidth: {
       default: "2px",
     },
@@ -334,9 +337,7 @@ const s = stylex.create({
     padding: `${spacing.xxs} ${spacing.xs}`,
     display: "flex",
     flexDirection: "column",
-    cursor: "pointer"
-  },
-  currentLocationP: {
+    cursor: "pointer",
     fontSize: text.sm,
     color: colors.inverted,
   },
@@ -350,17 +351,17 @@ const s = stylex.create({
     listStyleType: "none",
     cursor: "pointer",
     borderLeftStyle: "solid",
-    borderLeftColor: xBorderColor,
+    borderLeftColor: colors.xBorderColor,
     borderLeftWidth: {
       default: "2px",
     },
     borderRightStyle: "solid",
-    borderRightColor: xBorderColor,
+    borderRightColor: colors.xBorderColor,
     borderRightWidth: {
       default: "2px",
     },
     borderBottomStyle: "solid",
-    borderBottomColor: xBorderColor,
+    borderBottomColor: colors.xBorderColor,
     borderBottomWidth: {
       default: "2px",
     },

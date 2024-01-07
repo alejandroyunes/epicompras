@@ -1,6 +1,6 @@
 import stylex from "@stylexjs/stylex"
 import { globalTokens, spacing, text } from "../../../../app/globalTokens.stylex"
-import ArrowDownSvg from "../../../Assets/Icons/ArrowDownSvg";
+import ArrowDownSvg from "../../../Assets/Icons/ArrowDownSvg"
 
 
 export default function LanguagePicker() {
@@ -12,8 +12,8 @@ export default function LanguagePicker() {
         <ArrowDownSvg />
       </div>
     </div>
-  );
-};
+  )
+}
 
 const styles = stylex.create({
   container: {
@@ -28,5 +28,4 @@ const styles = stylex.create({
     paddingRight: spacing.xxs,
     fontFamily: globalTokens.fontSans
   },
-});
-
+})

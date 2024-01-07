@@ -19,6 +19,6 @@ const useClickOutsideListener = ({ ref, callback }: Props): void => {
       document.removeEventListener('mousedown', handleClickOutside)
     }
   }, [ref, callback])
-};
+}
 
 export default useClickOutsideListener

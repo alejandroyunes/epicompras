@@ -4,7 +4,6 @@ import { colors } from './globalTokens.stylex'
 const DARK = '@media (prefers-color-scheme: dark)';
 
 export const lightTheme = stylex.createTheme(colors, {
-  primary: '#fdae4b',
   bg: {
     default: "#edebeb",
     [DARK]: "#edebeb",
@@ -24,7 +23,6 @@ export const lightTheme = stylex.createTheme(colors, {
 })
 
 export const darkTheme = stylex.createTheme(colors, {
-  primary: '#fdae4b',
   bg: {
     default: "#262424",
     [DARK]: "#262424",

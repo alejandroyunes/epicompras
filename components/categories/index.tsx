@@ -233,7 +233,6 @@ export default function Categories() {
     </section>
   )
 }
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const s = stylex.create({
   container: {
@@ -252,7 +251,7 @@ const s = stylex.create({
     paddingBottom: `${spacing.xs}`,
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
-    borderBottomColor: xBorderColor
+    borderBottomColor: colors.xBorderColor
   },
   categoriesTitle: {
     fontSize: text.sm,
@@ -283,7 +282,7 @@ const s = stylex.create({
     // eslint-disable-next-line @stylexjs/valid-styles
     "::-webkit-scrollbar-thumb": {
       borderRadius: "8px",
-      backgroundColor: xBorderColor
+      backgroundColor: colors.xBorderColor
     },
   },
   unorderedList: {

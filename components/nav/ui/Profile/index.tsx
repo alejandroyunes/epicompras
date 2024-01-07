@@ -50,7 +50,6 @@ export default function Profile() {
   )
 }
 
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const styles = stylex.create({
   container: {
@@ -70,7 +69,7 @@ const styles = stylex.create({
     right: 0,
     transform: 'translateY(16px)',
     borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderColor: colors.xBorderColor,
     borderWidth: {
       default: "2px",
     },
@@ -90,7 +89,7 @@ const styles = stylex.create({
     backgroundColor: {
       default: null,
       ':hover': {
-        default: xBorderColor
+        default: colors.xBorderColor
       },
     },
     borderTopLeftRadius: {

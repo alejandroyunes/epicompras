@@ -45,7 +45,6 @@ export default function Notifications() {
   )
 }
 
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const slideIn = stylex.keyframes({
   '0%': { transform: 'translateX(0%)' },
@@ -85,7 +84,7 @@ const styles = stylex.create({
     height: "100vh",
     borderLeftStyle: "solid",
     borderLeftWidth: 2,
-    borderLeftColor: xBorderColor,
+    borderLeftColor: colors.xBorderColor,
     willChange: 'transform',
     backgroundColor: colors.bg
   },

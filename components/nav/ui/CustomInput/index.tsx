@@ -12,8 +12,8 @@ export default function CustomInput(props: Props) {
   const [inputValue, setInputValue] = useState('');
 
   const handleSubmit = (event: React.FormEvent) => {
-    event.preventDefault();
-    console.log('Form submitted', inputValue);
+    event.preventDefault()
+    console.log('Form submitted', inputValue)
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -34,7 +34,6 @@ export default function CustomInput(props: Props) {
     </div>
   )
 }
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const s = stylex.create({
   main: {
@@ -53,7 +52,7 @@ const s = stylex.create({
   input: {
     borderStyle: "solid",
     borderColor: {
-      default: xBorderColor,
+      default: colors.xBorderColor,
       ':focus': colors.primary
     },
     borderWidth: {

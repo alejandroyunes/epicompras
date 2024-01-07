@@ -1,4 +1,4 @@
-import * as stylex from '@stylexjs/stylex';
+import * as stylex from '@stylexjs/stylex'
 
 const MIN_WIDTH = 320
 const MAX_WIDTH = 1240
@@ -189,7 +189,8 @@ export const globalTokens = stylex.defineVars({
 
 
 export const colors = stylex.defineVars({
-  primary: 'pink',
+  primary: '#fdae4b',
+  xBorderColor: "rgba(108, 108, 108, 0.3)",
   bg: {
     default: "red",
     [DARK]: "blue",

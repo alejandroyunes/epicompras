@@ -380,8 +380,6 @@ export default function Ads() {
   )
 }
 
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.1)`
-
 const s = stylex.create({
   container: {
     width: "100%",
@@ -428,7 +426,7 @@ const s = stylex.create({
     position: "relative",
     borderWidth: "1px",
     borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderColor: colors.xBorderColor,
     boxShadow: colors.invertedShadows,
   },
   gridImage: {

@@ -38,7 +38,6 @@ export default function ModePicker() {
   )
 }
 
-const xBorderColor = `rgba(${$.calloutBorderR}, ${$.calloutBorderG}, ${$.calloutBorderB}, 0.3)`
 
 const s = stylex.create({
   container: {
@@ -57,7 +56,7 @@ const s = stylex.create({
     right: 0,
     transform: 'translateY(16px)',
     borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderColor: colors.xBorderColor,
     borderWidth: {
       default: "2px",
     },
@@ -77,7 +76,7 @@ const s = stylex.create({
     backgroundColor: {
       default: null,
       ':hover': {
-        default: xBorderColor
+        default: colors.xBorderColor
       },
     },
     borderTopLeftRadius: {
