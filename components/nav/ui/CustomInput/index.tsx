@@ -52,7 +52,10 @@ const s = stylex.create({
   },
   input: {
     borderStyle: "solid",
-    borderColor: xBorderColor,
+    borderColor: {
+      default: xBorderColor,
+      ':focus': colors.primary
+    },
     borderWidth: {
       default: "2px",
     },
@@ -62,7 +65,12 @@ const s = stylex.create({
     boxSizing: "border-box",
     paddingLeft: spacing.xl,
     width: "100%",
-    backgroundColor: colors.inputBg
+    backgroundColor: colors.inputBg,
+    color: colors.inverted,
+    outline: {
+      ':focus': 0,
+    },
+
   },
   arrow: {
     cursor: "pointer",

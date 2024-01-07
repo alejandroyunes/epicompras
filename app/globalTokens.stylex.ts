@@ -189,7 +189,7 @@ export const globalTokens = stylex.defineVars({
 
 
 export const colors = stylex.defineVars({
-  primary: 'red',
+  primary: 'pink',
   bg: {
     default: "red",
     [DARK]: "blue",
@@ -201,6 +201,9 @@ export const colors = stylex.defineVars({
   inverted: {
     default: "gree",
     [DARK]: "green",
+  },
+  invertedShadows: {
+    default: "0 3px 10px rgba(0, 0, 0, 0.2)",
+    [DARK]: "0 3px 10px rgba(142, 109, 109, 0.2)",
   }
-});
-
+})

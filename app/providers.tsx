@@ -27,16 +27,15 @@ interface ThemeContextType {
   theme: Theme
   setTheme: Dispatch<SetStateAction<Theme>>
 }
-export const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
+const ThemeContext = createContext<ThemeContextType | undefined>(undefined)
 
 export const ThemeProvider = ({ children }: Props) => {
-
   const [theme, setTheme] = useState<Theme>('dark')
   const contextValue: ThemeContextType = { theme, setTheme }
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <html {...stylex.props(s.html, s.reset)} lang="en">
+      <html {...stylex.props(s.html, s.reset)} lang="es">
         <body {...stylex.props(s.reset, s.body, theme === 'dark' ? darkTheme : lightTheme)}>
           {children}
         </body>

@@ -275,17 +275,36 @@ const s = stylex.create({
     width: "auto",
     maxWidth: "100%",
     overflowX: "scroll",
-    // scrollbarWidth: "1px",
     // scrollbarColor: `transparent ${xBorderColor}`,
-    // "::-webkit-scrollbar": {
+
+
+    // scrollbarWidth: 8,
+    // scrollbarHeight: 8,
+    // scrollbarColor: "red blue",
+    // scrollbarThumb: 8
+
+
+    // webkitScrollbar: {
     //   width: "8px",
     //   height: "8px"
     // },
 
-    // "::-webkit-scrollbar-thumb": {
+
+    // webkitScrollbarThumb: {
     //   borderRadius: "8px",
-    //   backgroundColor: xBorderColor,
+    //   backgroundColor: xBorderColor
     // },
+
+
+    "::-webkit-scrollbar": {
+      width: "8px",
+      height: "8px"
+    },
+
+    "::-webkit-scrollbar-thumb": {
+      borderRadius: "8px",
+      backgroundColor: xBorderColor
+    },
   },
   unorderedList: {
     display: "inline-grid",

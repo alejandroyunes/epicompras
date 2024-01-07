@@ -4,7 +4,7 @@ import { colors } from './globalTokens.stylex'
 const DARK = '@media (prefers-color-scheme: dark)';
 
 export const lightTheme = stylex.createTheme(colors, {
-  primary: 'blue',
+  primary: '#fdae4b',
   bg: {
     default: "#edebeb",
     [DARK]: "#edebeb",
@@ -16,12 +16,15 @@ export const lightTheme = stylex.createTheme(colors, {
   inverted: {
     default: "#262424",
     [DARK]: "#262424",
-
+  },
+  invertedShadows: {
+    default: "0 3px 10px rgba(0, 0, 0, 0.2)",
+    [DARK]: "0 3px 10px rgba(0, 0, 0, 0.2)",
   }
 })
 
 export const darkTheme = stylex.createTheme(colors, {
-  primary: 'blue',
+  primary: '#fdae4b',
   bg: {
     default: "#262424",
     [DARK]: "#262424",
@@ -33,5 +36,9 @@ export const darkTheme = stylex.createTheme(colors, {
   inverted: {
     default: "#edebeb",
     [DARK]: "#edebeb",
+  },
+  invertedShadows: {
+    default: "0 3px 10px rgba(142, 109, 109, 0.2)",
+    [DARK]: "0 3px 10px rgba(142, 109, 109, 0.2)",
   }
 })
