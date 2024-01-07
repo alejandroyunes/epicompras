@@ -70,7 +70,6 @@ const s = stylex.create({
     outline: {
       ':focus': 0,
     },
-
   },
   arrow: {
     cursor: "pointer",

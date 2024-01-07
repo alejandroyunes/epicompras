@@ -275,7 +275,6 @@ const s = stylex.create({
     width: "auto",
     maxWidth: "100%",
     overflowX: "scroll",
-    scrollbarColor: `transparent ${xBorderColor}`,
     // eslint-disable-next-line @stylexjs/valid-styles
     "::-webkit-scrollbar": {
       width: "8px",
