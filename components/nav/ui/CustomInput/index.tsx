@@ -68,7 +68,7 @@ const s = stylex.create({
     backgroundColor: colors.inputBg,
     color: colors.inverted,
     outline: {
-      default: null,
+      default: 'none',
       ':focus': 0,
     },
   },
