@@ -1,12 +1,12 @@
 "use client"
 import stylex from "@stylexjs/stylex"
-import LocationSvg from "../../../Assets/Icons/LocationSvg"
-import { spacing, text } from "../../../../app/globalTokens.stylex"
+import LocationSvg from "@/components/Assets/Icons/LocationSvg"
+import { colors, spacing, text } from "../../../../app/globalTokens.stylex"
 import { useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import { globalTokens as $ } from '../../../../app/globalTokens.stylex'
-import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
-import useClickOutsideListener from "../../hooks/useClickOutside"
+import ArrowRightSvg from "@/components/Assets/Icons/ArrowRightSvg"
+import useClickOutsideListener from "@/components/nav/hooks/useClickOutside"
 
 interface LocationProps {
   latitude: number
@@ -126,48 +126,50 @@ export default function Location() {
 
   return (
     <>
-      <div className={stylex(styles.container)} onClick={() => setOpen(!open)}>
-        <div className={stylex(styles.icon)}>
+      <div {...stylex.props(s.container)} onClick={() => setOpen(!open)}>
+        <div {...stylex.props(s.icon)}>
           <LocationSvg />
         </div>
-        <div className={stylex(styles.text)}>
-          {city ? city : 'Ciudad'}
+        <div {...stylex.props(s.text)}>
+          <p {...stylex.props(s.textP)}>
+            {city ? city : 'Ciudad'}
+          </p>
         </div>
-      </div>
+      </div >
 
-      <div {...stylex.props(styles.sliderContainer, open ? styles.slideIn : styles.slideOut)} ref={slideNotificaitonRef}>
-        <div {...stylex.props(styles.animationContainer)}>
+      <div {...stylex.props(s.sliderContainer, open ? s.slideIn : s.slideOut)} ref={slideNotificaitonRef}>
+        <div {...stylex.props(s.animationContainer)}>
 
-          <div {...stylex.props(styles.locationText)}>
+          <div {...stylex.props(s.locationText)}>
             <p>
               ¿Dónde quieres buscar?
             </p>
           </div>
 
-          <div {...stylex.props(styles.searchInput)}>
+          <div {...stylex.props(s.searchInput)}>
 
-            <form onSubmit={handleSubmit} {...stylex.props(styles.form)}>
-              <input {...stylex.props(styles.input)} type="text" placeholder="Buscar" onChange={handleChange} value={inputValue} />
+            <form onSubmit={handleSubmit} {...stylex.props(s.form)}>
+              <input {...stylex.props(s.input)} type="text" placeholder="Buscar" onChange={handleChange} value={inputValue} />
             </form>
 
-            <div {...stylex.props(styles.arrow)} onClick={handleSubmit}>
+            <div {...stylex.props(s.arrow)} onClick={handleSubmit}>
               <ArrowRightSvg />
             </div>
           </div>
 
-          <div {...stylex.props(styles.currentContainer)}>
+          <div {...stylex.props(s.currentContainer)}>
             <LocationSvg />
-            <div {...stylex.props(styles.currentLocation)} onClick={handleGetLocation}>
+            <div {...stylex.props(s.currentLocation)} onClick={handleGetLocation}>
               <p>
                 Usar la ubicación actual
               </p>
               {errorCity &&
-                <p {...stylex.props(styles.errorLocation)}>
+                <p {...stylex.props(s.errorLocation)}>
                   Hubo un error en la ubicación
                 </p>
               }
               {cityBlocked &&
-                <p {...stylex.props(styles.errorLocation)}>
+                <p {...stylex.props(s.errorLocation)}>
                   Ubicación bloqueada. Verifique la configuración del navegador/teléfono
                 </p>
               }
@@ -175,21 +177,21 @@ export default function Location() {
           </div>
         </div>
 
-        <div {...stylex.props(styles.resultContainer)}>
+        <div {...stylex.props(s.resultContainer)}>
           {cityArray &&
-            <ul {...stylex.props(styles.resultUnorder)}>
+            <ul {...stylex.props(s.resultUnorder)}>
               {cityArray.map((city, index) => (
-                <li key={index}{...stylex.props(styles.resultList)} onClick={() => handleSetCity(city.city)}>{city.city} </li>
+                <li key={index}{...stylex.props(s.resultList)} onClick={() => handleSetCity(city.city)}>{city.city} </li>
               ))}
             </ul>}
         </div>
 
-        <div {...stylex.props(styles.animationExit)} onClick={() => setOpen(false)}>
+        <div {...stylex.props(s.animationExit)} onClick={() => setOpen(false)}>
           <ExitSvg />
         </div>
       </div>
 
-      {open && <div {...stylex.props(styles.bg)} />}
+      {open && <div {...stylex.props(s.bg)} />}
     </>
   )
 }
@@ -211,7 +213,7 @@ const fadeIn = stylex.keyframes({
   '100%': { visibility: 'visible', opacity: 1 },
 })
 
-const styles = stylex.create({
+const s = stylex.create({
   container: {
     display: "flex",
     alignItems: "center",
@@ -232,13 +234,15 @@ const styles = stylex.create({
     }
   },
   text: {
-    fontSize: text.p,
     marginRight: {
       default: null,
       "@media (max-width: 900px)": spacing.xxs,
     },
   },
-
+  textP: {
+    fontSize: text.p,
+    color: colors.inverted,
+  },
   sliderContainer: {
     position: "fixed",
     top: 0,

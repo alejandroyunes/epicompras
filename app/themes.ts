@@ -16,6 +16,7 @@ export const lightTheme = stylex.createTheme(colors, {
   inverted: {
     default: "#262424",
     [DARK]: "#262424",
+
   }
 })
 
