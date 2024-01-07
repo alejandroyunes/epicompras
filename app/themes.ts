@@ -8,6 +8,14 @@ export const lightTheme = stylex.createTheme(colors, {
   bg: {
     default: "#edebeb",
     [DARK]: "#edebeb",
+  },
+  inputBg: {
+    default: "#f2ebeb",
+    [DARK]: "#f2ebeb",
+  },
+  inverted: {
+    default: "#262424",
+    [DARK]: "#262424",
   }
 })
 
@@ -16,5 +24,13 @@ export const darkTheme = stylex.createTheme(colors, {
   bg: {
     default: "#262424",
     [DARK]: "#262424",
+  },
+  inputBg: {
+    default: "#3b3737",
+    [DARK]: "#3b3737",
+  },
+  inverted: {
+    default: "#edebeb",
+    [DARK]: "#edebeb",
   }
 })

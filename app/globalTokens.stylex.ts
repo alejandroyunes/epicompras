@@ -193,6 +193,14 @@ export const colors = stylex.defineVars({
   bg: {
     default: "red",
     [DARK]: "blue",
+  },
+  inputBg: {
+    default: "gree",
+    [DARK]: "green",
+  },
+  inverted: {
+    default: "gree",
+    [DARK]: "green",
   }
 });
 

@@ -11,13 +11,13 @@ const useClickOutsideListener = ({ ref, callback }: Props): void => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         callback()
       }
-    };
+    }
 
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener('mousedown', handleClickOutside)
 
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
+      document.removeEventListener('mousedown', handleClickOutside)
+    }
   }, [ref, callback])
 };
 

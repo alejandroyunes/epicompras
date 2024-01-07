@@ -1,5 +1,4 @@
 "use client"
-
 import * as stylex from "@stylexjs/stylex"
 
 import CustomInput from "../ui/CustomInput"
@@ -47,8 +46,6 @@ export function DesktopNav() {
             <ButtonTheme onClick={onHandleClick}>Publicar</ButtonTheme>
           </>
         }
-
-
       </div>
     </nav>
   )

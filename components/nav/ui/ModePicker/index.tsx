@@ -1,7 +1,7 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import { globalTokens as $, colors, spacing, text } from "../../../../app/globalTokens.stylex"
+import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
 import { useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
@@ -9,7 +9,6 @@ import ModeSvg from "../../../Assets/Icons/ModeSvg"
 import useClickOutsideListener from "../../hooks/useClickOutside"
 
 import { useTheme } from "@/app/providers"
-
 
 export default function ModePicker() {
 

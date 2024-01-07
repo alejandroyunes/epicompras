@@ -1,5 +1,4 @@
 import * as stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "./globalTokens.stylex"
 import { DesktopNav } from "../components/nav/DesktopNav"
 import { MobileNav } from "../components/nav/Mobile"
 import Categories from "../components/categories"
