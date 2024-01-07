@@ -140,8 +140,8 @@ export default function Location() {
       <div {...stylex.props(s.sliderContainer, open ? s.slideIn : s.slideOut)} ref={slideNotificaitonRef}>
         <div {...stylex.props(s.animationContainer)}>
 
-          <div {...stylex.props(s.locationText)}>
-            <p>
+          <div {...stylex.props(s.location)}>
+            <p {...stylex.props(s.textP)}>
               ¿Dónde quieres buscar?
             </p>
           </div>
@@ -160,7 +160,7 @@ export default function Location() {
           <div {...stylex.props(s.currentContainer)}>
             <LocationSvg />
             <div {...stylex.props(s.currentLocation)} onClick={handleGetLocation}>
-              <p>
+              <p {...stylex.props(s.currentLocationP)}>
                 Usar la ubicación actual
               </p>
               {errorCity &&
@@ -181,7 +181,9 @@ export default function Location() {
           {cityArray &&
             <ul {...stylex.props(s.resultUnorder)}>
               {cityArray.map((city, index) => (
-                <li key={index}{...stylex.props(s.resultList)} onClick={() => handleSetCity(city.city)}>{city.city} </li>
+                <li key={index} {...stylex.props(s.resultList)} onClick={() => handleSetCity(city.city)}>
+                  {city.city}
+                </li>
               ))}
             </ul>}
         </div>
@@ -259,10 +261,7 @@ const s = stylex.create({
     borderLeftWidth: 2,
     borderLeftColor: xBorderColor,
     willChange: 'transform',
-    backgroundColor: {
-      default: "white",
-      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
-    },
+    backgroundColor: colors.bg
   },
   slideIn: {
     animationName: slideIn,
@@ -288,8 +287,7 @@ const s = stylex.create({
     right: 16,
     cursor: "pointer"
   },
-  locationText: {
-    fontSize: text.p,
+  location: {
     paddingBottom: spacing.xs
   },
   searchInput: {
@@ -310,6 +308,7 @@ const s = stylex.create({
     boxSizing: "border-box",
     paddingLeft: spacing.xs,
     width: "100%",
+    backgroundColor: colors.inputBg
   },
   arrow: {
     cursor: "pointer",
@@ -328,7 +327,7 @@ const s = stylex.create({
     },
     alignItems: "center",
     marginTop: spacing.xs,
-    padding: `0 ${spacing.xs}`,
+    padding: `0 ${spacing.xxs}`,
   },
   currentLocation: {
     width: "100%",
@@ -336,6 +335,13 @@ const s = stylex.create({
     display: "flex",
     flexDirection: "column",
     cursor: "pointer"
+  },
+  currentLocationP: {
+    fontSize: text.sm,
+    color: colors.inverted,
+  },
+  errorLocation: {
+    padding: `${spacing.xxs} 0`,
   },
   resultContainer: {
     margin: `0 ${spacing.md}`,
@@ -361,10 +367,8 @@ const s = stylex.create({
   },
   resultList: {
     padding: `${spacing.xxs}`,
-  },
-  errorLocation: {
-    fontSize: spacing.xs,
-    padding: `${spacing.xxs} 0`,
+    fontSize: text.sm,
+    color: colors.inverted,
   },
   bg: {
     position: "fixed",
