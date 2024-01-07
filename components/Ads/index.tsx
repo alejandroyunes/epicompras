@@ -429,7 +429,7 @@ const s = stylex.create({
     borderWidth: "1px",
     borderStyle: "solid",
     borderColor: xBorderColor,
-    // boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
+    boxShadow: "0 3px 10px rgba(0, 0, 0, 0.2)",
   },
   gridImage: {
     margin: `0 0 ${spacing.xxs} 0`,
