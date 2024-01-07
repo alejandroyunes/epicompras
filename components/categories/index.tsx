@@ -275,32 +275,13 @@ const s = stylex.create({
     width: "auto",
     maxWidth: "100%",
     overflowX: "scroll",
-    // scrollbarColor: `transparent ${xBorderColor}`,
-
-
-    // scrollbarWidth: 8,
-    // scrollbarHeight: 8,
-    // scrollbarColor: "red blue",
-    // scrollbarThumb: 8
-
-
-    // webkitScrollbar: {
-    //   width: "8px",
-    //   height: "8px"
-    // },
-
-
-    // webkitScrollbarThumb: {
-    //   borderRadius: "8px",
-    //   backgroundColor: xBorderColor
-    // },
-
-
+    scrollbarColor: `transparent ${xBorderColor}`,
+    // eslint-disable-next-line @stylexjs/valid-styles
     "::-webkit-scrollbar": {
       width: "8px",
       height: "8px"
     },
-
+    // eslint-disable-next-line @stylexjs/valid-styles
     "::-webkit-scrollbar-thumb": {
       borderRadius: "8px",
       backgroundColor: xBorderColor
