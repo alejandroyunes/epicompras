@@ -2,7 +2,7 @@
 
 import stylex from "@stylexjs/stylex"
 import ProfileSvg from "../../../Assets/Icons/ProfileSvg"
-import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
+import { globalTokens as $, spacing, text, colors } from "../../../../app/globalTokens.stylex"
 import { useRef, useState } from "react"
 import MessageSvg from "../../../Assets/Icons/MessagesSvg"
 import AdsSvg from "../../../Assets/Icons/AdsSvg"
@@ -76,13 +76,10 @@ const styles = stylex.create({
     },
     borderRadius: spacing.xs,
     margin: "15px",
-    backgroundColor: {
-      default: "white",
-      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
-    },
+    backgroundColor: colors.bg
   },
   a: {
-    color: "inherit",
+    color: colors.inverted,
     fontSize: text.p,
     padding: "5px 20px",
     display: "flex",

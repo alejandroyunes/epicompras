@@ -1,7 +1,7 @@
 "use client"
 
 import stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
+import { globalTokens as $, spacing, text, colors } from "../../../../app/globalTokens.stylex"
 import { useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
@@ -63,13 +63,10 @@ const s = stylex.create({
     },
     borderRadius: spacing.xs,
     margin: "15px",
-    backgroundColor: {
-      default: "white",
-      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
-    },
+    backgroundColor: colors.inputBg
   },
   text: {
-    color: "inherit",
+    color: colors.inverted,
     fontSize: text.p,
     padding: "5px 20px",
     display: "flex",
@@ -102,6 +99,7 @@ const s = stylex.create({
   iconDropdown: {
     display: "flex",
     marginRight: spacing.xs,
+    color: colors.inverted
   }
 })
 

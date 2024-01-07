@@ -1,12 +1,11 @@
 import stylex from "@stylexjs/stylex"
 import { s } from "./SearchSvg"
 
-
 export default function ModeSvg() {
   return (
     <svg width="28px" height="28px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
       {...stylex.props(s.svgStroke)}
-      strokeWidth="1"
+      strokeWidth="1.5"
       strokeLinecap="square"
       strokeLinejoin="miter"
       fill="none"

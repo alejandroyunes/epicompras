@@ -2,7 +2,7 @@
 
 import stylex from "@stylexjs/stylex"
 import BellSvg from "../../../Assets/Icons/BellSvg"
-import { globalTokens as $, spacing, text } from "../../../../app/globalTokens.stylex"
+import { globalTokens as $, colors, spacing, text } from "../../../../app/globalTokens.stylex"
 import { useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg"
@@ -87,10 +87,7 @@ const styles = stylex.create({
     borderLeftWidth: 2,
     borderLeftColor: xBorderColor,
     willChange: 'transform',
-    backgroundColor: {
-      default: "white",
-      "@media (prefers-color-scheme: dark)": "rgb(20, 22, 27)",
-    },
+    backgroundColor: colors.bg
   },
   slideIn: {
     animationName: slideIn,
@@ -109,7 +106,7 @@ const styles = stylex.create({
     justifyContent: "center",
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 24
+    marginTop: 24,
   },
   animationExit: {
     display: "flex",
@@ -119,10 +116,7 @@ const styles = stylex.create({
     cursor: "pointer"
   },
   animationBell: {
-    backgroundColor: {
-      default: "rgb(244, 244, 240)",
-      "@media (prefers-color-scheme: dark)": "rgb(121 121 111)"
-    },
+    backgroundColor: colors.inverted,
     borderRadius: "50%",
     display: "flex",
     alignItems: "center",
@@ -133,6 +127,7 @@ const styles = stylex.create({
   },
   notifications: {
     fontSize: text.p,
+    color: colors.inverted
   },
   bg: {
     position: "fixed",
