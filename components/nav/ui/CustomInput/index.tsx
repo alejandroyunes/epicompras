@@ -69,7 +69,7 @@ const s = stylex.create({
     color: colors.inverted,
     outline: {
       default: 'none',
-      ':focus': 0,
+      ':focus': 'none',
     },
   },
   arrow: {
