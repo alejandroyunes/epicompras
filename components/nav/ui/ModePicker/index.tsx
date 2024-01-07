@@ -2,12 +2,14 @@
 
 import stylex from "@stylexjs/stylex"
 import { globalTokens as $, colors, spacing, text } from "../../../../app/globalTokens.stylex"
-import { useEffect, useRef, useState } from "react"
+import { useRef, useState } from "react"
 import LightModeSvg from "./icons/LightModeSvg"
 import DarkModeSvg from "./icons/DarkMode"
 import ModeSvg from "../../../Assets/Icons/ModeSvg"
 import useClickOutsideListener from "../../hooks/useClickOutside"
-import { dracula } from "@/app/themes"
+
+import { useTheme } from "@/app/providers"
+
 
 export default function ModePicker() {
 
@@ -15,12 +17,7 @@ export default function ModePicker() {
   const dropdownRef = useRef<HTMLDivElement>(null)
 
   useClickOutsideListener({ ref: dropdownRef, callback: () => setOpen(false) })
-
-  const [isDark, setDark] = useState(false)
-
-  const toggle = () => {
-    setDark(!isDark);
-  };
+  const { setTheme } = useTheme()
 
   return (
     <div {...stylex.props(s.container)} onClick={() => setOpen(!open)} ref={dropdownRef}>
@@ -29,11 +26,11 @@ export default function ModePicker() {
       </div>
       {open &&
         <div {...stylex.props(s.dropdown)}>
-          <p {...stylex.props(s.text)} onClick={() => setDark(false)}>
+          <p {...stylex.props(s.text)} onClick={() => setTheme('light')}>
             <span {...stylex.props(s.iconDropdown)}><LightModeSvg /></span>
             Modo Claro
           </p>
-          <p {...stylex.props(s.text)} onClick={() => setDark(true)}>
+          <p {...stylex.props(s.text)} onClick={() => setTheme('dark')}>
             <span {...stylex.props(s.iconDropdown)}><DarkModeSvg /></span>
             Modo Oscuro
           </p>

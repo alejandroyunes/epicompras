@@ -1,11 +1,7 @@
 
 import "./globals.css"
 
-import { globalTokens as $, colors } from "./globalTokens.stylex"
-import * as stylex from "@stylexjs/stylex"
-
-import { NextAuthProvider } from "./providers"
-import { dracula } from "./themes"
+import { NextAuthProvider, ThemeProvider } from "./providers"
 
 export const metadata = {
   title: "Create Next App",
@@ -15,35 +11,10 @@ export const metadata = {
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
 
   return (
-    <html {...stylex.props(s.html, s.reset)} lang="en">
-      <body {...stylex.props(s.reset, s.body)}>
-        <NextAuthProvider>
-          {children}
-        </NextAuthProvider>
-      </body>
-    </html>
+    <ThemeProvider>
+      <NextAuthProvider>
+        {children}
+      </NextAuthProvider>
+    </ThemeProvider>
   )
 }
-
-const DARK = "@media (prefers-color-scheme: dark)"
-const fgColor = `rgba(${$.foregroundR}, ${$.foregroundG}, ${$.foregroundB}, 1)`
-
-const s = stylex.create({
-  html: {
-    colorScheme: "light dark"
-  },
-  reset: {
-    minHeight: "100%",
-    margin: 0,
-    padding: 0,
-  },
-  body: {
-    color: fgColor,
-    backgroundColor: {
-      default: "rgb(248, 242, 242)",
-      [DARK]: "rgb(24, 24, 24)",
-    },
-    // backgroundColor: colors.background,
-    fontFamily: $.fontSans,
-  }
-})

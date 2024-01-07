@@ -1,13 +1,20 @@
-//themes.ts
-import * as stylex from '@stylexjs/stylex';
-import { colors, colorsRepo } from './globalTokens.stylex';
+import * as stylex from '@stylexjs/stylex'
+import { colors } from './globalTokens.stylex'
 
-// A constant can be used to avoid repeating the media query
 const DARK = '@media (prefers-color-scheme: dark)';
 
-// Dracula theme
-export const dracula = stylex.createTheme(colors, {
-  ...colorsRepo,
-  // primaryText: { default: 'green', [DARK]: 'red' },
-  background: { default: 'red', [DARK]: 'black' },
-});
+export const lightTheme = stylex.createTheme(colors, {
+  primary: 'blue',
+  bg: {
+    default: "#edebeb",
+    [DARK]: "#edebeb",
+  }
+})
+
+export const darkTheme = stylex.createTheme(colors, {
+  primary: 'blue',
+  bg: {
+    default: "#262424",
+    [DARK]: "#262424",
+  }
+})

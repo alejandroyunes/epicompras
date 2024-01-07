@@ -187,16 +187,12 @@ export const globalTokens = stylex.defineVars({
   },
 })
 
-export const colorsRepo = {
-  primaryText: { default: 'red', [DARK]: 'blue' },
-  secondaryText: { default: '#333', [DARK]: '#ccc' },
-  accent: { default: 'blue', [DARK]: 'lightblue' },
-  // background: { default: 'rgb(248, 242, 242)', [DARK]: 'rgb(245, 246, 248)' },
-  background: { default: 'blue', [DARK]: 'lightblue' },
-  lineColor: { default: 'gray', [DARK]: 'lightgray' },
-  borderRadius: '4px',
-  fontFamily: 'system-ui, sans-serif',
-  fontSize: '16px',
-};
 
-export const colors = stylex.defineVars(colorsRepo);
+export const colors = stylex.defineVars({
+  primary: 'red',
+  bg: {
+    default: "red",
+    [DARK]: "blue",
+  }
+});
+
