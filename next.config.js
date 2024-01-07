@@ -16,6 +16,6 @@ const nextConfig = {
 
 module.exports = stylexPlugin({
   filename: 'stylex-bundle.css',
-  rootDir: process.cwd(),
+  rootDir: __dirname,
   useCSSLayers: true,
 })((nextConfig))
