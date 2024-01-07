@@ -232,7 +232,7 @@ const s = stylex.create({
   icon: {
     marginRight: {
       default: spacing.xs,
-      "@media (max-width: 900px)": 0,
+      "@media (max-width: 900px)": spacing.xxs,
     }
   },
   text: {

@@ -3,7 +3,7 @@
 import stylex from "@stylexjs/stylex"
 import { InputHTMLAttributes, useState } from "react"
 import { globalTokens as $, colors, spacing, text } from "./../../../../app/globalTokens.stylex"
-import ArrowRightSvg from "@/components/Assets/Icons/ArrowRightSvg"
+import ArrowRightSvg from "../../../Assets/Icons/ArrowRightSvg"
 import SearchSvg from "@/components/Assets/Icons/SearchSvg"
 
 interface Props extends InputHTMLAttributes<HTMLInputElement> { }

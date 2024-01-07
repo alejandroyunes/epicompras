@@ -11,12 +11,12 @@ import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"
 import HamburgerSvg from "../../Assets/Icons/HamburgerSvg"
-import { useState } from "react"
 import ButtonTheme from "../../button/ButtonTheme"
 import { spacing } from "../../../app/globalTokens.stylex"
+import { useSession } from "next-auth/react"
 
 export function MobileNav() {
-  const [login, setLogin] = useState(false)
+  const { data: session } = useSession()
 
   const onClick = () => {
     console.log("click")
@@ -38,7 +38,9 @@ export function MobileNav() {
         </div>
         <div {...stylex.props(styles.upItems)}>
           <Location />
-          {login ?
+          <ModePicker />
+
+          {!session ?
             <div {...stylex.props(styles.buttonContainer)}>
               <ButtonTheme onClick={onClick}>Entrar</ButtonTheme>
             </div>
@@ -54,7 +56,7 @@ export function MobileNav() {
         </div>
 
         <div {...stylex.props(styles.downItems)}>
-          {login ? null : <Profile />}
+          {!session ? null : <Profile />}
         </div>
 
       </div>

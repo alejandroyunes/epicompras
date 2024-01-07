@@ -1,5 +1,5 @@
 import * as stylex from "@stylexjs/stylex"
-import { globalTokens as $, spacing, text } from "../../app/globalTokens.stylex"
+import { globalTokens as $, colors, spacing, text } from "../../app/globalTokens.stylex"
 import Link from "next/link"
 import Image from "next/image"
 import cars from './assets/carros.webp'
@@ -257,12 +257,13 @@ const s = stylex.create({
   categoriesTitle: {
     fontSize: text.sm,
     fontWeight: "bold",
+    color: colors.inverted
   },
   categoriesUrl: {
     fontSize: text.sm,
     textDecoration: "none",
     color: {
-      default: 'inherit',
+      default: colors.inverted,
       ':hover': {
         default: null,
       },
@@ -298,7 +299,7 @@ const s = stylex.create({
   },
   itemLink: {
     fontSize: text.sm,
-    color: "inherit",
+    color: colors.inverted,
     textDecoration: "none",
   },
   liImage: {

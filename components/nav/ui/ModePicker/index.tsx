@@ -63,7 +63,8 @@ const s = stylex.create({
     },
     borderRadius: spacing.xs,
     margin: "15px",
-    backgroundColor: colors.inputBg
+    backgroundColor: colors.inputBg,
+    zIndex: 101
   },
   text: {
     color: colors.inverted,
