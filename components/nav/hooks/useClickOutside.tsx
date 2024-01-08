@@ -6,9 +6,7 @@ interface Props {
 }
 
 const useClickOutsideListener = ({ ref, callback }: Props): void => {
-  // console.log('before useffect')
   useEffect(() => {
-    // console.log('inside useffect')
 
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {

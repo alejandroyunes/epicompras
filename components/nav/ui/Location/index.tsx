@@ -2,7 +2,7 @@
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "@/components/Assets/Icons/LocationSvg"
 import { colors, spacing, text } from "../../../../app/globalTokens.stylex"
-import { use, useEffect, useState } from "react"
+import { useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import ArrowRightSvg from "@/components/Assets/Icons/ArrowRightSvg"
 
@@ -57,6 +57,7 @@ export default function Location() {
     { city: 'Mitú', latitude: 1.1986, longitude: -70.1733 },
     { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
   ]
+
 
   const searchCity = () => {
     const searchTerm = inputValue.toLocaleLowerCase()

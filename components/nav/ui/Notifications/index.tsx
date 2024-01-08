@@ -9,10 +9,8 @@ import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg"
 import useClickOutsideListener from "../../hooks/useClickOutside"
 
 export default function Notifications() {
-  const [open, setOpen] = useState(false)
-  const slideNotificaitonRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState<boolean>()
 
-  useClickOutsideListener({ ref: slideNotificaitonRef, callback: () => setOpen(false) })
 
   return (
     <>
@@ -20,7 +18,7 @@ export default function Notifications() {
         <BellSvg />
       </div>
 
-      <div {...stylex.props(styles.sliderContainer, open ? styles.slideIn : styles.slideOut)} ref={slideNotificaitonRef}>
+      <div {...stylex.props(styles.sliderContainer, open && styles.slideIn, open === false && styles.slideOut)} >
         <div {...stylex.props(styles.animationContainer)}>
 
           <div {...stylex.props(styles.animationBell)}>
@@ -40,7 +38,7 @@ export default function Notifications() {
         </div>
       </div>
 
-      {open && <div {...stylex.props(styles.bg)} />}
+      {open && <div {...stylex.props(styles.bg)} onClick={() => setOpen(false)} />}
     </>
   )
 }
@@ -52,7 +50,7 @@ const slideIn = stylex.keyframes({
 })
 
 const slideOut = stylex.keyframes({
-  // '0%': { transform: 'translateX(-100%)' },
+  '0%': { transform: 'translateX(-100%)' },
   '100%': { transform: 'translateX(0%)' },
 })
 
@@ -98,6 +96,7 @@ const styles = stylex.create({
     animationName: slideOut,
     animationDuration: "0.5s",
     animationFillMode: "forwards",
+    zIndex: 101
   },
   animationContainer: {
     display: "flex",
