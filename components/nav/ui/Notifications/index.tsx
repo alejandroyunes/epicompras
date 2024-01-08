@@ -6,11 +6,9 @@ import { globalTokens as $, colors, spacing, text } from "../../../../app/global
 import { useRef, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg"
-import useClickOutsideListener from "../../hooks/useClickOutside"
 
 export default function Notifications() {
   const [open, setOpen] = useState<boolean>()
-
 
   return (
     <>
@@ -42,7 +40,6 @@ export default function Notifications() {
     </>
   )
 }
-
 
 const slideIn = stylex.keyframes({
   '0%': { transform: 'translateX(0%)' },

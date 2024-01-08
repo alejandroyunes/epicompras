@@ -37,14 +37,14 @@ export function DesktopNav() {
 
       <div {...stylex.props(styles.right)}>
         <ModePicker />
-        {!session ?
-          <ButtonTheme onClick={() => signIn()}>Entrar</ButtonTheme>
-          :
+        {session ?
           <>
             <Notifications />
             <Profile />
             <ButtonTheme onClick={onHandleClick}>Publicar</ButtonTheme>
           </>
+          :
+          <ButtonTheme onClick={() => signIn()}>Entrar</ButtonTheme>
         }
       </div>
     </nav>
