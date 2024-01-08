@@ -2,10 +2,9 @@
 import stylex from "@stylexjs/stylex"
 import LocationSvg from "@/components/Assets/Icons/LocationSvg"
 import { colors, spacing, text } from "../../../../app/globalTokens.stylex"
-import { useRef, useState } from "react"
+import { use, useEffect, useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import ArrowRightSvg from "@/components/Assets/Icons/ArrowRightSvg"
-import useClickOutsideListener from "@/components/nav/hooks/useClickOutside"
 
 interface LocationProps {
   latitude: number
@@ -20,10 +19,9 @@ interface cityProps {
 
 export default function Location() {
 
-  const [open, setOpen] = useState(false)
-  const slideNotificaitonRef = useRef<HTMLDivElement>(null)
+  const [open, setOpen] = useState<boolean>()
   const [inputValue, setInputValue] = useState('')
-  const [city, setCity] = useState('')
+  const [city, setCity] = useState<string>()
   const [errorCity, setErrorCity] = useState(false)
   const [cityBlocked, setCityBlocked] = useState(false)
   const [cityArray, setCityArray] = useState<cityProps[]>()
@@ -60,8 +58,6 @@ export default function Location() {
     { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
   ]
 
-  useClickOutsideListener({ ref: slideNotificaitonRef, callback: () => setOpen(false) });
-
   const searchCity = () => {
     const searchTerm = inputValue.toLocaleLowerCase()
 
@@ -69,6 +65,7 @@ export default function Location() {
       const cityLowerCase = city.city.toLocaleLowerCase()
       return cityLowerCase.includes(searchTerm)
     })
+
     setCityArray(filteredCities)
 
     return filteredCities
@@ -76,7 +73,7 @@ export default function Location() {
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value)
-    if (inputValue.length >= 2) {
+    if (inputValue.length >= 1) {
       searchCity()
     }
   }
@@ -120,7 +117,6 @@ export default function Location() {
         },
         () => {
           setCityBlocked(true)
-
         }
       )
     } else {
@@ -130,8 +126,8 @@ export default function Location() {
 
   return (
     <>
-      <div {...stylex.props(s.container)} onClick={() => setOpen(!open)}>
-        <div {...stylex.props(s.icon)}>
+      <div {...stylex.props(s.container)} onClick={() => setOpen(true)}>
+        <div  {...stylex.props(s.icon, city !== undefined && s.popIn)}>
           <LocationSvg />
         </div>
         <div {...stylex.props(s.text)}>
@@ -141,7 +137,7 @@ export default function Location() {
         </div>
       </div >
 
-      <div {...stylex.props(s.sliderContainer, open ? s.slideIn : s.slideOut)} ref={slideNotificaitonRef}>
+      <div {...stylex.props(s.sliderContainer, open && s.slideIn, open === false && s.slideClose)}>
         <div {...stylex.props(s.animationContainer)}>
 
           <div {...stylex.props(s.location)}>
@@ -197,7 +193,7 @@ export default function Location() {
         </div>
       </div>
 
-      {open && <div {...stylex.props(s.bg)} />}
+      {open && <div {...stylex.props(s.bg)} onClick={() => setOpen(false)} />}
     </>
   )
 }
@@ -207,14 +203,20 @@ const slideIn = stylex.keyframes({
   '100%': { transform: 'translateX(-100%)' },
 })
 
-const slideOut = stylex.keyframes({
-  // '0%': { transform: 'translateX(-100%)' },
+const slideClose = stylex.keyframes({
+  '0%': { transform: 'translateX(-100%)' },
   '100%': { transform: 'translateX(0%)' },
 })
 
 const fadeIn = stylex.keyframes({
   '0%': { visibility: 'hidden', opacity: 0 },
   '100%': { visibility: 'visible', opacity: 1 },
+})
+
+const popIn = stylex.keyframes({
+  '0%': { transform: 'translateY(0px)' },
+  '50%': { transform: 'translateY(-10px)' },
+  '100%': { transform: 'translateY(0px)' },
 })
 
 const s = stylex.create({
@@ -271,10 +273,18 @@ const s = stylex.create({
     animationFillMode: "forwards",
     zIndex: 101
   },
-  slideOut: {
-    animationName: slideOut,
+  slideClose: {
+    animationName: slideClose,
     animationDuration: "0.5s",
     animationFillMode: "forwards",
+    zIndex: 101
+  },
+  popIn: {
+    animationName: popIn,
+    animationDuration: "1s",
+    animationFillMode: 'both',
+    animationTimingFunction: 'cubic-bezier(.2, .85, .4, 1)',
+    animationIterationCount: 2,
   },
   animationContainer: {
     display: "flex",

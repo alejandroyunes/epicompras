@@ -1,4 +1,4 @@
-import { useEffect, RefObject } from 'react'
+import { useEffect, RefObject, useCallback, useState } from 'react'
 
 interface Props {
   ref: RefObject<HTMLElement>,
@@ -6,7 +6,10 @@ interface Props {
 }
 
 const useClickOutsideListener = ({ ref, callback }: Props): void => {
+  // console.log('before useffect')
   useEffect(() => {
+    // console.log('inside useffect')
+
     const handleClickOutside = (event: MouseEvent) => {
       if (ref.current && !ref.current.contains(event.target as Node)) {
         callback()
