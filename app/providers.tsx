@@ -9,7 +9,7 @@ import React, {
   useEffect,
 } from 'react'
 import * as stylex from "@stylexjs/stylex"
-import { globalTokens as $, colors } from "./globalTokens.stylex"
+import { globalTokens as $, colors, spacing } from "./globalTokens.stylex"
 
 import { SessionProvider } from 'next-auth/react'
 import { darkTheme, lightTheme } from './themes'
@@ -35,7 +35,7 @@ export const ThemeProvider = ({ children }: Props) => {
   const isLocalStorageSupported = typeof window !== 'undefined' && window.localStorage
   const storeTheme = isLocalStorageSupported ? localStorage.getItem('theme') as Theme | null : null
 
-  const [theme, setTheme] = useState<Theme>(storeTheme !== null ? storeTheme : 'light');
+  const [theme, setTheme] = useState<Theme>(storeTheme !== null ? storeTheme : 'dark');
   const contextValue: ThemeContextType = { theme, setTheme }
 
   useEffect(() => {
@@ -85,6 +85,7 @@ const s = stylex.create({
     fontFamily: $.fontSans,
     maxWidth: $.maxWidth,
     margin: '0 auto',
+    padding: `0 ${spacing.md}`,
     animationName: fadeIn,
     animationDuration: '2.8s',
     animationFillMode: 'forwards',

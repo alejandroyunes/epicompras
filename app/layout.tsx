@@ -1,7 +1,7 @@
 
 import "./globals.css"
 
-import { NextAuthProvider, ThemeProvider } from "./providers"
+import { ThemeProvider } from "./providers"
 
 export const metadata = {
   title: "Epic Compras",
@@ -12,9 +12,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <ThemeProvider>
-      {/* <NextAuthProvider> */}
-        {children}
-      {/* </NextAuthProvider> */}
+      {children}
     </ThemeProvider>
   )
 }

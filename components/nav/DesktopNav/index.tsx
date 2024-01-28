@@ -10,7 +10,7 @@ import Profile from "../ui/Profile"
 import ButtonTheme from "../../button/ButtonTheme"
 
 import { signIn, useSession } from "next-auth/react"
-import { globalTokens, spacing } from "../../../app/globalTokens.stylex"
+import { spacing } from "../../../app/globalTokens.stylex"
 import ModePicker from "../ui/ModePicker"
 
 export function DesktopNav() {
@@ -44,7 +44,9 @@ export function DesktopNav() {
             <ButtonTheme onClick={onHandleClick}>Publicar</ButtonTheme>
           </>
           :
-          <ButtonTheme onClick={() => signIn()}>Entrar</ButtonTheme>
+          <div {...stylex.props(styles.button)}>
+            <ButtonTheme onClick={() => signIn()}>Entrar</ButtonTheme>
+          </div>
         }
       </div>
     </nav>
@@ -57,12 +59,7 @@ const styles = stylex.create({
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: `0 ${spacing.md}`,
-    width: {
-      default: globalTokens.maxWidth,
-      "@media (min-width: 701px) and (max-width: 1260px)": "100%",
-    },
-    margin: `${spacing.md} auto`,
+    margin: `${spacing.md} auto 0`,
   },
   logo: {
     marginRight: spacing.md
@@ -74,5 +71,8 @@ const styles = stylex.create({
   right: {
     display: "flex",
     alignItems: "center",
+  },
+  button: {
+    paddingLeft: spacing.xxs
   }
 })

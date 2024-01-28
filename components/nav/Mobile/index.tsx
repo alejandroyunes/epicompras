@@ -7,7 +7,6 @@ import Image from "next/image"
 import ventas from '../../Assets/images/ventas.jpg'
 import Location from "../ui/Location"
 import ModePicker from "../ui/ModePicker"
-import Messages from "../ui/Messages"
 import Notifications from "../ui/Notifications"
 import Profile from "../ui/Profile"
 import HamburgerSvg from "../../Assets/Icons/HamburgerSvg"
@@ -70,9 +69,8 @@ const styles = stylex.create({
     flexDirection: "column",
     alignItems: "center",
     gap: 16,
-    padding: `0 ${spacing.md}`,
     width: "100%",
-    margin: `${spacing.md} auto`,
+    margin: `${spacing.md} auto 0`,
   },
   logo: {
     marginRight: spacing.md
