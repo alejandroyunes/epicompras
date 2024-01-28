@@ -12,9 +12,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
   return (
     <ThemeProvider>
-      <NextAuthProvider>
+      {/* <NextAuthProvider> */}
         {children}
-      </NextAuthProvider>
+      {/* </NextAuthProvider> */}
     </ThemeProvider>
   )
 }
