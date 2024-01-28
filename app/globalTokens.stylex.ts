@@ -191,6 +191,7 @@ export const globalTokens = stylex.defineVars({
 export const colors = stylex.defineVars({
   primary: '#fdae4b',
   xBorderColor: "rgba(108, 108, 108, 0.3)",
+  gray: '#656565',
   bg: {
     default: "red",
     [DARK]: "blue",

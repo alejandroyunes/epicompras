@@ -58,7 +58,6 @@ export default function Location() {
     { city: 'Leticia', latitude: -4.2032, longitude: -69.9350 },
   ]
 
-
   const searchCity = () => {
     const searchTerm = inputValue.toLocaleLowerCase()
 
@@ -81,7 +80,12 @@ export default function Location() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    searchCity()
+    console.log(event)
+    if (inputValue === '') {
+      return null
+    } else {
+      searchCity()
+    }
   }
 
   const handleSetCity = (city: string) => {
@@ -156,6 +160,7 @@ export default function Location() {
             <div {...stylex.props(s.arrow)} onClick={handleSubmit}>
               <ArrowRightSvg />
             </div>
+            
           </div>
 
           <div {...stylex.props(s.currentContainer)}>
@@ -238,7 +243,8 @@ const s = stylex.create({
     marginRight: {
       default: spacing.xs,
       "@media (max-width: 900px)": spacing.xxs,
-    }
+    },
+    marginTop: spacing.xxs
   },
   text: {
     marginRight: {
@@ -296,9 +302,16 @@ const s = stylex.create({
   animationExit: {
     display: "flex",
     position: "absolute",
-    top: 10,
-    right: 16,
-    cursor: "pointer"
+    top: 24,
+    right: 24,
+    cursor: "pointer",
+    backgroundColor: colors.gray,
+    borderRadius: "50%",
+    alignItems: "center",
+    justifyContent: "center",
+    width: 40,
+    height: 40,
+    marginBottom: 16
   },
   location: {
     paddingBottom: spacing.xs
@@ -376,11 +389,20 @@ const s = stylex.create({
     borderBottomWidth: {
       default: "2px",
     },
+    borderTopStyle: "solid",
+    borderTopColor: colors.xBorderColor,
+    borderTopWidth: {
+      default: "2px",
+    },
+    paddingLeft: 0
   },
   resultList: {
     padding: `${spacing.xxs}`,
     fontSize: text.sm,
     color: colors.inverted,
+    backgroundColor:{
+      ':hover': colors.gray
+    }
   },
   bg: {
     position: "fixed",
