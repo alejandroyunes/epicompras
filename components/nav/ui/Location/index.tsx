@@ -24,7 +24,7 @@ export default function Location() {
   const [city, setCity] = useState<string>()
   const [errorCity, setErrorCity] = useState(false)
   const [cityBlocked, setCityBlocked] = useState(false)
-  const [cityArray, setCityArray] = useState<cityProps[]>()
+  const [cityArray, setCityArray] = useState<cityProps[] | null>()
   const colombiaCoordinates = [
     { city: 'Bogotá', latitude: 4.6097, longitude: -74.0817 },
     { city: 'Medellín', latitude: 6.1924, longitude: -75.5963 },
@@ -80,7 +80,6 @@ export default function Location() {
 
   const handleSubmit = (event: React.FormEvent) => {
     event.preventDefault()
-    console.log(event)
     if (inputValue === '') {
       return null
     } else {
@@ -91,6 +90,8 @@ export default function Location() {
   const handleSetCity = (city: string) => {
     setCity(city)
     setOpen(false)
+    setInputValue('')
+    setCityArray(null)
   }
 
   const getLocationCity = ({ latitude, longitude }: LocationProps) => {
@@ -160,7 +161,7 @@ export default function Location() {
             <div {...stylex.props(s.arrow)} onClick={handleSubmit}>
               <ArrowRightSvg />
             </div>
-            
+
           </div>
 
           <div {...stylex.props(s.currentContainer)}>

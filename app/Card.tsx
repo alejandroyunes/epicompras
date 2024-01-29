@@ -62,11 +62,11 @@ const styles = stylex.create({
     padding: spacing.sm,
     transitionProperty: "background-color, border-color",
     transitionDuration: "400ms",
-    // eslint-disable-next-line @stylexjs/valid-styles
-    [LOCAL_VAR]: {
-      default: "translateX(0)",
-      ":hover": "translateX(4px)",
-    },
+    // // eslint-disable-next-line @stylexjs/valid-styles
+    // [LOCAL_VAR]: {
+    //   default: "translateX(0)",
+    //   ":hover": "translateX(4px)",
+    // },
     textAlign: "center",
     textDecoration: "none",
   },
