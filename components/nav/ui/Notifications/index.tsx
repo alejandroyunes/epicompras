@@ -3,12 +3,20 @@
 import stylex from "@stylexjs/stylex"
 import BellSvg from "../../../Assets/Icons/BellSvg"
 import { globalTokens as $, colors, spacing, text } from "../../../../app/globalTokens.stylex"
-import { useRef, useState } from "react"
+import { useState } from "react"
 import ExitSvg from "../../../Assets/Icons/ExitSvg"
 import BellSlashSvg from "../../../Assets/Icons/BellSlashSvg"
 
 export default function Notifications() {
-  const [open, setOpen] = useState<boolean>()
+  const [open, setOpen] = useState<boolean | undefined>()
+
+  const handleClose = () => {
+    setOpen(false)
+
+    setTimeout(() => {
+      setOpen(undefined)
+    }, 500)
+  }
 
   return (
     <>
@@ -31,12 +39,12 @@ export default function Notifications() {
 
         </div>
 
-        <div {...stylex.props(styles.animationExit)} onClick={() => setOpen(false)}>
+        <div {...stylex.props(styles.animationExit)} onClick={handleClose}>
           <ExitSvg />
         </div>
       </div>
 
-      {open && <div {...stylex.props(styles.bg)} onClick={() => setOpen(false)} />}
+      {open && <div {...stylex.props(styles.bg)} onClick={handleClose} />}
     </>
   )
 }

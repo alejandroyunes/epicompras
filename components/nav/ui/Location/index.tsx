@@ -19,7 +19,7 @@ interface cityProps {
 
 export default function Location() {
 
-  const [open, setOpen] = useState<boolean>()
+  const [open, setOpen] = useState<boolean | undefined>()
   const [inputValue, setInputValue] = useState('')
   const [city, setCity] = useState<string>()
   const [errorCity, setErrorCity] = useState(false)
@@ -67,14 +67,16 @@ export default function Location() {
     })
 
     setCityArray(filteredCities)
-
-    return filteredCities
   }
 
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value)
+
     if (inputValue.length >= 1) {
       searchCity()
+    }
+    if (event.target.value === '') {
+      setCityArray(null)
     }
   }
 
@@ -97,8 +99,7 @@ export default function Location() {
   const getLocationCity = ({ latitude, longitude }: LocationProps) => {
     const closestCity = colombiaCoordinates.reduce((closest, current) => {
       const distanceToCurrent = Math.sqrt(
-        Math.pow(latitude - current.latitude, 2) +
-        Math.pow(longitude - current.longitude, 2)
+        Math.pow(latitude - current.latitude, 2) + Math.pow(longitude - current.longitude, 2)
       )
 
       if (distanceToCurrent < closest.distance) {
@@ -128,6 +129,14 @@ export default function Location() {
     } else {
       setErrorCity(true)
     }
+  }
+
+  const handleClose = () => {
+    setOpen(false)
+
+    setTimeout(() => {
+      setOpen(undefined)
+    }, 500)
   }
 
   return (
@@ -185,22 +194,24 @@ export default function Location() {
         </div>
 
         <div {...stylex.props(s.resultContainer)}>
-          {cityArray &&
+          {(cityArray?.length ?? 0) > 0 && (
             <ul {...stylex.props(s.resultUnorder)}>
-              {cityArray.map((city, index) => (
+              {cityArray?.map((city, index) => (
                 <li key={index} {...stylex.props(s.resultList)} onClick={() => handleSetCity(city.city)}>
                   {city.city}
                 </li>
               ))}
-            </ul>}
+            </ul>
+          )}
         </div>
 
-        <div {...stylex.props(s.animationExit)} onClick={() => setOpen(false)}>
+
+        <div {...stylex.props(s.animationExit)} onClick={handleClose}>
           <ExitSvg />
         </div>
       </div>
 
-      {open && <div {...stylex.props(s.bg)} onClick={() => setOpen(false)} />}
+      {open && <div {...stylex.props(s.bg)} onClick={handleClose} />}
     </>
   )
 }
@@ -325,7 +336,10 @@ const s = stylex.create({
   },
   input: {
     borderStyle: "solid",
-    borderColor: colors.xBorderColor,
+    borderColor: {
+      default: colors.xBorderColor,
+      ':focus': colors.primary
+    },
     borderWidth: {
       default: "2px",
     },
@@ -336,7 +350,11 @@ const s = stylex.create({
     paddingLeft: spacing.xs,
     width: "100%",
     backgroundColor: colors.inputBg,
-    color: colors.inverted
+    color: colors.inverted,
+    outline: {
+      default: 'none',
+      ':focus': 'none',
+    },
   },
   arrow: {
     cursor: "pointer",
@@ -401,7 +419,7 @@ const s = stylex.create({
     padding: `${spacing.xxs}`,
     fontSize: text.sm,
     color: colors.inverted,
-    backgroundColor:{
+    backgroundColor: {
       ':hover': colors.gray
     }
   },

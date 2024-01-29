@@ -247,8 +247,7 @@ const s = stylex.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "center",
-    margin: `${spacing.xs} ${spacing.md}`,
-    paddingBottom: `${spacing.xs}`,
+    margin: `${spacing.xs} 0`,
     borderBottomWidth: "1px",
     borderBottomStyle: "solid",
     borderBottomColor: colors.xBorderColor
@@ -269,8 +268,7 @@ const s = stylex.create({
     },
   },
   items: {
-    margin: `${spacing.xs} ${spacing.md}`,
-    paddingBottom: `${spacing.xs}`,
+    margin: `${spacing.xs} 0`,
     width: "auto",
     maxWidth: "100%",
     overflowX: "scroll",
@@ -288,6 +286,7 @@ const s = stylex.create({
     gridAutoFlow: "column",
     gridGap: `${spacing.xs}`,
     listStyle: "none",
+    paddingLeft: 0
   },
   liList: {
     width: 100,

@@ -76,8 +76,6 @@ const s = stylex.create({
   },
   reset: {
     minHeight: "100%",
-    margin: 0,
-    padding: 0,
   },
   body: {
     color: fgColor,
